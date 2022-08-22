@@ -1,0 +1,3467 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MoEngage Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MoEngage </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">MoEngage</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/delegate">delegate</option>
+		
+		<option value="//api/name/disableBadgeReset">disableBadgeReset</option>
+		
+		<option value="//api/name/disableInApps">disableInApps</option>
+		
+		<option value="//api/name/disableInbox">disableInbox</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/debug:">+ debug:</option>
+		
+		<option value="//api/name/redirectDataToRegion:">+ redirectDataToRegion:</option>
+		
+		<option value="//api/name/setAppGroupID:">+ setAppGroupID:</option>
+		
+		<option value="//api/name/setDataRedirection:">+ setDataRedirection:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/appStatus:">- appStatus:</option>
+		
+		<option value="//api/name/didFailToRegisterForPush">- didFailToRegisterForPush</option>
+		
+		<option value="//api/name/didReceieveNotificationinApplication:withInfo:openDeeplinkUrlAutomatically:">- didReceieveNotificationinApplication:withInfo:openDeeplinkUrlAutomatically:</option>
+		
+		<option value="//api/name/didRegisterForUserNotificationSettings:">- didRegisterForUserNotificationSettings:</option>
+		
+		<option value="//api/name/disablePeriodicFlush">- disablePeriodicFlush</option>
+		
+		<option value="//api/name/dismissRichLandingWebViewControllerWithAnimation:">- dismissRichLandingWebViewControllerWithAnimation:</option>
+		
+		<option value="//api/name/dontShowInAppInViewController:">- dontShowInAppInViewController:</option>
+		
+		<option value="//api/name/flushWithCompletionBlock:">- flushWithCompletionBlock:</option>
+		
+		<option value="//api/name/getNudgeViewWithCompletionBlock:">- getNudgeViewWithCompletionBlock:</option>
+		
+		<option value="//api/name/getSelfHandledInApp">- getSelfHandledInApp</option>
+		
+		<option value="//api/name/handleActionWithIdentifier:forRemoteNotification:">- handleActionWithIdentifier:forRemoteNotification:</option>
+		
+		<option value="//api/name/handleInAppMessage">- handleInAppMessage</option>
+		
+		<option value="//api/name/initializeDevWithApiKey:inApplication:withLaunchOptions:openDeeplinkUrlAutomatically:">- initializeDevWithApiKey:inApplication:withLaunchOptions:openDeeplinkUrlAutomatically:</option>
+		
+		<option value="//api/name/initializeProdWithApiKey:inApplication:withLaunchOptions:openDeeplinkUrlAutomatically:">- initializeProdWithApiKey:inApplication:withLaunchOptions:openDeeplinkUrlAutomatically:</option>
+		
+		<option value="//api/name/nudgeViewShownWithCampaignID:">- nudgeViewShownWithCampaignID:</option>
+		
+		<option value="//api/name/optOutOfDataTracking:">- optOutOfDataTracking:</option>
+		
+		<option value="//api/name/optOutOfInAppCampaign:">- optOutOfInAppCampaign:</option>
+		
+		<option value="//api/name/optOutOfMoEngagePushNotification:">- optOutOfMoEngagePushNotification:</option>
+		
+		<option value="//api/name/registerForPush:">- registerForPush:</option>
+		
+		<option value="//api/name/registerForRemoteNotificationForBelowiOS10WithCategories:">- registerForRemoteNotificationForBelowiOS10WithCategories:</option>
+		
+		<option value="//api/name/registerForRemoteNotificationWithCategories:andCategoriesForPreviousVersions:andWithUserNotificationCenterDelegate:">- registerForRemoteNotificationWithCategories:andCategoriesForPreviousVersions:andWithUserNotificationCenterDelegate:</option>
+		
+		<option value="//api/name/registerForRemoteNotificationWithCategories:withUserNotificationCenterDelegate:">- registerForRemoteNotificationWithCategories:withUserNotificationCenterDelegate:</option>
+		
+		<option value="//api/name/resetUser">- resetUser</option>
+		
+		<option value="//api/name/resetUserWithCompletionBlock:">- resetUserWithCompletionBlock:</option>
+		
+		<option value="//api/name/selfHandledInAppClickedWithDismissActionAndCampaignID:">- selfHandledInAppClickedWithDismissActionAndCampaignID:</option>
+		
+		<option value="//api/name/selfHandledInAppClickedWithPrimaryActionAndCampaignID:">- selfHandledInAppClickedWithPrimaryActionAndCampaignID:</option>
+		
+		<option value="//api/name/selfHandledInAppClickedWithSecondaryActionAndCampaignID:">- selfHandledInAppClickedWithSecondaryActionAndCampaignID:</option>
+		
+		<option value="//api/name/selfHandledInAppViewShownWithCampaignID:">- selfHandledInAppViewShownWithCampaignID:</option>
+		
+		<option value="//api/name/setAlias:">- setAlias:</option>
+		
+		<option value="//api/name/setFlushInterval:">- setFlushInterval:</option>
+		
+		<option value="//api/name/setNotificationCategoriesForEarlieriOSVersionsWithCategories:">- setNotificationCategoriesForEarlieriOSVersionsWithCategories:</option>
+		
+		<option value="//api/name/setPushToken:">- setPushToken:</option>
+		
+		<option value="//api/name/setUserAttribute:forKey:">- setUserAttribute:forKey:</option>
+		
+		<option value="//api/name/setUserAttributeLocationLatitude:longitude:forKey:">- setUserAttributeLocationLatitude:longitude:forKey:</option>
+		
+		<option value="//api/name/setUserAttributeTimestamp:forKey:">- setUserAttributeTimestamp:forKey:</option>
+		
+		<option value="//api/name/setUserDateOfBirth:">- setUserDateOfBirth:</option>
+		
+		<option value="//api/name/setUserEmailID:">- setUserEmailID:</option>
+		
+		<option value="//api/name/setUserFirstName:">- setUserFirstName:</option>
+		
+		<option value="//api/name/setUserGender:">- setUserGender:</option>
+		
+		<option value="//api/name/setUserLastName:">- setUserLastName:</option>
+		
+		<option value="//api/name/setUserLocationLatitude:andLongitude:">- setUserLocationLatitude:andLongitude:</option>
+		
+		<option value="//api/name/setUserMobileNo:">- setUserMobileNo:</option>
+		
+		<option value="//api/name/setUserName:">- setUserName:</option>
+		
+		<option value="//api/name/setUserNotificationCategories:">- setUserNotificationCategories:</option>
+		
+		<option value="//api/name/setUserUniqueID:">- setUserUniqueID:</option>
+		
+		<option value="//api/name/showNudgeViewAtNudgePosition:">- showNudgeViewAtNudgePosition:</option>
+		
+		<option value="//api/name/syncNow">- syncNow</option>
+		
+		<option value="//api/name/syncRealTimeTriggersWithCompletionBlock:">- syncRealTimeTriggersWithCompletionBlock:</option>
+		
+		<option value="//api/name/trackEvent:andPayload:">- trackEvent:andPayload:</option>
+		
+		<option value="//api/name/trackEvent:builderPayload:">- trackEvent:builderPayload:</option>
+		
+		<option value="//api/name/trackLocale">- trackLocale</option>
+		
+		<option value="//api/name/trackUserPushPreference:">- trackUserPushPreference:</option>
+		
+		<option value="//api/name/userNotificationCenter:didReceiveNotificationResponse:">- userNotificationCenter:didReceiveNotificationResponse:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MoEngage Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MoEngage.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set this delegate to get callbacks on whenever a inApp campaign is shown or clicked by the user</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;MOInAppDelegate&gt; delegate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/disableInbox" title="disableInbox"></a>
+	<h3 class="method-title"><code><a href="#//api/name/disableInbox">&nbsp;&nbsp;disableInbox</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set this property to YES if you don&rsquo;t wish to use the Inbox / Notification center feature</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL disableInbox</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/disableInApps" title="disableInApps"></a>
+	<h3 class="method-title"><code><a href="#//api/name/disableInApps">&nbsp;&nbsp;disableInApps</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set this property to YES if you don&rsquo;t use in app messaging.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL disableInApps</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/disableBadgeReset" title="disableBadgeReset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/disableBadgeReset">&nbsp;&nbsp;disableBadgeReset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set the property to YES if you don&rsquo;t want MoEngage to reset bagde no. on app open</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL disableBadgeReset</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initializeDevWithApiKey:inApplication:withLaunchOptions:openDeeplinkUrlAutomatically:" title="initializeDevWithApiKey:inApplication:withLaunchOptions:openDeeplinkUrlAutomatically:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initializeDevWithApiKey:inApplication:withLaunchOptions:openDeeplinkUrlAutomatically:">&ndash;&nbsp;initializeDevWithApiKey:inApplication:withLaunchOptions:openDeeplinkUrlAutomatically:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method in the AppDelegate in application:didFinishLaunchingWithOptions: to initialize the SDK for dev build</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)initializeDevWithApiKey:(NSString *_Nonnull)<em>apiKey</em> inApplication:(UIApplication *_Nullable)<em>application</em> withLaunchOptions:(NSDictionary *_Nullable)<em>launchOptions</em> openDeeplinkUrlAutomatically:(BOOL)<em>openUrl</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>apiKey</code></th>
+						<td><p>The unique apiKey provided for your app</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>application</code></th>
+						<td><p>The application instance</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>launchOptions</code></th>
+						<td><p>The launch options dictionary</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>openUrl</code></th>
+						<td><p>This tells us whether the deeplink should be handled or not, which means whether we call handleOpenUrl or you do it yourself.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="warning"><p><strong>Warning:</strong> Make sure <a href="#//api/name/initializeProdWithApiKey:inApplication:withLaunchOptions:openDeeplinkUrlAutomatically:">initializeProdWithApiKey:inApplication:withLaunchOptions:openDeeplinkUrlAutomatically:</a> method is also implemented, refer this link for more details: <a href="https://docs.moengage.com/docs/appdelegate-changes#section-initializing-moengage-sdk">Initializing MoEngage SDK</a></p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initializeProdWithApiKey:inApplication:withLaunchOptions:openDeeplinkUrlAutomatically:" title="initializeProdWithApiKey:inApplication:withLaunchOptions:openDeeplinkUrlAutomatically:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initializeProdWithApiKey:inApplication:withLaunchOptions:openDeeplinkUrlAutomatically:">&ndash;&nbsp;initializeProdWithApiKey:inApplication:withLaunchOptions:openDeeplinkUrlAutomatically:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method in the AppDelegate in application:didFinishLaunchingWithOptions: to initialize the SDK for production build</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)initializeProdWithApiKey:(NSString *_Nonnull)<em>apiKey</em> inApplication:(UIApplication *_Nullable)<em>application</em> withLaunchOptions:(NSDictionary *_Nullable)<em>launchOptions</em> openDeeplinkUrlAutomatically:(BOOL)<em>openUrl</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>apiKey</code></th>
+						<td><p>The unique apiKey provided for your app</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>application</code></th>
+						<td><p>The application instance</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>launchOptions</code></th>
+						<td><p>The launch options dictionary</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>openUrl</code></th>
+						<td><p>This tells us whether the deeplink should be handled or not, which means whether we call handleOpenUrl or you do it yourself.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="warning"><p><strong>Warning:</strong> Make sure initializeProdWithApiKey:inApplication:withLaunchOptions:openDeeplinkUrlAutomatically: method is also implemented, refer this link for more details: <a href="https://docs.moengage.com/docs/appdelegate-changes#section-initializing-moengage-sdk">Initializing MoEngage SDK</a></p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/optOutOfDataTracking:" title="optOutOfDataTracking:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/optOutOfDataTracking:">&ndash;&nbsp;optOutOfDataTracking:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method to opt out of the data tracking for a particular user</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)optOutOfDataTracking:(BOOL)<em>isOptedOut</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>isOptedOut</code></th>
+						<td><p>Bool value to indicate if the data tracking is to be opted out
+@version 4.1.0 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/optOutOfMoEngagePushNotification:" title="optOutOfMoEngagePushNotification:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/optOutOfMoEngagePushNotification:">&ndash;&nbsp;optOutOfMoEngagePushNotification:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method to opt out of push for a particular user</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)optOutOfMoEngagePushNotification:(BOOL)<em>isPushOptedOut</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>isPushOptedOut</code></th>
+						<td><p>Bool value to indicate if the push is to be opted out
+@version 4.1.0 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/optOutOfInAppCampaign:" title="optOutOfInAppCampaign:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/optOutOfInAppCampaign:">&ndash;&nbsp;optOutOfInAppCampaign:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method to opt out of the data tracking for a particular user</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)optOutOfInAppCampaign:(BOOL)<em>isInAppOptedOut</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>isInAppOptedOut</code></th>
+						<td><p>Bool value to indicate if the data tracking is to be opted out
+@version 4.1.0 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registerForRemoteNotificationWithCategories:withUserNotificationCenterDelegate:" title="registerForRemoteNotificationWithCategories:withUserNotificationCenterDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerForRemoteNotificationWithCategories:withUserNotificationCenterDelegate:">&ndash;&nbsp;registerForRemoteNotificationWithCategories:withUserNotificationCenterDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method to register your app for push notification with APNS for iOS10 and above.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)registerForRemoteNotificationWithCategories:(NSSet&lt;UNNotificationCategory*&gt; *_Nullable)<em>categories</em> withUserNotificationCenterDelegate:(id _Nullable)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>categories</code></th>
+						<td><p>to set categories for supporting Notification Actions (iOS10 and above)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>to set the <a href="#//api/name/delegate">delegate</a> for UNUserNotificationCenter.
+@version 4.0.0 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registerForRemoteNotificationForBelowiOS10WithCategories:" title="registerForRemoteNotificationForBelowiOS10WithCategories:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerForRemoteNotificationForBelowiOS10WithCategories:">&ndash;&nbsp;registerForRemoteNotificationForBelowiOS10WithCategories:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method to register your app for push notification with APNS for iOS versions below iOS10.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)registerForRemoteNotificationForBelowiOS10WithCategories:(NSSet&lt;MONotificationCategory*&gt; *_Nullable)<em>categoriesForPreviousOS</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>categoriesForPreviousOS</code></th>
+						<td><p>to set categories for supporting Notification Actions in iOS8 and iOS9 (This should be a set of <a href="../Classes/MONotificationCategory.html">MONotificationCategory</a> objects)
+@version 4.0.0 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setUserNotificationCategories:" title="setUserNotificationCategories:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setUserNotificationCategories:">&ndash;&nbsp;setUserNotificationCategories:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method to send notification categories to SDK to support Notification Action in iOS10 and above</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setUserNotificationCategories:(NSSet&lt;UNNotificationCategory*&gt; *_Nullable)<em>categories</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setNotificationCategoriesForEarlieriOSVersionsWithCategories:" title="setNotificationCategoriesForEarlieriOSVersionsWithCategories:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setNotificationCategoriesForEarlieriOSVersionsWithCategories:">&ndash;&nbsp;setNotificationCategoriesForEarlieriOSVersionsWithCategories:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method to send notification categories to SDK to support Notification Action in iOS8 and iOS9</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setNotificationCategoriesForEarlieriOSVersionsWithCategories:(NSSet&lt;MONotificationCategory*&gt; *_Nullable)<em>categories</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setPushToken:" title="setPushToken:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setPushToken:">&ndash;&nbsp;setPushToken:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to pass the device token/push token generated by APNS for your app to MoEngage SDK which can be later used for sending push notification to your app users.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setPushToken:(NSData *_Nullable)<em>deviceToken</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>deviceToken</code></th>
+						<td><p>The token of the device for push notifications</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Call this method in AppDelegate in application:didRegisterForRemoteNotificationsWithDeviceToken:.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didReceieveNotificationinApplication:withInfo:openDeeplinkUrlAutomatically:" title="didReceieveNotificationinApplication:withInfo:openDeeplinkUrlAutomatically:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didReceieveNotificationinApplication:withInfo:openDeeplinkUrlAutomatically:">&ndash;&nbsp;didReceieveNotificationinApplication:withInfo:openDeeplinkUrlAutomatically:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method in AppDelegate in didReceiveRemoteNotification</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didReceieveNotificationinApplication:(UIApplication *_Nullable)<em>application</em> withInfo:(NSDictionary *_Nonnull)<em>userInfo</em> openDeeplinkUrlAutomatically:(BOOL)<em>openUrl</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>application</code></th>
+						<td><p>The application instance</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>userInfo</code></th>
+						<td><p>The info dict with the push</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didRegisterForUserNotificationSettings:" title="didRegisterForUserNotificationSettings:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didRegisterForUserNotificationSettings:">&ndash;&nbsp;didRegisterForUserNotificationSettings:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method in AppDelegate in didRegisterUserNotificationSettings to register the app for notification setting changes by the user</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didRegisterForUserNotificationSettings:(UIUserNotificationSettings *_Nullable)<em>settings</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>settings</code></th>
+						<td><p>The push notification settings.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection availability">
+				<h4 class="method-subtitle parameter-title">Availability</h4>
+				<p>iOS8</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didFailToRegisterForPush" title="didFailToRegisterForPush"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didFailToRegisterForPush">&ndash;&nbsp;didFailToRegisterForPush</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method in AppDelegate in didFailToRegisterForRemoteNotificationsWithError</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didFailToRegisterForPush</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/userNotificationCenter:didReceiveNotificationResponse:" title="userNotificationCenter:didReceiveNotificationResponse:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/userNotificationCenter:didReceiveNotificationResponse:">&ndash;&nbsp;userNotificationCenter:didReceiveNotificationResponse:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method in AppDelegate in userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)userNotificationCenter:(UNUserNotificationCenter *_Nonnull)<em>center</em> didReceiveNotificationResponse:(UNNotificationResponse *_Nonnull)<em>response</em></code></div>
+
+		    
+			
+
+			
+
+			
+			<div class="method-subsection availability">
+				<h4 class="method-subtitle parameter-title">Availability</h4>
+				<p>iOS 10
+@version 3.0.0 and above</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/handleActionWithIdentifier:forRemoteNotification:" title="handleActionWithIdentifier:forRemoteNotification:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/handleActionWithIdentifier:forRemoteNotification:">&ndash;&nbsp;handleActionWithIdentifier:forRemoteNotification:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to track which action button was clicked by user for a notification.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)handleActionWithIdentifier:(NSString *_Nonnull)<em>identifier</em> forRemoteNotification:(NSDictionary *_Nonnull)<em>notification</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>identifier</code></th>
+						<td><p>Action Identifier of the Action button clicked by user</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>notification</code></th>
+						<td><p>NSDictionary instance of the notification payload received by the app.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Call this method in AppDelegate in application:handleActionWithIdentifier:forRemoteNotification:completionHandler:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trackEvent:andPayload:" title="trackEvent:andPayload:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackEvent:andPayload:">&ndash;&nbsp;trackEvent:andPayload:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method to track events.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)trackEvent:(NSString *_Nonnull)<em>name</em> andPayload:(NSMutableDictionary *_Nullable)<em>payload</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>The name of the event</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>payload</code></th>
+						<td><p>The dictionary you want to associate with the event (optional)</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="warning"><p><strong>Warning:</strong> Please make sure that you are tracking event attributes without changing their data types. Our system detects the data type automatically unless you explicitly specify it as a string.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trackEvent:builderPayload:" title="trackEvent:builderPayload:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackEvent:builderPayload:">&ndash;&nbsp;trackEvent:builderPayload:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method if you want to track events with special types like timestamp/datetime or location.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)trackEvent:(NSString *_Nonnull)<em>name</em> builderPayload:(MOPayloadBuilder *_Nullable)<em>payload</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>Event name to be tracked</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>payload</code></th>
+						<td><p>of type <a href="../Classes/MOPayloadBuilder.html">MOPayloadBuilder</a>. See MOPaylodBuilder for more details.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setUserAttribute:forKey:" title="setUserAttribute:forKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setUserAttribute:forKey:">&ndash;&nbsp;setUserAttribute:forKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to set unique attributes to identify the app user. For eg. username, email, age, gender etc.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setUserAttribute:(id _Nullable)<em>value</em> forKey:(NSString *_Nonnull)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>value</code></th>
+						<td><p>The value/attribute</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The key, which is the kind of attribute</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="warning"><p><strong>Warning:</strong> value can of be type string, integer or bool</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setUserAttributeTimestamp:forKey:" title="setUserAttributeTimestamp:forKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setUserAttributeTimestamp:forKey:">&ndash;&nbsp;setUserAttributeTimestamp:forKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to set a user attribute which is datetime or time.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setUserAttributeTimestamp:(double)<em>timestamp</em> forKey:(NSString *_Nonnull)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>timestamp</code></th>
+						<td><p>The timestamp in epoch format.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setUserAttributeLocationLatitude:longitude:forKey:" title="setUserAttributeLocationLatitude:longitude:forKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setUserAttributeLocationLatitude:longitude:forKey:">&ndash;&nbsp;setUserAttributeLocationLatitude:longitude:forKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to set user attribute location.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setUserAttributeLocationLatitude:(double)<em>lat</em> longitude:(double)<em>lng</em> forKey:(NSString *_Nonnull)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>lat</code></th>
+						<td><p>The latitude of the location</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>lng</code></th>
+						<td><p>The longitude of the location</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trackLocale" title="trackLocale"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackLocale">&ndash;&nbsp;trackLocale</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to track device locale settings of user.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)trackLocale</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setUserUniqueID:" title="setUserUniqueID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setUserUniqueID:">&ndash;&nbsp;setUserUniqueID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to set a unique Identifier(ID) for a user. Please make sure you use this method wisely to only set the unique ID and not use it to update the unique ID, make use of <a href="#//api/name/setAlias:"><code>setAlias:</code></a> method for updating the unique ID for a user.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setUserUniqueID:(id _Nullable)<em>uniqueID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>uniqueID</code></th>
+						<td><p>A Unique ID to filter the specific user from your user base. Please make sure this value is not hardcoded.
+@attention Please make sure not to use this method to update the unique ID of a logged in user, use <a href="#//api/name/setAlias:">setAlias:</a> instead
+@version 3.3.0 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setAlias:" title="setAlias:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAlias:">&ndash;&nbsp;setAlias:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to update the Unique ID(ID) value of a user.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setAlias:(id _Nullable)<em>uniqueID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>uniqueID</code></th>
+						<td><p>Unique ID to filter the specific user from your user base. Please make sure this value is not hardcoded.
+@version 3.8.0 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setUserEmailID:" title="setUserEmailID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setUserEmailID:">&ndash;&nbsp;setUserEmailID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to track Email ID of a user.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setUserEmailID:(NSString *_Nullable)<em>emailID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>emailID</code></th>
+						<td><p>Email ID value to be tracked.
+@version 3.3.0 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setUserName:" title="setUserName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setUserName:">&ndash;&nbsp;setUserName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to track User Name of a user.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setUserName:(NSString *_Nullable)<em>name</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>User Name value to be tracked for the user.
+@version 3.3.0 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setUserFirstName:" title="setUserFirstName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setUserFirstName:">&ndash;&nbsp;setUserFirstName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to track First Name of a user.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setUserFirstName:(NSString *_Nullable)<em>firstName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>firstName</code></th>
+						<td><p>User First Name value to be tracked for the user.
+@version 3.3.0 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setUserLastName:" title="setUserLastName:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setUserLastName:">&ndash;&nbsp;setUserLastName:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to track Last Name of a user.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setUserLastName:(NSString *_Nullable)<em>lastName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>lastName</code></th>
+						<td><p>User last name value to be tracked for the user.
+@version 3.3.0 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setUserMobileNo:" title="setUserMobileNo:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setUserMobileNo:">&ndash;&nbsp;setUserMobileNo:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to track Phone Number of a user.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setUserMobileNo:(id _Nullable)<em>phNumber</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>phNumber</code></th>
+						<td><p>Phone Number of user to be tracked.
+@version 3.3.0 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setUserGender:" title="setUserGender:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setUserGender:">&ndash;&nbsp;setUserGender:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to track gender of a user.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setUserGender:(UserGender)<em>gender</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>gender</code></th>
+						<td><p>UserGender value indicating if user is MALE or FEMALE.
+@version 3.3.0 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setUserDateOfBirth:" title="setUserDateOfBirth:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setUserDateOfBirth:">&ndash;&nbsp;setUserDateOfBirth:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to track Date of birth of a user.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setUserDateOfBirth:(NSDate *_Nullable)<em>date</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>date</code></th>
+						<td><p>NSDate instance of birthdate of user.
+@version 3.3.0 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setUserLocationLatitude:andLongitude:" title="setUserLocationLatitude:andLongitude:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setUserLocationLatitude:andLongitude:">&ndash;&nbsp;setUserLocationLatitude:andLongitude:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to track location of a user.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setUserLocationLatitude:(double)<em>lat</em> andLongitude:(double)<em>lng</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>lat</code></th>
+						<td><p>latitude value in double of the location cordinate to be tracked.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>lng</code></th>
+						<td><p>longitude value in double of the location cordinate to be tracked.
+@version 3.3.0 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/trackUserPushPreference:" title="trackUserPushPreference:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trackUserPushPreference:">&ndash;&nbsp;trackUserPushPreference:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to track push preference set by a user.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)trackUserPushPreference:(BOOL)<em>isPushEnabled</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>isPushEnabled</code></th>
+						<td><p>A Bool value indicating if the user has enabled push preference in the app.
+@version 3.8.1 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/syncRealTimeTriggersWithCompletionBlock:" title="syncRealTimeTriggersWithCompletionBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/syncRealTimeTriggersWithCompletionBlock:">&ndash;&nbsp;syncRealTimeTriggersWithCompletionBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method to sync the realtime trigger campaigns created in your account</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)syncRealTimeTriggersWithCompletionBlock:(void ( ^ _Nullable ) ( BOOL rtSyncCompleted ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>Completion Block indicating the success/failure of the sync
+@version 4.0.1 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/handleInAppMessage" title="handleInAppMessage"></a>
+	<h3 class="method-title"><code><a href="#//api/name/handleInAppMessage">&ndash;&nbsp;handleInAppMessage</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method in viewDidAppear of the view controller where you want to show the in app message</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)handleInAppMessage</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> Adhere to the <a href="#//api/name/delegate">delegate</a> for InApp - <a href="../Protocols/MOInAppDelegate.html">MOInAppDelegate</a>, if you want the callback for the button actions.</p></div>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="../Protocols/MOInAppDelegate.html">MOInAppDelegate</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dontShowInAppInViewController:" title="dontShowInAppInViewController:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dontShowInAppInViewController:">&ndash;&nbsp;dontShowInAppInViewController:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method in viewDidLoad of the view controller where you don&rsquo;t want to show in app messages</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)dontShowInAppInViewController:(UIViewController *_Nonnull)<em>viewcontroller</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>viewcontroller</code></th>
+						<td><p>The viewcontroller instance where you don&rsquo;t want to show in app</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getSelfHandledInApp" title="getSelfHandledInApp"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getSelfHandledInApp">&ndash;&nbsp;getSelfHandledInApp</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method in viewDidAppear of the view controller where you want to get a self handled in app message</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *_Nullable)getSelfHandledInApp</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/selfHandledInAppViewShownWithCampaignID:" title="selfHandledInAppViewShownWithCampaignID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/selfHandledInAppViewShownWithCampaignID:">&ndash;&nbsp;selfHandledInAppViewShownWithCampaignID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method to track if self handled in app was shown.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)selfHandledInAppViewShownWithCampaignID:(NSString *_Nonnull)<em>campaignID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>campaignID</code></th>
+						<td><p>The campaign ID of the self handled in app shown.
+@version 2.0.0 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/selfHandledInAppClickedWithPrimaryActionAndCampaignID:" title="selfHandledInAppClickedWithPrimaryActionAndCampaignID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/selfHandledInAppClickedWithPrimaryActionAndCampaignID:">&ndash;&nbsp;selfHandledInAppClickedWithPrimaryActionAndCampaignID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method to track if self handled in app Primary widget is clicked.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)selfHandledInAppClickedWithPrimaryActionAndCampaignID:(NSString *_Nonnull)<em>campaignID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>campaignID</code></th>
+						<td><p>The campaign ID of the self handled in app shown.
+@version 3.4.0 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/selfHandledInAppClickedWithSecondaryActionAndCampaignID:" title="selfHandledInAppClickedWithSecondaryActionAndCampaignID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/selfHandledInAppClickedWithSecondaryActionAndCampaignID:">&ndash;&nbsp;selfHandledInAppClickedWithSecondaryActionAndCampaignID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method to track if self handled in app widget(other than Primary Widget) is clicked.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)selfHandledInAppClickedWithSecondaryActionAndCampaignID:(NSString *_Nonnull)<em>campaignID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>campaignID</code></th>
+						<td><p>The campaign ID of the self handled in app shown.
+@version 3.4.0 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/selfHandledInAppClickedWithDismissActionAndCampaignID:" title="selfHandledInAppClickedWithDismissActionAndCampaignID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/selfHandledInAppClickedWithDismissActionAndCampaignID:">&ndash;&nbsp;selfHandledInAppClickedWithDismissActionAndCampaignID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method to track dismiss actions on the inApp.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)selfHandledInAppClickedWithDismissActionAndCampaignID:(NSString *_Nonnull)<em>campaignID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>campaignID</code></th>
+						<td><p>The campaign ID of the self handled in app shown.
+@version 3.4.0 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getNudgeViewWithCompletionBlock:" title="getNudgeViewWithCompletionBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getNudgeViewWithCompletionBlock:">&ndash;&nbsp;getNudgeViewWithCompletionBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method to get the nudge view created in the dashboard. There can be only 1 active nudge view at any given point of time</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getNudgeViewWithCompletionBlock:(NudgeCreationCompletionBlock _Nullable)<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>Completion Block with the nudge View and campaign ID.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/nudgeViewShownWithCampaignID:" title="nudgeViewShownWithCampaignID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/nudgeViewShownWithCampaignID:">&ndash;&nbsp;nudgeViewShownWithCampaignID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method to track if nudge obtained from getNudgeViewWithCompletionBlock was shown.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)nudgeViewShownWithCampaignID:(NSString *_Nonnull)<em>campaignID</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>campaignID</code></th>
+						<td><p>The campaign ID of the nudge shown</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/showNudgeViewAtNudgePosition:" title="showNudgeViewAtNudgePosition:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/showNudgeViewAtNudgePosition:">&ndash;&nbsp;showNudgeViewAtNudgePosition:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method to show the nudge view created in the dashboard at top/bottom of the viewcontroller.
+@attention There can be only 1 active nudge view at any given point of time.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)showNudgeViewAtNudgePosition:(NudgePosition)<em>position</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>position</code></th>
+						<td><p>Defines where to add the nudge view Top/Bottom.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resetUser" title="resetUser"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resetUser">&ndash;&nbsp;resetUser</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method to clear the unique attributes of the current user, and add him as a new user. One of the use cases is when a user logs out</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)resetUser</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resetUserWithCompletionBlock:" title="resetUserWithCompletionBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resetUserWithCompletionBlock:">&ndash;&nbsp;resetUserWithCompletionBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method to clear the unique attributes of the current user, and add him as a new user. One of the use cases is when a user logs out</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)resetUserWithCompletionBlock:(void ( ^ _Nullable ) ( BOOL userResetSuccessfully ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>: Completion block called after the User Reset is done
+@version 4.1.0 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/syncNow" title="syncNow"></a>
+	<h3 class="method-title"><code><a href="#//api/name/syncNow">&ndash;&nbsp;syncNow</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to forcefully sync events to server right now. Useful for testing and to send data in realtime when you don&rsquo;t wish to wait for when the user goes to background or terminates the app.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)syncNow</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/flushWithCompletionBlock:" title="flushWithCompletionBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/flushWithCompletionBlock:">&ndash;&nbsp;flushWithCompletionBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to forcefully sync events to server right now. Useful for testing and to send data in realtime when you don&rsquo;t wish to wait for when the user goes to background or terminates the app.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)flushWithCompletionBlock:(void ( ^ _Nullable ) ( BOOL syncSuccessful ))<em>completionBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionBlock</code></th>
+						<td><p>: Completion block called after data sync is completed
+@version 4.1.0 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/disablePeriodicFlush" title="disablePeriodicFlush"></a>
+	<h3 class="method-title"><code><a href="#//api/name/disablePeriodicFlush">&ndash;&nbsp;disablePeriodicFlush</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>There is a periodic sync enabled by default in SDK, use this method to disable this periodic sync by SDK</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)disablePeriodicFlush</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setFlushInterval:" title="setFlushInterval:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setFlushInterval:">&ndash;&nbsp;setFlushInterval:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to change the periodic sync interval in the SDK,</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setFlushInterval:(NSInteger)<em>flushInterval</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flushInterval</code></th>
+						<td><ul>
+<li>Interval in seconds for periodic Flush, the interval set should be greater than 60 secs</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> The interval should be greater than 60 Secs</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/appStatus:" title="appStatus:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/appStatus:">&ndash;&nbsp;appStatus:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to set the app status.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)appStatus:(AppStatus)<em>appStatus</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>appStatus</code></th>
+						<td><ul>
+<li>Two possible enum values - APP_UDPATE (for app updates) and APP_INSTALL (for new installs)</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/debug:" title="debug:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/debug:">+&nbsp;debug:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to enable logs for the MoEngage SDK. You can simply pass yes and no to disable the logs.
+Alternatively you can use Log Levels.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)debug:(LogLevel)<em>logLevel</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/redirectDataToRegion:" title="redirectDataToRegion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/redirectDataToRegion:">+&nbsp;redirectDataToRegion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to redirect the data to region defined in DataRedirectionRegion Enumerator</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)redirectDataToRegion:(DataRedirectionRegion)<em>region</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="warning"><p><strong>Warning:</strong> Consult with MoEngage team before using this method for redirecting the data</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setAppGroupID:" title="setAppGroupID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAppGroupID:">+&nbsp;setAppGroupID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method to set the App Group ID for Notification impression tracking.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)setAppGroupID:(NSString *_Nonnull)<em>appGroupID</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dismissRichLandingWebViewControllerWithAnimation:" title="dismissRichLandingWebViewControllerWithAnimation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dismissRichLandingWebViewControllerWithAnimation:">&ndash;&nbsp;dismissRichLandingWebViewControllerWithAnimation:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method to dismiss the RichLanding Controller manually</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)dismissRichLandingWebViewControllerWithAnimation:(BOOL)<em>animate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>animate</code></th>
+						<td><p>Bool value indicating if the dismissing the controller should be with animation</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registerForRemoteNotificationWithCategories:andCategoriesForPreviousVersions:andWithUserNotificationCenterDelegate:" title="registerForRemoteNotificationWithCategories:andCategoriesForPreviousVersions:andWithUserNotificationCenterDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerForRemoteNotificationWithCategories:andCategoriesForPreviousVersions:andWithUserNotificationCenterDelegate:">&ndash;&nbsp;registerForRemoteNotificationWithCategories:andCategoriesForPreviousVersions:andWithUserNotificationCenterDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This method has been deprecated from MoEngage-iOS-SDK version 4.0.0
+Method to register your app for push notification with APNS.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)registerForRemoteNotificationWithCategories:(NSSet&lt;UNNotificationCategory*&gt; *_Nullable)<em>categories</em> andCategoriesForPreviousVersions:(NSSet&lt;MONotificationCategory*&gt; *_Nullable)<em>categoriesForPreviousOS</em> andWithUserNotificationCenterDelegate:(id _Nullable)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>categories</code></th>
+						<td><p>to set categories for supporting Notification Actions (iOS10 and above)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>categoriesForPreviousOS</code></th>
+						<td><p>to set categories for supporting Notification Actions in iOS8 and iOS9 (This should be a set of <a href="../Classes/MONotificationCategory.html">MONotificationCategory</a> objects)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>to set the <a href="#//api/name/delegate">delegate</a> for UNUserNotificationCenter.
+@version 3.0.0 and above</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registerForPush:" title="registerForPush:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerForPush:">&ndash;&nbsp;registerForPush:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to pass the device token/push token generated by APNS for your app to MoEngage SDK which can be later used for sending push notification to your app users.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)registerForPush:(NSData *_Nullable)<em>deviceToken</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>deviceToken</code></th>
+						<td><p>The token of the device for push notifications</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Call this method in AppDelegate in application:didRegisterForRemoteNotificationsWithDeviceToken:.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setDataRedirection:" title="setDataRedirection:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setDataRedirection:">+&nbsp;setDataRedirection:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Use this method to redirect the data tracked
+This method has been deprecated from MoEngage-iOS-SDK version 3.8.0 and use <a href="#//api/name/redirectDataToRegion:">redirectDataToRegion:</a> method instead of this method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)setDataRedirection:(BOOL)<em>value</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="warning"><p><strong>Warning:</strong> Consult with MoEngage team before using this method for redirecting the data</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MoEngage.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2019 MoEngage. All rights reserved. Updated: 2019-05-20</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
