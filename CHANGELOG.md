@@ -1,8 +1,8 @@
-# MoEngage-iOS-SDK-Beta
+# MoE-iOS-SDK
 =================================
 
 ## Changelog:
-### Version 8.3.0  *(22nd August, 2022)*
+### Version 8.3.0  *(15th September, 2022)*
 -------------------------------------------
-* First release of MoEngage-iOS-SDK-Beta.
+* First release of MoE-iOS-SDK.
 * Added dSYMs files for debugging.

@@ -1,8 +1,8 @@
 ![Logo](https://github.com/moengage/MoEngage-iOS-SDK/blob/master/Images/moe_logo_blue.png)
-# MoEngage-iOS-SDK
+# MoE-iOS-SDK
 
-[![Version](https://img.shields.io/cocoapods/v/MoEngage-iOS-SDK.svg?style=flat)](http://cocoapods.org/pods/MoEngage-iOS-SDK)
-[![License](https://img.shields.io/cocoapods/l/MoEngage-iOS-SDK.svg?style=flat)](http://cocoapods.org/pods/MoEngage-iOS-SDK)
+[![Version](https://img.shields.io/cocoapods/v/MoE-iOS-SDK.svg?style=flat)](http://cocoapods.org/pods/MoE-iOS-SDK)
+[![License](https://img.shields.io/cocoapods/l/MoE-iOS-SDK.svg?style=flat)](http://cocoapods.org/pods/MoE-iOS-SDK)
 
 MoEngage provides a platform which enables companies to deliver personalized interactions to their users through push notifications, in-app campaigns, email campaigns and other re-targeting channels.
 
@@ -17,7 +17,7 @@ CocoaPods is a dependency manager for Objective C & Swift projects and makes int
     
 2. If you don't have a Podfile, create a plain text file named Podfile in the Xcode project directory with the following content, making sure to set the platform and version that matches your app.
 
-    ```pod 'MoEngage-iOS-SDK'```
+    ```pod 'MoE-iOS-SDK'```
     
 3. Install MoEngage SDK by executing the following in the Xcode project directory.
 
