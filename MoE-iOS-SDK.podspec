@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
 
   s.source       = { 
                     :git => 'https://github.com/moengage/MoEngage-iOS-SDK-Beta.git', 
-                    :tag => 'moe-iOS-sdk' + s.version.to_s 
+                    :tag => 'moe-iOS-sdk-' + s.version.to_s 
                     }
                     
   s.ios.vendored_frameworks = 'Frameworks/MoEngageSDK.xcframework','Frameworks/MOCore.xcframework', 'Frameworks/MoEngageAnalytics.xcframework', 'Frameworks/MoEngageMessaging.xcframework','Frameworks/MoEngageObjCUtils.xcframework'
