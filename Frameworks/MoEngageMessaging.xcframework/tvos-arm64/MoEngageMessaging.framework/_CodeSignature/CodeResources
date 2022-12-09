@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		BqTWzCMhS67mFpDDfnEwxrAjV3o=
+		1AjrBrWF/mq5AQXaQ4F5aX5k2+E=
 		</data>
 		<key>Modules/MoEngageMessaging.swiftmodule/arm64-apple-tvos.swiftdoc</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/MoEngageMessaging.swiftmodule/arm64-apple-tvos.swiftmodule</key>
 		<data>
-		+62qWQGbOFGHIiJwECGAsx7+2Qg=
+		+UgV05AVRKQzpRTRanyeOYH57ZQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -83,11 +83,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+62qWQGbOFGHIiJwECGAsx7+2Qg=
+			+UgV05AVRKQzpRTRanyeOYH57ZQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			kyxct7MTZiBm8QIljb4dCF8mD+NZLZlG1S9sJuHh3ug=
+			ai+sHOt1kw2tnluQcGSYGqZnyzT3Epw8W3VylUy+Zl4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
