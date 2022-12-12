@@ -2,6 +2,32 @@
 =================================
 
 ## Changelog:
+### Version 8.4.3 *(1st December, 2022)*
+-------------------------------------------
+* Added DC-04 support.
+
+### Version 8.4.2 *(17th November, 2022)*
+-------------------------------------------
+* CrashFix - Updated Appdelegate swizzler to handle crash while registering for remote notifications.
+* CrashFix - Handled removing of `infinity` or `NaN` from the payload on migration. 
+
+### Version 8.4.1 *(09th November, 2022)*
+-------------------------------------------
+* CrashFix - Fixed Crash while passing `infinity` or `NaN` to SDK via user attributes and track event properties.
+* BugFix - Added support to track userAttribute of type `Float`.
+
+### Version 8.4.0 *(18th October, 2022)*
+-------------------------------------------
+* Added MoEngageSDK Initialization method with SDK State.
+* Fixed handling of notification observers to avoid runtime crashes.
+* Added exception handling to fix the crashes in a few scenarios.
+
+### Version 8.3.1 *(22nd September, 2022)*
+-------------------------------------------
+* Added support for `setUserAttributeISODate` in the following ISO format `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
+* Added API `setDateOfBirthInISO` to track Date of birth in ISO format.
+* Added API `MoESdkStateHelper.isSDKInitialized` to check if SDK is initialized.
+
 ### Version 8.3.0 *(20th July, 2022)*
 -------------------------------------------
 * Fixed multithreading issue in SDK, which led to crashes in few cases.

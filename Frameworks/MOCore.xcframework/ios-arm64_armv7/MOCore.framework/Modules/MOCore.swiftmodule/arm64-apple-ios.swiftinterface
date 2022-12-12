@@ -99,6 +99,7 @@ public class MoEnagageGifManager {
   case data_center_01
   case data_center_02
   case data_center_03
+  case data_center_04
   public static func getDataCenter(dataCenter: Swift.String) -> MOCore.MODataCenter
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
@@ -126,6 +127,7 @@ public class MoEnagageGifManager {
   }
   @objc public var enableLogs: Swift.Bool
   public var partnerIntegrationType: MOCore.PartnerIntegrationType?
+  @objc public var inAppConfig: MOCore.MoEngageInAppConfig
   @objc public init(withAppID appID: Swift.String)
   @objc public func updateConfigForTestEnvironment()
   @objc public func setPartnerIntegrationType(integrationType: MOCore.PartnerIntegrationType)
@@ -181,6 +183,7 @@ public enum MoEngageExceptions : Swift.Error {
   @objc public static func getSDKUniqueIdForInstance(withConfig sdkConfig: MOCore.MOSDKConfig) -> Swift.String
   @objc public static func generateSDKUniqueID() -> Swift.String
   @objc public static func isSdkEnabledForInstance(withConfig sdkConfig: MOCore.MOSDKConfig) -> Swift.Bool
+  @objc public static func fetchMoEngageSDKState(_ sdkConfig: MOCore.MOSDKConfig) -> MOCore.MoEngageSDKState
   @objc public static func updateUserDefault(withSDKState isSDKEnabled: Swift.Bool, forSDKConfig sdkConfig: MOCore.MOSDKConfig)
   @objc public static func updateSDKState(_ isEnabled: Swift.Bool, withConfig sdkConfig: MOCore.MOSDKConfig)
   @objc public static func isDataTrackingEnabled(forSDKConfig sdkConfig: MOCore.MOSDKConfig) -> Swift.Bool
@@ -192,14 +195,16 @@ public enum MoEngageExceptions : Swift.Error {
   @objc public static func setIDFVOptOutStatus(forSDKConfig sdkConfig: MOCore.MOSDKConfig, optOutStatus: Swift.Bool)
   @objc public static func isIDFATrackingEnabled(forSDKConfig sdkConfig: MOCore.MOSDKConfig) -> Swift.Bool
   @objc public static func isIDFVTrackingEnabled(forSDKConfig sdkConfig: MOCore.MOSDKConfig) -> Swift.Bool
+  public static func isValidNumber<T>(number: T) -> Swift.Bool where T : Swift.ExpressibleByFloatLiteral, T : Swift.FloatingPoint
   @objc override dynamic public init()
   @objc deinit
 }
 extension UIKit.UIDevice {
   @_Concurrency.MainActor(unsafe) public static let modelName: Swift.String
 }
-@_hasMissingDesignatedInitializers public class ValidateExtension {
-  public static func isFromExtension() -> Swift.Bool
+@_inheritsConvenienceInitializers @objc public class ValidateExtension : ObjectiveC.NSObject {
+  @objc public static func isFromExtension() -> Swift.Bool
+  @objc override dynamic public init()
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class CardsManager : ObjectiveC.NSObject {
@@ -252,6 +257,7 @@ extension UIKit.UIDevice {
   @objc public static func getString(forDate date: Foundation.Date?, withFormat format: Swift.String?, andForGMTTimeZone isGMTtz: Swift.Bool) -> Swift.String?
   @objc public static func getStringInDeviceLocale(forDate date: Foundation.Date?, withFormat format: Swift.String?, andForGMTTimeZone isGMTtz: Swift.Bool) -> Swift.String?
   @objc public static func getDate(forString str: Swift.String?, withFormat format: Swift.String?, andForGMTTimeZone isGMTtz: Swift.Bool) -> Foundation.Date?
+  public static func getDateFromISOString(_ dateString: Swift.String?) -> Foundation.Date?
   @objc override dynamic public init()
   @objc deinit
 }
@@ -370,6 +376,15 @@ extension UIKit.UIImage {
   @objc override dynamic public init()
   @objc deinit
 }
+@objc public enum MoEngageSDKState : Swift.Int {
+  case enabled
+  case disabled
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class GeofenceManager : ObjectiveC.NSObject {
   @objc public static let sharedInstance: MOCore.GeofenceManager
   @objc open func initializeGeofence(sdkInstance: MOCore.SdkInstance)
@@ -378,6 +393,8 @@ extension UIKit.UIImage {
 }
 @_inheritsConvenienceInitializers @objc public class MoESdkStateHelper : ObjectiveC.NSObject {
   @objc public static func isSDKEnabled(appID: Swift.String? = nil, completion: @escaping (Swift.Bool) -> Swift.Void)
+  @objc public static func isSDKInitialized(appID: Swift.String? = nil, completion: @escaping (Swift.Bool) -> Swift.Void)
+  @objc public static func isSDKInitialized(_ completion: @escaping (Swift.Bool) -> Swift.Void)
   @objc override dynamic public init()
   @objc deinit
 }
@@ -491,6 +508,11 @@ extension MOCore.MONetworkClient : MOCore.NetworkRequestProtocol {
   }
   @objc deinit
 }
+@objc public class MoEngageInAppConfig : ObjectiveC.NSObject {
+  public static func defaultConfig() -> MOCore.MoEngageInAppConfig
+  public init(safeAreaInset: CoreGraphics.CGFloat)
+  @objc deinit
+}
 @objc public class EventConditionEvaluator : ObjectiveC.NSObject {
   @objc public init(withEventName name: Swift.String, andConditionDict conditionDict: Swift.Dictionary<Swift.String, Any>)
   @objc public func checkConditionSatisfied(forEvent event: Swift.String, andAttributesPayload attributesPayload: Swift.Dictionary<Swift.String, Any>) -> Swift.Bool
@@ -526,10 +548,10 @@ extension MOCore.MONetworkClient : MOCore.NetworkRequestProtocol {
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MOConfigCoordinator : ObjectiveC.NSObject {
   @objc public static let sharedInstance: MOCore.MOConfigCoordinator
+  @objc deinit
   @objc public func getSdkInstance(forSDKConfig sdkConfig: MOCore.MOSDKConfig, withCompletionHandler completionHandler: @escaping ((MOCore.SdkInstance?) -> Swift.Void))
   @objc public func getSdkInstance(_ instanceId: Swift.String?, completionHandler: @escaping ((MOCore.SdkInstance?) -> Swift.Void))
   @objc public func getDefaultSdkInstance(_ completionHandler: @escaping ((MOCore.SdkInstance?) -> Swift.Void))
-  @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MOCoreIntegrator : ObjectiveC.NSObject {
   @objc public static let sharedInstance: MOCore.MOCoreIntegrator
@@ -706,6 +728,9 @@ extension MOCore.MoEngageExceptions : Swift.Hashable {}
 extension MOCore.MOLoggerType : Swift.Equatable {}
 extension MOCore.MOLoggerType : Swift.Hashable {}
 extension MOCore.MOLoggerType : Swift.RawRepresentable {}
+extension MOCore.MoEngageSDKState : Swift.Equatable {}
+extension MOCore.MoEngageSDKState : Swift.Hashable {}
+extension MOCore.MoEngageSDKState : Swift.RawRepresentable {}
 @available(*, unavailable, renamed: "Connection")
 extension MOCore.MONetworkReachability.NetworkStatus : Swift.Equatable {}
 @available(*, unavailable, renamed: "Connection")

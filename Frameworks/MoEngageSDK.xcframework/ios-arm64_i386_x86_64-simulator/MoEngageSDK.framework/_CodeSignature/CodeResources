@@ -6,11 +6,11 @@
 	<dict>
 		<key>CHANGELOG.md</key>
 		<data>
-		SNdKb3yZRBlNSfjroDU7WEEcWVA=
+		KX/YpUY5wmsIQtez7dWNecX3IWw=
 		</data>
 		<key>Headers/MoEngage.h</key>
 		<data>
-		sdYuWOl8+n5gqMR1vphbcaYAcEA=
+		P1i1AP2eBDODEcPrRY4VRyZ9xng=
 		</data>
 		<key>Headers/MoEngageSDK.h</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		tkCGnLVVEytCRoNSdAvSVjUnLdo=
+		GbsIAIKvxPR80pGWX0J26MngnmA=
 		</data>
 		<key>LICENSE</key>
 		<data>
@@ -39,22 +39,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			SNdKb3yZRBlNSfjroDU7WEEcWVA=
+			KX/YpUY5wmsIQtez7dWNecX3IWw=
 			</data>
 			<key>hash2</key>
 			<data>
-			nKCZzmb08PxxnxhWMN37ofzeNHfGlCeGld5VZN69inw=
+			ofVcaAbvRu2ON/JXfTJkzzJn1j67oP4nTt2IkOXC7Ps=
 			</data>
 		</dict>
 		<key>Headers/MoEngage.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			sdYuWOl8+n5gqMR1vphbcaYAcEA=
+			P1i1AP2eBDODEcPrRY4VRyZ9xng=
 			</data>
 			<key>hash2</key>
 			<data>
-			IQPcj0jpu5yz8JzHYOAYigUBS8msnjfQzGoy4nZeMuo=
+			cLBmKOSPX9dTjD39fEsrweHKSRUNOYhJ1QsgCqgbuiA=
 			</data>
 		</dict>
 		<key>Headers/MoEngageSDK.h</key>
