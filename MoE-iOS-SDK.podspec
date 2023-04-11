@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = 'MoE-iOS-SDK'
-  s.version      = '8.3.0'
+  s.version      = '9.0.0'
   s.summary      = 'MoEngage for iOS'
   s.description  = <<-DESC
                    MoEngage is a mobile marketing automation company. This framework acts like a umbrella framework to include MoEngageCore, MOAnalytics and MOMessaging frameworks.
@@ -25,8 +25,8 @@ Pod::Spec.new do |s|
                     :tag => 'moe-iOS-sdk-' + s.version.to_s 
                     }
                     
-  s.ios.vendored_frameworks = 'Frameworks/MoEngageSDK.xcframework','Frameworks/MOCore.xcframework', 'Frameworks/MoEngageAnalytics.xcframework', 'Frameworks/MoEngageMessaging.xcframework','Frameworks/MoEngageObjCUtils.xcframework'
-  s.tvos.vendored_frameworks = 'Frameworks/MoEngageSDK.xcframework','Frameworks/MOCore.xcframework', 'Frameworks/MoEngageAnalytics.xcframework', 'Frameworks/MoEngageMessaging.xcframework', 'Frameworks/MoEngageObjCUtils.xcframework'
+  s.ios.vendored_frameworks = 'Frameworks/MoEngageSDK.xcframework','Frameworks/MoEngageCore.xcframework', 'Frameworks/MoEngageAnalytics.xcframework', 'Frameworks/MoEngageMessaging.xcframework','Frameworks/MoEngageObjCUtils.xcframework'
+  s.tvos.vendored_frameworks = 'Frameworks/MoEngageSDK.xcframework','Frameworks/MoEngageCore.xcframework', 'Frameworks/MoEngageAnalytics.xcframework', 'Frameworks/MoEngageMessaging.xcframework', 'Frameworks/MoEngageObjCUtils.xcframework'
   s.requires_arc = true
   s.frameworks = 'Foundation', 'UIKit', 'SystemConfiguration' , 'Security'
   s.weak_framework = 'AdSupport', 'UserNotifications', 'AppTrackingTransparency'
