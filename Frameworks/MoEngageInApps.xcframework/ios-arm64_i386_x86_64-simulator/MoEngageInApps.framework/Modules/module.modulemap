@@ -1,6 +1,0 @@
-framework module MoEngageInApps {
-  umbrella header "MoEngageInApps.h"
-
-  export *
-  module * { export * }
-}
