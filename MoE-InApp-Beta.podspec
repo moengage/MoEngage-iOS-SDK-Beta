@@ -24,5 +24,5 @@ Pod::Spec.new do |s|
   s.tvos.vendored_frameworks = 'Frameworks/MoEngageInApps.xcframework', 'Frameworks/MoEngageTriggerEvaluator.xcframework'
   s.requires_arc = true
   s.frameworks = 'Foundation', 'UIKit', 'CoreGraphics'
-  s.dependency 'MoE-iOS-SDK', '>= 9.16.0', '< 9.17.0'
+  s.dependency 'MoE-iOS-SDK-Beta', '>= 9.16.0', '< 9.17.0'
 end
