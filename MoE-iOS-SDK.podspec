@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
 
-  s.name         = 'MoE-iOS-SDK'
+  s.name         = 'MoE-iOS-SDK-Beta'
   s.version      = '9.16.0'
   s.summary      = 'MoEngage for iOS'
   s.description  = <<-DESC

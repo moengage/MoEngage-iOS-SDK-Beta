@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 
-  s.name         = 'MoE-InApp'
+  s.name         = 'MoE-InApp-Beta'
   s.version      = '5.0.0'
   s.summary      = 'MoEngage InApp Campaigns for iOS'
   s.description  = <<-DESC
