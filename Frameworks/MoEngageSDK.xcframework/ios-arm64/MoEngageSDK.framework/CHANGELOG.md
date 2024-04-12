@@ -3,6 +3,23 @@
 
 ## Changelog:
 
+### Version 9.17.0 *(8th April March 2024)*
+-------------------------------------------
+* Handled UserDefault storage limit
+
+### Version 9.16.2 *(21st March 2024)*
+-------------------------------------------
+* Fixed the app rejection issue due to privacy manifest
+
+### Version 9.16.1 *(18th March 2024)*
+-------------------------------------------
+* Added AND Support
+* Fixed the issue where Session start was not tracked in some cases.
+* Provided callback when force logout is done.
+* Added tvOS platform identifier changes
+* Remove linking to AdSupport by default.
+* BugFix - MOEN-30596: Fixed crash in network session delegate.
+
 ### Version 9.16.0 *(27th February 2024)*
 -------------------------------------------
 * Refactored network layer.

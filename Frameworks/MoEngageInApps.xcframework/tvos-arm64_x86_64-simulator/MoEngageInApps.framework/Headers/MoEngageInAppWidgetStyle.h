@@ -101,6 +101,7 @@ typedef NS_ENUM(NSInteger, MoEngageInAppViewVisibility);
 
 -(instancetype)initWithDict:(NSDictionary*)infoDict andSDKInstance:(MoEngageSDKInstance*)sdkInstance;
 -(UIFont*)getUIFontOfInstanceWithSource:(id<MoEngageInAppViewDataSource>)dataSource;
+-(UIFont*)getUIFontOfInstanceWithSource:(id<MoEngageInAppViewDataSource>)dataSource fallbackFont:(NSString*)fallbackFontName;
 @end
 
 

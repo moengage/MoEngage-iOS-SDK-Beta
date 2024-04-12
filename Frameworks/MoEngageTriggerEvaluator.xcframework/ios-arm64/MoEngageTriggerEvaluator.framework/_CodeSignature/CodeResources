@@ -4,21 +4,13 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Frameworks/MoEngageCore.framework/Info.plist</key>
+		<key>CHANGELOG.md</key>
 		<data>
-		ehfeP1V4uPxdzOrPQnjcAS4OkeQ=
-		</data>
-		<key>Frameworks/MoEngageCore.framework/MoEngageCore</key>
-		<data>
-		gYcq8uevgJUuGj1FNZFBhqoG3tk=
-		</data>
-		<key>Frameworks/MoEngageCore.framework/_CodeSignature/CodeResources</key>
-		<data>
-		X89kuG33Zjy2ZDeOWRmLacCbGC0=
+		Au9cGJXfVLaD/EJNPvoq6r62lPU=
 		</data>
 		<key>Headers/MoEngageTriggerEvaluator-Swift.h</key>
 		<data>
-		i7U+//poL6z5dknKNnUk3RnQTio=
+		wp+vT24MWDsoPA7R1igXGhbtJoM=
 		</data>
 		<key>Headers/MoEngageTriggerEvaluator.h</key>
 		<data>
@@ -26,27 +18,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		LMzOXVWqOQ3aGeyDzifJCdZyzGQ=
+		BCPnBY5PS5yEhUb9nF48idBf1/M=
+		</data>
+		<key>LICENSE</key>
+		<data>
+		ih5AQhHYR6MqQ2cinlT1HtiVYGQ=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		TIg2f5iyxj+8bdd2pGDn2i19Uz8=
+		RlzirU7bTieI8JtCJvlMxRFjOCM=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		enShS+qKbwhEpnpWcRBd6P9ngog=
+		Bz0NqIZlvYbKLBzaZ34KtlOpjcc=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		1e0eF6hgsEnNlwZa04cwJAGYaK0=
+		yM1F8F+MF3SwblqH1/vwodWUZ30=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		enShS+qKbwhEpnpWcRBd6P9ngog=
+		Bz0NqIZlvYbKLBzaZ34KtlOpjcc=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		KdM/IG2IbPoZsIC42W9QV0ApHnU=
+		yZDS3Sn2YJJ54BGQ+i5h/RiXKNI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -55,32 +51,18 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Frameworks/MoEngageCore.framework/Info.plist</key>
+		<key>CHANGELOG.md</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kH55L5s/9hBIlQ//rSKD/ok0tC1KCHJCdKFjjXpoBRA=
-			</data>
-		</dict>
-		<key>Frameworks/MoEngageCore.framework/MoEngageCore</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			p8HEyltHF0BL9BxIvNPGYy3yQOvr5E4LbLLhCwibsCg=
-			</data>
-		</dict>
-		<key>Frameworks/MoEngageCore.framework/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			S+VyKhlShaDJSVeEG0fw+iJpWM7JdqPQ60W755Goq50=
+			QFKOtVc8bXDOQXtYE/h6mO8MxRivMOfaUww9qBVfkKk=
 			</data>
 		</dict>
 		<key>Headers/MoEngageTriggerEvaluator-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			eqHq4zHsKQ8igT0sppVkGWKpGky0SpHIDn8jpTJTj20=
+			/mCcsAhhnvgr4jjy4kr7UB7TjdZEfZHNGYKriWogoBs=
 			</data>
 		</dict>
 		<key>Headers/MoEngageTriggerEvaluator.h</key>
@@ -90,39 +72,46 @@
 			c/ET2tgJ7H6I7UINCdRVDLC1dn+GWdgUDbpujb8Y22c=
 			</data>
 		</dict>
+		<key>LICENSE</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			DHxoqa3SWsSeiRWX4o3nIP0kO6sTBMPVanytCdzu7ME=
+			</data>
+		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			e1gHRW561+j8Zbhien6MAs1dKafcVFsJNhQGuI1UWek=
+			WkaYo5A8aH+gCas5nrHSuzl9TdvrvUvpwmYDCNMFPt8=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3xvPouzVynTPkg2QWabCa/j/o5qV5T9WOsZlWEobJ6M=
+			IA+LXv4JuNYXs9BMi7WHvrcb7wcK/FyZocESUmNjWHQ=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			A9OeQY01vp9fUth7gGhltAqS8mtSyzTfQl2JHpPiieY=
+			3RK+t9u/5uSXY6xn8+JwfSpIh5bNa9kS0it/7srICII=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3xvPouzVynTPkg2QWabCa/j/o5qV5T9WOsZlWEobJ6M=
+			IA+LXv4JuNYXs9BMi7WHvrcb7wcK/FyZocESUmNjWHQ=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kVJiT2EYpU0AQxiz4vkTX0PfTorEZLL4brJbBAIS858=
+			VDqdHWJu99nasJO/9MXaUYGk/CNPrR2KWO6cgPnL5w8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

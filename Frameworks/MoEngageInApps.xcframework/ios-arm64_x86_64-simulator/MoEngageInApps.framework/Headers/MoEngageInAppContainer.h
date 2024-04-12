@@ -11,16 +11,16 @@
 
 @class MoEngageInAppWidget;
 
-typedef enum NSUInteger{
+typedef enum MoEngageInAppAxisType: NSUInteger{
     Horizontal,
     Vertical,
     Neutral
-}AxisType;
+}MoEngageInAppAxisType;
 
 @interface MoEngageInAppContainer : NSObject
 @property(nonatomic, strong) NSString *instance_id;
 @property(nonatomic, assign) BOOL isPrimary;
-@property(nonatomic, assign) AxisType axis;
+@property(nonatomic, assign) MoEngageInAppAxisType axis;
 @property(nonatomic, assign) NSInteger widgetID;
 @property(nonatomic, strong) NSMutableArray<MoEngageInAppWidget *> *widgets;
 @property(assign, nonatomic) MoEngageInAppWidgetType widgetType;

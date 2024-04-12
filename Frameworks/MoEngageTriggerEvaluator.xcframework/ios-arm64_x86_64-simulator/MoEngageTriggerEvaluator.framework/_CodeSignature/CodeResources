@@ -4,21 +4,13 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Frameworks/MoEngageCore.framework/Info.plist</key>
+		<key>CHANGELOG.md</key>
 		<data>
-		1+r1i/yciRe9dD/8MafBm/jN80U=
-		</data>
-		<key>Frameworks/MoEngageCore.framework/MoEngageCore</key>
-		<data>
-		3KcjjifHRv3P9KNRyIKeQN9sypU=
-		</data>
-		<key>Frameworks/MoEngageCore.framework/_CodeSignature/CodeResources</key>
-		<data>
-		/5ndeg9Fe7cuLuKAHHzwjbwebKA=
+		Au9cGJXfVLaD/EJNPvoq6r62lPU=
 		</data>
 		<key>Headers/MoEngageTriggerEvaluator-Swift.h</key>
 		<data>
-		ksdzti3DZHQzo8niNtlAsAYwZF8=
+		KPXN0b+Pab4AZ9tbtcEyxH9ZOBI=
 		</data>
 		<key>Headers/MoEngageTriggerEvaluator.h</key>
 		<data>
@@ -26,47 +18,51 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		N30DiqIMIPNaWuTCuzhzks9ziJ4=
+		7VmpKLEMx4rtnAFRoPSMZbynro8=
+		</data>
+		<key>LICENSE</key>
+		<data>
+		ih5AQhHYR6MqQ2cinlT1HtiVYGQ=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		TIg2f5iyxj+8bdd2pGDn2i19Uz8=
+		RlzirU7bTieI8JtCJvlMxRFjOCM=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		uaDgYFtR1JY8vhSIsfuOVzPP2ZI=
+		WMKz1Dhpx7AZypuwopyKQNjzgqU=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		2Yq9zOIlkrJepojzs85+/uic8v8=
+		JvJAYq5EvbMRZ3ddmbFe7vYdRao=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		uaDgYFtR1JY8vhSIsfuOVzPP2ZI=
+		WMKz1Dhpx7AZypuwopyKQNjzgqU=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		wJk3W4K7q1BYB66XPHNKKEcdhwg=
+		KYd3BA67ylNhsZG3MuxtJbtsfQU=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		TIg2f5iyxj+8bdd2pGDn2i19Uz8=
+		RlzirU7bTieI8JtCJvlMxRFjOCM=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		Qd4W8TdMzeJW4t50IkEI+azGd/c=
+		C18MoJXNVSulLg0u8J9E/n2HaUM=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		H3CMCZIo1jZPUVePFZoRtHzs/ZE=
+		tY3qi6B3k00tT7zBau9w0aEWaj8=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Qd4W8TdMzeJW4t50IkEI+azGd/c=
+		C18MoJXNVSulLg0u8J9E/n2HaUM=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		gkPJXSwkR9dWYkfyFqTH1HHV0sM=
+		hAiarnJX6fDl19UF7X8wrtXkVJU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -75,32 +71,18 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Frameworks/MoEngageCore.framework/Info.plist</key>
+		<key>CHANGELOG.md</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			e2vGanLqjrTwNGK08F++evFSr/LVPsZlXNLWyW/XvWY=
-			</data>
-		</dict>
-		<key>Frameworks/MoEngageCore.framework/MoEngageCore</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			fRa3Xbq5+9vwzbfAcuwpxkL9B8eClUzQuo0bvplj6cY=
-			</data>
-		</dict>
-		<key>Frameworks/MoEngageCore.framework/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			zqqgt5Wk3ZPPDVJfUTU6K9bc/da0aA4kBhVvp0bHbRc=
+			QFKOtVc8bXDOQXtYE/h6mO8MxRivMOfaUww9qBVfkKk=
 			</data>
 		</dict>
 		<key>Headers/MoEngageTriggerEvaluator-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hty5PTolMJmxsuGVOiTSXYpOoACqROckaoQZqVfRY0I=
+			+KQIx6jFQWm3uOas9MovhAY8E8D/D3JRHXI3paP++ew=
 			</data>
 		</dict>
 		<key>Headers/MoEngageTriggerEvaluator.h</key>
@@ -110,74 +92,81 @@
 			c/ET2tgJ7H6I7UINCdRVDLC1dn+GWdgUDbpujb8Y22c=
 			</data>
 		</dict>
+		<key>LICENSE</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			DHxoqa3SWsSeiRWX4o3nIP0kO6sTBMPVanytCdzu7ME=
+			</data>
+		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			e1gHRW561+j8Zbhien6MAs1dKafcVFsJNhQGuI1UWek=
+			WkaYo5A8aH+gCas5nrHSuzl9TdvrvUvpwmYDCNMFPt8=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/lopPONcVbfbQljj64Gljy4ps+WsHy2VK2TJ4jY081E=
+			CslbiZz+RVUhHZDxln7hLbYymEETHG1RmXlCUf9iIOQ=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tOz2S4j/53pfoJfxSto4iY196Ak9MvhWjH/nldtVfl4=
+			ZRNh0P6z3n6/GT7+k6OO9o2vPENufngOg15FnyjigtY=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/lopPONcVbfbQljj64Gljy4ps+WsHy2VK2TJ4jY081E=
+			CslbiZz+RVUhHZDxln7hLbYymEETHG1RmXlCUf9iIOQ=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bzp1jlvx9hxogAfl/9i49Z+CGYxEgzWdxVnt0rXTj0g=
+			4HfIBexkJmac1nrEJ2FCYjq2zjUwO425mWBK14CCnN4=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			e1gHRW561+j8Zbhien6MAs1dKafcVFsJNhQGuI1UWek=
+			WkaYo5A8aH+gCas5nrHSuzl9TdvrvUvpwmYDCNMFPt8=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4doCyyEYCtkJUzxhKHuhU0EfidbZB5eXSFqGo1d8INk=
+			EV2ukIobZ2z+DDwiOmBMeGO33tCb3BBL0x2+VYftVoQ=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nQBJU+RMCpv0oWuU6h8DIiNMaxPXbfVRuVHxUQcpDn4=
+			QkG2DerdDbKFOrmT+GAcG8OyEEUdCJ/M1KVzxwLHF7c=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4doCyyEYCtkJUzxhKHuhU0EfidbZB5eXSFqGo1d8INk=
+			EV2ukIobZ2z+DDwiOmBMeGO33tCb3BBL0x2+VYftVoQ=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BwT6/bPteFDbDFilyST4iw25PnHapAaxRFBbJO4f2Ao=
+			t058Aw1hAAfbkDZwfeuWD1OcFPwfmI6+IqeODX/Sp+o=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -1,35 +1,35 @@
 ---
 triple:          'arm64-apple-darwin'
-binary-path:     '/Users/soumya.mahunt/Library/Developer/Xcode/DerivedData/MoEngage-ggsjbihhgwfbsnfxgdqbiqhfflhf/Build/Intermediates.noindex/ArchiveIntermediates/MoEngageSDKTvOS/InstallationBuildProductsLocation/Library/Frameworks/MoEngageSDK.framework/MoEngageSDK'
+binary-path:     '/Users/babul.raj@moengage.com/Library/Developer/Xcode/DerivedData/MoEngage-cwklwhuuwqxiipdtdrkxlhnyvord/Build/Intermediates.noindex/ArchiveIntermediates/MoEngageSDKTvOS/InstallationBuildProductsLocation/Library/Frameworks/MoEngageSDK.framework/MoEngageSDK'
 relocations:
-  - { offsetInCU: 0x34, offset: 0x548A1, size: 0x8, addend: 0x0, symName: _MoEngageSDKVersionString, symObjAddr: 0x0, symBinAddr: 0x3848, symSize: 0x0 }
-  - { offsetInCU: 0x69, offset: 0x548D6, size: 0x8, addend: 0x0, symName: _MoEngageSDKVersionNumber, symObjAddr: 0x30, symBinAddr: 0x3878, symSize: 0x0 }
-  - { offsetInCU: 0x4F, offset: 0x5493B, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C14sharedInstanceACvpZ', symObjAddr: 0x6DB8, symBinAddr: 0x85E0, symSize: 0x0 }
-  - { offsetInCU: 0x97, offset: 0x54983, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C14sharedInstanceACvgZTo', symObjAddr: 0x6C, symBinAddr: 0x13B8, symSize: 0x40 }
-  - { offsetInCU: 0xEC, offset: 0x549D8, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0CACyc33_B0FA01D6E5EF84AE4FCDF7C6DFD641B4LlfcTo', symObjAddr: 0xAC, symBinAddr: 0x13F8, symSize: 0x3C }
-  - { offsetInCU: 0x167, offset: 0x54A53, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C29initializeDefaultTestInstanceyy0aB4Core0aB9SDKConfigCFTo', symObjAddr: 0x204, symBinAddr: 0x1550, symSize: 0x50 }
-  - { offsetInCU: 0x1A3, offset: 0x54A8F, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C29initializeDefaultTestInstance_8sdkStatey0aB4Core0aB9SDKConfigC_AF0aB8SDKStateOtFTo', symObjAddr: 0x338, symBinAddr: 0x1684, symSize: 0x58 }
-  - { offsetInCU: 0x1DA, offset: 0x54AC6, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C29initializeDefaultLiveInstanceyy0aB4Core0aB9SDKConfigCFTo', symObjAddr: 0x480, symBinAddr: 0x17CC, symSize: 0x50 }
-  - { offsetInCU: 0x216, offset: 0x54B02, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C29initializeDefaultLiveInstance_8sdkStatey0aB4Core0aB9SDKConfigC_AF0aB8SDKStateOtFTo', symObjAddr: 0x5AC, symBinAddr: 0x18F8, symSize: 0x108 }
-  - { offsetInCU: 0x2B2, offset: 0x54B9E, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C22initializeTestInstanceyy0aB4Core0aB9SDKConfigCFTo', symObjAddr: 0x78C, symBinAddr: 0x1AD8, symSize: 0xFC }
-  - { offsetInCU: 0x32A, offset: 0x54C16, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C22initializeTestInstance_8sdkStatey0aB4Core0aB9SDKConfigC_AF0aB8SDKStateOtFTo', symObjAddr: 0x94C, symBinAddr: 0x1C98, symSize: 0xE8 }
-  - { offsetInCU: 0x3A5, offset: 0x54C91, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C22initializeLiveInstanceyy0aB4Core0aB9SDKConfigCFTo', symObjAddr: 0xB04, symBinAddr: 0x1E50, symSize: 0xFC }
-  - { offsetInCU: 0x429, offset: 0x54D15, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C22initializeLiveInstance_8sdkStatey0aB4Core0aB9SDKConfigC_AF0aB8SDKStateOtFTo', symObjAddr: 0xCBC, symBinAddr: 0x2008, symSize: 0xE8 }
-  - { offsetInCU: 0x4A1, offset: 0x54D8D, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C05setupC033_B0FA01D6E5EF84AE4FCDF7C6DFD641B4LL_8sdkState9isDefaulty0aB4Core0aB9SDKConfigC_AH0aB8SDKStateOSbtFyAH0aB11SDKInstanceCSgcfU_', symObjAddr: 0xDA4, symBinAddr: 0x20F0, symSize: 0x84 }
-  - { offsetInCU: 0x51E, offset: 0x54E0A, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C35dismissRichLandingWebViewControlleryySbFTo', symObjAddr: 0x1078, symBinAddr: 0x23C4, symSize: 0x60 }
-  - { offsetInCU: 0x574, offset: 0x54E60, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C14sharedInstance_WZ', symObjAddr: 0x0, symBinAddr: 0x134C, symSize: 0x2C }
-  - { offsetInCU: 0x5B5, offset: 0x54EA1, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C05setupC033_B0FA01D6E5EF84AE4FCDF7C6DFD641B4LL_8sdkState9isDefaulty0aB4Core0aB9SDKConfigC_AH0aB8SDKStateOSbtFyAH0aB11SDKInstanceCSgcfU_TA', symObjAddr: 0xE28, symBinAddr: 0x2174, symSize: 0x8 }
-  - { offsetInCU: 0x5C9, offset: 0x54EB5, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0CMa', symObjAddr: 0x1108, symBinAddr: 0x2454, symSize: 0x20 }
-  - { offsetInCU: 0x5DD, offset: 0x54EC9, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0CfETo', symObjAddr: 0x1128, symBinAddr: 0x2474, symSize: 0x4 }
-  - { offsetInCU: 0x725, offset: 0x55011, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C14sharedInstanceACvgZ', symObjAddr: 0x2C, symBinAddr: 0x1378, symSize: 0x40 }
-  - { offsetInCU: 0x7C6, offset: 0x550B2, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C29initializeDefaultTestInstanceyy0aB4Core0aB9SDKConfigCF', symObjAddr: 0xE8, symBinAddr: 0x1434, symSize: 0xF8 }
-  - { offsetInCU: 0x833, offset: 0x5511F, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C29initializeDefaultTestInstance_8sdkStatey0aB4Core0aB9SDKConfigC_AF0aB8SDKStateOtF', symObjAddr: 0x254, symBinAddr: 0x15A0, symSize: 0xE4 }
-  - { offsetInCU: 0x8B0, offset: 0x5519C, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C29initializeDefaultLiveInstanceyy0aB4Core0aB9SDKConfigCF', symObjAddr: 0x390, symBinAddr: 0x16DC, symSize: 0xF0 }
-  - { offsetInCU: 0x91D, offset: 0x55209, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C29initializeDefaultLiveInstance_8sdkStatey0aB4Core0aB9SDKConfigC_AF0aB8SDKStateOtF', symObjAddr: 0x4D0, symBinAddr: 0x181C, symSize: 0xDC }
-  - { offsetInCU: 0x9B6, offset: 0x552A2, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C22initializeTestInstanceyy0aB4Core0aB9SDKConfigCF', symObjAddr: 0x6B4, symBinAddr: 0x1A00, symSize: 0xD8 }
-  - { offsetInCU: 0xA36, offset: 0x55322, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C22initializeTestInstance_8sdkStatey0aB4Core0aB9SDKConfigC_AF0aB8SDKStateOtF', symObjAddr: 0x888, symBinAddr: 0x1BD4, symSize: 0xC4 }
-  - { offsetInCU: 0xACC, offset: 0x553B8, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C22initializeLiveInstanceyy0aB4Core0aB9SDKConfigCF', symObjAddr: 0xA34, symBinAddr: 0x1D80, symSize: 0xD0 }
-  - { offsetInCU: 0xB4C, offset: 0x55438, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C22initializeLiveInstance_8sdkStatey0aB4Core0aB9SDKConfigC_AF0aB8SDKStateOtF', symObjAddr: 0xC00, symBinAddr: 0x1F4C, symSize: 0xBC }
-  - { offsetInCU: 0xBE4, offset: 0x554D0, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C35dismissRichLandingWebViewControlleryySbF', symObjAddr: 0x103C, symBinAddr: 0x2388, symSize: 0x3C }
-  - { offsetInCU: 0xC29, offset: 0x55515, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0CfD', symObjAddr: 0x10D8, symBinAddr: 0x2424, symSize: 0x30 }
+  - { offsetInCU: 0x34, offset: 0x5462D, size: 0x8, addend: 0x0, symName: _MoEngageSDKVersionString, symObjAddr: 0x0, symBinAddr: 0x6280, symSize: 0x0 }
+  - { offsetInCU: 0x69, offset: 0x54662, size: 0x8, addend: 0x0, symName: _MoEngageSDKVersionNumber, symObjAddr: 0x30, symBinAddr: 0x62B0, symSize: 0x0 }
+  - { offsetInCU: 0x4F, offset: 0x546C7, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C14sharedInstanceACvpZ', symObjAddr: 0x6778, symBinAddr: 0xC490, symSize: 0x0 }
+  - { offsetInCU: 0x7A, offset: 0x546F2, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C14sharedInstanceACvgZ', symObjAddr: 0x2C, symBinAddr: 0x402C, symSize: 0x40 }
+  - { offsetInCU: 0xBF, offset: 0x54737, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C14sharedInstanceACvgZTo', symObjAddr: 0x6C, symBinAddr: 0x406C, symSize: 0x40 }
+  - { offsetInCU: 0x11C, offset: 0x54794, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0CACyc33_B0FA01D6E5EF84AE4FCDF7C6DFD641B4LlfcTo', symObjAddr: 0xAC, symBinAddr: 0x40AC, symSize: 0x3C }
+  - { offsetInCU: 0x199, offset: 0x54811, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C29initializeDefaultTestInstanceyy0aB4Core0aB9SDKConfigCF', symObjAddr: 0xE8, symBinAddr: 0x40E8, symSize: 0x108 }
+  - { offsetInCU: 0x210, offset: 0x54888, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C29initializeDefaultTestInstanceyy0aB4Core0aB9SDKConfigCFTo', symObjAddr: 0x214, symBinAddr: 0x4214, symSize: 0x50 }
+  - { offsetInCU: 0x22C, offset: 0x548A4, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C29initializeDefaultTestInstance_8sdkStatey0aB4Core0aB9SDKConfigC_AF0aB8SDKStateOtF', symObjAddr: 0x264, symBinAddr: 0x4264, symSize: 0xF4 }
+  - { offsetInCU: 0x2B3, offset: 0x5492B, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C29initializeDefaultTestInstance_8sdkStatey0aB4Core0aB9SDKConfigC_AF0aB8SDKStateOtFTo', symObjAddr: 0x358, symBinAddr: 0x4358, symSize: 0x64 }
+  - { offsetInCU: 0x2CF, offset: 0x54947, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C29initializeDefaultLiveInstanceyy0aB4Core0aB9SDKConfigCF', symObjAddr: 0x3BC, symBinAddr: 0x43BC, symSize: 0x100 }
+  - { offsetInCU: 0x346, offset: 0x549BE, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C29initializeDefaultLiveInstanceyy0aB4Core0aB9SDKConfigCFTo', symObjAddr: 0x4BC, symBinAddr: 0x44BC, symSize: 0x50 }
+  - { offsetInCU: 0x362, offset: 0x549DA, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C29initializeDefaultLiveInstance_8sdkStatey0aB4Core0aB9SDKConfigC_AF0aB8SDKStateOtF', symObjAddr: 0x50C, symBinAddr: 0x450C, symSize: 0xEC }
+  - { offsetInCU: 0x3EB, offset: 0x54A63, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C29initializeDefaultLiveInstance_8sdkStatey0aB4Core0aB9SDKConfigC_AF0aB8SDKStateOtFTo', symObjAddr: 0x5F8, symBinAddr: 0x45F8, symSize: 0x64 }
+  - { offsetInCU: 0x407, offset: 0x54A7F, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C22initializeTestInstanceyy0aB4Core0aB9SDKConfigCF', symObjAddr: 0x65C, symBinAddr: 0x465C, symSize: 0xE8 }
+  - { offsetInCU: 0x47D, offset: 0x54AF5, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C22initializeTestInstanceyy0aB4Core0aB9SDKConfigCFTo', symObjAddr: 0x744, symBinAddr: 0x4744, symSize: 0x50 }
+  - { offsetInCU: 0x499, offset: 0x54B11, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C22initializeTestInstance_8sdkStatey0aB4Core0aB9SDKConfigC_AF0aB8SDKStateOtF', symObjAddr: 0x794, symBinAddr: 0x4794, symSize: 0xD4 }
+  - { offsetInCU: 0x539, offset: 0x54BB1, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C22initializeTestInstance_8sdkStatey0aB4Core0aB9SDKConfigC_AF0aB8SDKStateOtFTo', symObjAddr: 0x868, symBinAddr: 0x4868, symSize: 0xFC }
+  - { offsetInCU: 0x5A9, offset: 0x54C21, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C22initializeLiveInstanceyy0aB4Core0aB9SDKConfigCF', symObjAddr: 0x964, symBinAddr: 0x4964, symSize: 0xE0 }
+  - { offsetInCU: 0x633, offset: 0x54CAB, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C22initializeLiveInstanceyy0aB4Core0aB9SDKConfigCFTo', symObjAddr: 0xA44, symBinAddr: 0x4A44, symSize: 0x114 }
+  - { offsetInCU: 0x69D, offset: 0x54D15, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C22initializeLiveInstance_8sdkStatey0aB4Core0aB9SDKConfigC_AF0aB8SDKStateOtF', symObjAddr: 0xB58, symBinAddr: 0x4B58, symSize: 0xCC }
+  - { offsetInCU: 0x73F, offset: 0x54DB7, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C22initializeLiveInstance_8sdkStatey0aB4Core0aB9SDKConfigC_AF0aB8SDKStateOtFTo', symObjAddr: 0xC24, symBinAddr: 0x4C24, symSize: 0x100 }
+  - { offsetInCU: 0x7B3, offset: 0x54E2B, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C05setupC033_B0FA01D6E5EF84AE4FCDF7C6DFD641B4LL_8sdkState9isDefaulty0aB4Core0aB9SDKConfigC_AH0aB8SDKStateOSbtFyAH0aB11SDKInstanceCSgcfU_', symObjAddr: 0xD24, symBinAddr: 0x4D24, symSize: 0x84 }
+  - { offsetInCU: 0x815, offset: 0x54E8D, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C35dismissRichLandingWebViewControlleryySbF', symObjAddr: 0xFBC, symBinAddr: 0x4FBC, symSize: 0x3C }
+  - { offsetInCU: 0x864, offset: 0x54EDC, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C35dismissRichLandingWebViewControlleryySbFTo', symObjAddr: 0xFF8, symBinAddr: 0x4FF8, symSize: 0x60 }
+  - { offsetInCU: 0x8A3, offset: 0x54F1B, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0CfD', symObjAddr: 0x1058, symBinAddr: 0x5058, symSize: 0x30 }
+  - { offsetInCU: 0x8D1, offset: 0x54F49, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C14sharedInstance_WZ', symObjAddr: 0x0, symBinAddr: 0x4000, symSize: 0x2C }
+  - { offsetInCU: 0x912, offset: 0x54F8A, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0C05setupC033_B0FA01D6E5EF84AE4FCDF7C6DFD641B4LL_8sdkState9isDefaulty0aB4Core0aB9SDKConfigC_AH0aB8SDKStateOSbtFyAH0aB11SDKInstanceCSgcfU_TA', symObjAddr: 0xDA8, symBinAddr: 0x4DA8, symSize: 0x8 }
+  - { offsetInCU: 0x926, offset: 0x54F9E, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0CMa', symObjAddr: 0x1088, symBinAddr: 0x5088, symSize: 0x20 }
+  - { offsetInCU: 0x93A, offset: 0x54FB2, size: 0x8, addend: 0x0, symName: '_$s11MoEngageSDK0aB0CfETo', symObjAddr: 0x10A8, symBinAddr: 0x50A8, symSize: 0x4 }
 ...
