@@ -27,8 +27,6 @@ let package = Package(
             .binaryTarget(name: "MoEngageObjCUtils", path: "./Frameworks/MoEngageObjCUtils.xcframework"),
         
             .binaryTarget(name: "MoEngageSDK", path: "./Frameworks/MoEngageSDK.xcframework"),
-        
-            .binaryTarget(name: "MoEngageSDK", path: "./Frameworks/MoEngageSDK.xcframework"),
             .binaryTarget(name: "MoEngageTriggerEvaluator", path: "./Frameworks/MoEngageTriggerEvaluator.xcframework"),
         
             .binaryTarget(name: "MoEngageInApps", path: "./Frameworks/MoEngageInApps.xcframework"),
