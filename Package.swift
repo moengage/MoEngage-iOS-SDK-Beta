@@ -4,11 +4,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "SDKBeta",
+    name: "MoEngage-iOS-SDK-Beta",
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "SDKBeta",
+            name: "MoEngage-iOS-SDK-Beta",
             targets: ["MoEngageCore","MoEngageSDK","MoEngageAnalytics","MoEngageMessaging","MoEngageObjCUtils", "MoEngageSecurity", "MoEngageInApps"])
     ],
     dependencies: [
@@ -18,15 +18,20 @@ let package = Package(
     targets: [
         .binaryTarget(name: "MoEngageSecurity", path: "./Frameworks/MoEngageSecurity.xcframework"),
         
-        .binaryTarget(name: "MoEngageCore", path: "./Frameworks/MoEngageCore.xcframework"),
+            .binaryTarget(name: "MoEngageCore", path: "./Frameworks/MoEngageCore.xcframework"),
         
-        .binaryTarget(name: "MoEngageAnalytics", path: "./Frameworks/MoEngageAnalytics.xcframework"),
+            .binaryTarget(name: "MoEngageAnalytics", path: "./Frameworks/MoEngageAnalytics.xcframework"),
         
-        .binaryTarget(name: "MoEngageMessaging", path: "./Frameworks/MoEngageMessaging.xcframework"),
+            .binaryTarget(name: "MoEngageMessaging", path: "./Frameworks/MoEngageMessaging.xcframework"),
         
-        .binaryTarget(name: "MoEngageObjCUtils", path: "./Frameworks/MoEngageObjCUtils.xcframework"),
-
-        .binaryTarget(name: "MoEngageSDK", path: "./Frameworks/MoEngageSDK.xcframework")
+            .binaryTarget(name: "MoEngageObjCUtils", path: "./Frameworks/MoEngageObjCUtils.xcframework"),
+        
+            .binaryTarget(name: "MoEngageSDK", path: "./Frameworks/MoEngageSDK.xcframework"),
+        
+            .binaryTarget(name: "MoEngageSDK", path: "./Frameworks/MoEngageSDK.xcframework"),
+            .binaryTarget(name: "MoEngageTriggerEvaluator", path: "./Frameworks/MoEngageTriggerEvaluator.xcframework"),
+        
+            .binaryTarget(name: "MoEngageInApps", path: "./Frameworks/MoEngageInApps.xcframework"),
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
     ]
