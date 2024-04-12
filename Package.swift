@@ -9,7 +9,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "MoEngage-iOS-SDK-Beta",
-            targets: ["MoEngageCore","MoEngageSDK","MoEngageAnalytics","MoEngageMessaging","MoEngageObjCUtils", "MoEngageSecurity", "MoEngageInApps"])
+            targets: ["MoEngageCore","MoEngageSDK","MoEngageAnalytics","MoEngageMessaging","MoEngageObjCUtils", "MoEngageSecurity", "MoEngageInApps", "MoEngageTriggerEvaluator", "MoEngageRichNotification"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
