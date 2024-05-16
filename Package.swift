@@ -9,7 +9,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "MoEngage-iOS-SDK-Beta",
-            targets: ["MoEngageCore","MoEngageSDK","MoEngageAnalytics","MoEngageMessaging","MoEngageObjCUtils", "MoEngageSecurity", "MoEngageInApps", "MoEngageTriggerEvaluator", "MoEngageRichNotification"])
+            targets: ["MoEngageCore","MoEngageSDK","MoEngageAnalytics","MoEngageMessaging","MoEngageObjCUtils", "MoEngageSecurity", "MoEngageInApps", "MoEngageTriggerEvaluator"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -29,8 +29,7 @@ let package = Package(
             .binaryTarget(name: "MoEngageSDK", path: "./Frameworks/MoEngageSDK.xcframework"),
             .binaryTarget(name: "MoEngageTriggerEvaluator", path: "./Frameworks/MoEngageTriggerEvaluator.xcframework"),
         
-            .binaryTarget(name: "MoEngageInApps", path: "./Frameworks/MoEngageInApps.xcframework"),
-        .binaryTarget(name: "MoEngageRichNotification", path: "./Frameworks/MoEngageRichNotification.xcframework")
+            .binaryTarget(name: "MoEngageInApps", path: "./Frameworks/MoEngageInApps.xcframework")
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
     ]
