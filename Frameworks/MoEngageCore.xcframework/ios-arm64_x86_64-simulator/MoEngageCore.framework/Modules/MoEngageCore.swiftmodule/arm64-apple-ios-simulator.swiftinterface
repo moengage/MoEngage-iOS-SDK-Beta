@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
-// swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MoEngageCore
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name MoEngageCore
 import CommonCrypto
 import Foundation
 import ImageIO
@@ -751,6 +750,11 @@ extension MoEngageCore.MoEngageCoreUtils {
   public static func hexToRGB(hex: Swift.String, alpha: Swift.Float = 1.0) -> UIKit.UIColor
   @objc deinit
 }
+public struct MoEngageFileSaver {
+  public init()
+  public func save(payload: [Swift.String : Any], to filePath: Swift.String, folderPath: Swift.String, sdkInstance: MoEngageCore.MoEngageSDKInstance, isInstanceSpecific: Swift.Bool)
+  public func fetchFile(from filePath: Swift.String, folderPath: Swift.String, sdkInstance: MoEngageCore.MoEngageSDKInstance, isInstanceSpecific: Swift.Bool) -> MoEngageCore.MoEngageFileData
+}
 public struct MoEngageFileDataHandler {
   public init(folderPath: Swift.String, filePath: Swift.String, sdkInstance: MoEngageCore.MoEngageSDKInstance, shouldFetchExtensionSharedPath: Swift.Bool = false, isInstanceSpecific: Swift.Bool = false)
   public func fetchData() -> MoEngageCore.MoEngageFileData
@@ -1262,7 +1266,11 @@ public protocol MoEngageNetworkTaskDelegate {
   }
 }
 @objc public class MoEngageInAppConfig : ObjectiveC.NSObject {
-  public init(safeAreaInset: CoreFoundation.CGFloat)
+  @objc public var shouldProvideDeeplinkCallback: Swift.Bool
+  @objc public init(safeAreaInset: CoreFoundation.CGFloat)
+  @objc public init(shouldProvideDeeplinkCallback: Swift.Bool = false)
+  @objc public init(safeAreaInset: CoreFoundation.CGFloat, shouldProvideDeeplinkCallback: Swift.Bool)
+  @objc public static func defaultConfig() -> MoEngageCore.MoEngageInAppConfig
   @objc override dynamic public var description: Swift.String {
     @objc get
   }

@@ -2,6 +2,14 @@
 =============================
 
 ## Change Log:
+### Version 6.00.1 *(02nd May 2024)*
+-------------------------------------------
+* BugFix - Fixed non-Intrusive InApp breaking with tabbar
+
+### Version 6.00.0 *(18th April 2024)*
+-------------------------------------------
+* Added support to provide optional deep link callback to MoEngageInAppNativeDelegate protocol via MoEngageInAppConfig.
+* BugFix - Fixed type name collision
 
 ### Version 5.02.0 *(8th April 2024)*
 -------------------------------------------

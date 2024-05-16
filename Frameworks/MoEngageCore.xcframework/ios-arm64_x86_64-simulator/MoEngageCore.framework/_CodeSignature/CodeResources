@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/MoEngageCore-Swift.h</key>
 		<data>
-		ZtfxM+AqSS4CeYwjHYWI2zPs8CU=
+		eZgtHmn4SyAeLkIE+KGf+ugOERE=
 		</data>
 		<key>Headers/MoEngageCore.h</key>
 		<data>
@@ -22,47 +22,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Vim8w7RKUOu2KaIdCTBlqB9IDlQ=
+		zUTDRCFwoyHFNL2YMY07H5dA8Vo=
 		</data>
 		<key>Modules/MoEngageCore.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		uZfNrXlXMTFaJrOFQGWORQh71o8=
+		I/9rv99wSe5TW9KgCsZsd4w679g=
 		</data>
 		<key>Modules/MoEngageCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		mK3WdddhujSwrHC1HDTa9Zg05nM=
+		3ordzh2oxfZI4I24A35I2V6AK4Y=
 		</data>
 		<key>Modules/MoEngageCore.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		BPzdJp9h4VVHt8XpRaf7K0tO4U0=
+		rRcrJkDg7DMFIroviiALb7unrSM=
 		</data>
 		<key>Modules/MoEngageCore.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		mK3WdddhujSwrHC1HDTa9Zg05nM=
+		3ordzh2oxfZI4I24A35I2V6AK4Y=
 		</data>
 		<key>Modules/MoEngageCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		AwW8WnLHLpxO3s/bzZx+w0ITU2w=
+		aNndmjPaH8N7D1cOlLeke72JV0Y=
 		</data>
 		<key>Modules/MoEngageCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		uZfNrXlXMTFaJrOFQGWORQh71o8=
+		I/9rv99wSe5TW9KgCsZsd4w679g=
 		</data>
 		<key>Modules/MoEngageCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		rsQS3ic2BzOcC9cjfSQSKXzRK48=
+		kZlzmuTyqLd1wIji4yXpSCpOCaE=
 		</data>
 		<key>Modules/MoEngageCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		7q66mKG55LksKmhuaUrlenOho9Y=
+		Wy5bCL4kgM/lt7Ax+64lXHMRqZE=
 		</data>
 		<key>Modules/MoEngageCore.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		rsQS3ic2BzOcC9cjfSQSKXzRK48=
+		kZlzmuTyqLd1wIji4yXpSCpOCaE=
 		</data>
 		<key>Modules/MoEngageCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		axtNocMhMthkX4cLc1z9gJsgwWA=
+		4groieTHdj262oJCMfPy7akRrZo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -75,7 +75,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6emkXuA+lloLFxH48fJ6RfAekDGMg8Fqe14RIkVQmpk=
+			BlpdQic8A4jiO5JUcaywFUDpSNFfkyEqVOyGmobAmMQ=
 			</data>
 		</dict>
 		<key>Headers/MoEngageCore.h</key>
@@ -103,70 +103,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			R2TMyWvSpm+TsSqhgOjOLH1tc7mTueP4Xe+47/jJnRg=
+			uY1tqMoNGzacmWqOjmRodPGMoWfTkg8q+Gri2MJkx50=
 			</data>
 		</dict>
 		<key>Modules/MoEngageCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NmPT8tZCVNYltInxTWJ8nwbUGme1VErQreZCzu95paw=
+			IN4a1L9nieYDBFAJVCGciGln1oVE3iRVSYkMO6tBMb4=
 			</data>
 		</dict>
 		<key>Modules/MoEngageCore.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PMwaQgEdnF2ErWJmMo4CNRoDO/+2DZrwRVFzmlLND/8=
+			v1oJpO4K3AUb4OBeH4Gv+Bfb53tAQeWh5Mm6fAGwsPk=
 			</data>
 		</dict>
 		<key>Modules/MoEngageCore.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NmPT8tZCVNYltInxTWJ8nwbUGme1VErQreZCzu95paw=
+			IN4a1L9nieYDBFAJVCGciGln1oVE3iRVSYkMO6tBMb4=
 			</data>
 		</dict>
 		<key>Modules/MoEngageCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pa4JhRMQfndtLmlu6vC6UMsyBmkfRvS/YlSEda4xN24=
+			UH+C4VmRu4EjyBuJ2j36hdmzyH8XSgqsWhI2/JP4jvc=
 			</data>
 		</dict>
 		<key>Modules/MoEngageCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			R2TMyWvSpm+TsSqhgOjOLH1tc7mTueP4Xe+47/jJnRg=
+			uY1tqMoNGzacmWqOjmRodPGMoWfTkg8q+Gri2MJkx50=
 			</data>
 		</dict>
 		<key>Modules/MoEngageCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			L9SCN8gUnj+Q8Nk3wPXs7suHxDhWnFTPOAAu2JXONY8=
+			f5FULRatvHKKu9ovt+eL7AZNiJL5quwF6l3Dq/AdNZg=
 			</data>
 		</dict>
 		<key>Modules/MoEngageCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			R8jKRKcia/Eu4XsZYBql00+UldRiMFGA6w57bqiG5xE=
+			kRRfGO4IUXA17+/R2b95x+2UvXGIehOwBCf5GVarJnA=
 			</data>
 		</dict>
 		<key>Modules/MoEngageCore.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			L9SCN8gUnj+Q8Nk3wPXs7suHxDhWnFTPOAAu2JXONY8=
+			f5FULRatvHKKu9ovt+eL7AZNiJL5quwF6l3Dq/AdNZg=
 			</data>
 		</dict>
 		<key>Modules/MoEngageCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6HRJhEXP1NJN4WtanNAetcbJOi0RUEMdjsKSAR8KwWA=
+			s+L12C/pZxV4dQsNd5k6ctpsyj9CqymnR66/jwDVU/k=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

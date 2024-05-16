@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/MoEngageTriggerEvaluator-Swift.h</key>
 		<data>
-		wp+vT24MWDsoPA7R1igXGhbtJoM=
+		i7U+//poL6z5dknKNnUk3RnQTio=
 		</data>
 		<key>Headers/MoEngageTriggerEvaluator.h</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		GlkWwtWYDMQMG6IspTjEKT0a+JI=
+		Bn8I1cK+TGizVh9RpKAxUvKhgmo=
 		</data>
 		<key>LICENSE</key>
 		<data>
@@ -26,23 +26,23 @@
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-tvos.abi.json</key>
 		<data>
-		RlzirU7bTieI8JtCJvlMxRFjOCM=
+		neeEVqtW9L1DeX+QP5rr6ie/hU8=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-tvos.private.swiftinterface</key>
 		<data>
-		tL4i9EyQ13OBa3FTCHhoSsX40XM=
+		WLdM6YCUKWmVxjxcH57Eis0kd0Y=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-tvos.swiftdoc</key>
 		<data>
-		o+nmWnREzDMPaI7GvaPmilqIWuc=
+		OdIG6g/uKME/0gECNE09U+5LXXk=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-tvos.swiftinterface</key>
 		<data>
-		tL4i9EyQ13OBa3FTCHhoSsX40XM=
+		WLdM6YCUKWmVxjxcH57Eis0kd0Y=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-tvos.swiftmodule</key>
 		<data>
-		5aJ8QVo9zChiwNduayLN+a+8hO8=
+		hsinmw65YQlmIC6jnVem41jL1fI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -62,7 +62,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/mCcsAhhnvgr4jjy4kr7UB7TjdZEfZHNGYKriWogoBs=
+			eqHq4zHsKQ8igT0sppVkGWKpGky0SpHIDn8jpTJTj20=
 			</data>
 		</dict>
 		<key>Headers/MoEngageTriggerEvaluator.h</key>
@@ -83,35 +83,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WkaYo5A8aH+gCas5nrHSuzl9TdvrvUvpwmYDCNMFPt8=
+			emTcHKLbdqEpsH4K+uhjbJm6ycHBdkfs3viSgYtGOa8=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-tvos.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dvkNl3dAzFCUlnha9k2CgiYaRIGYwe+vsNnSejYWUAU=
+			mk/Par/jSxPPg0yXxOCvbWyH1wwSc1IowgFbaa/K0BQ=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-tvos.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			coU2MHNm7mCzMeCqcnh9iQCnvoKH+LdMjSTIx7Qvxns=
+			XIkd9r5TDUCK63FY1UOewJ+oj1BU4usviQikB7kZ25E=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-tvos.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dvkNl3dAzFCUlnha9k2CgiYaRIGYwe+vsNnSejYWUAU=
+			mk/Par/jSxPPg0yXxOCvbWyH1wwSc1IowgFbaa/K0BQ=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-tvos.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nk4fxgMpcwk/r7Dqpy0M5Y46BKR3gZ/nNHWIzODrI3U=
+			qbMj3DKbQzUCqkj7AI+dnBLQUar/IYa13noE4TFW0oI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
