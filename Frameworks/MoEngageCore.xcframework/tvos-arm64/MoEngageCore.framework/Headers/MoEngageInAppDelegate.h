@@ -30,5 +30,8 @@
 -(void)removeEncryptedFolder:(MoEngageSDKInstance*)sdkInstance;
 -(void)syncInAppStatsDataForSDKInstance:(MoEngageSDKInstance*)sdkInstance withCompletionHandler:(void(^)(void))completionHandler;
 -(void)removeInAppStorageDataForSDKInstance:(MoEngageSDKInstance*)sdkInstance withCompletionHandler:(void(^)(void))completionHandler;
+/// Handle callback for environment change.
+/// - Parameter sdkInstance: The instance to migrate.
+-(void)migrateEnvironmentForSDK:(MoEngageSDKInstance*)sdkInstance;
 @end
 

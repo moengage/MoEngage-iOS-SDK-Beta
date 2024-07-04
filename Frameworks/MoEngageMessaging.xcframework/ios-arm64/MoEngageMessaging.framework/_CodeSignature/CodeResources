@@ -14,27 +14,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		EXqlCIf1MFvZjvA1XyJMuYQH5xw=
+		C0xFYsKiu7zchmMOpO2CNqA4rro=
 		</data>
 		<key>Modules/MoEngageMessaging.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		pfl4ZdXYY+H+x7z3z+8xqQMaYg0=
+		8NSPOwIV6An3LRqEb22ACVvmeK0=
 		</data>
 		<key>Modules/MoEngageMessaging.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		NHf6ujS+9AnmLGPhlFnCoNl44KY=
+		Hk3yusoCPWWvHDap/vnRHGv/s8A=
 		</data>
 		<key>Modules/MoEngageMessaging.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		YqYK7TjJhJ9sBo61JOF2s88lWxk=
+		lSnkNyLpmI+sAh8edvRq4JA/FVU=
 		</data>
 		<key>Modules/MoEngageMessaging.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		NHf6ujS+9AnmLGPhlFnCoNl44KY=
+		Hk3yusoCPWWvHDap/vnRHGv/s8A=
 		</data>
 		<key>Modules/MoEngageMessaging.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		9cbWlr2M9e+MneZbXEKvYi90C3E=
+		ec4B05YLt8QnSIiDAYleIMTs6r0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -61,35 +61,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MOrf58Q3lRIkWkd2QHVEfdZ2ZEGv+TgDNx7afFuvyqs=
+			3cNlS5VwTd9qCjpf0l53PCAFjo6/es4PiJ7Vqsk6BYI=
 			</data>
 		</dict>
 		<key>Modules/MoEngageMessaging.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DRQ6Nwj1JKIINnEKdxQr+IIuvYDO9jqHZWCjcuSVA3E=
+			yJ7F+9OJRMfoXtmeCbkpaOAJOET0mnytQwQ54aFUHZU=
 			</data>
 		</dict>
 		<key>Modules/MoEngageMessaging.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			y0N6jvB0ntIn4Gqsu+C/m3eKRL0OEWMBnlAhpzmK4V8=
+			C3Kgd21geLzawy46weQeyx+EcEXKnHl+tSQnP3SxXYo=
 			</data>
 		</dict>
 		<key>Modules/MoEngageMessaging.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DRQ6Nwj1JKIINnEKdxQr+IIuvYDO9jqHZWCjcuSVA3E=
+			yJ7F+9OJRMfoXtmeCbkpaOAJOET0mnytQwQ54aFUHZU=
 			</data>
 		</dict>
 		<key>Modules/MoEngageMessaging.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			29Y6tXXOJSLnSuWzDw4i2xobqDrZKGTJ6MP3C9NU2Io=
+			Ls3Kmh63J4Q+IrHVxWIVrBX1bNZPcv9oCaavwdWadgk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -140,6 +140,11 @@ Method to get List of InApp Campaign IDs for which State instance is available
 -(void)resetInAppsData;
 
 /**
+ Method to reset all inApps data
+ */
+-(void)resetAllData;
+
+/**
  Method to print inApps data info in current state
  */
 -(void)printInAppsDataInfo;

@@ -9,6 +9,11 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+@objc public class MoEngageCampaignPathsHandler : ObjectiveC.NSObject {
+  @objc public init(sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  @objc public func reset()
+  @objc deinit
+}
 @objc @_hasMissingDesignatedInitializers @objcMembers public class MoEngageTriggerEvaluationResult : ObjectiveC.NSObject {
   @objc final public let isSuccess: Swift.Bool
   @objc public var campaignIds: [Swift.String]

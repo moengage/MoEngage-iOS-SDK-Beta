@@ -48,9 +48,11 @@ public struct MoEngageFileData {
   case data_center_01
   case data_center_02
   case data_center_03
+  case data_center_03_secondary
   case data_center_04
   case data_center_05
   case data_center_100
+  case data_center_06
   public static func getDataCenter(dataCenter: Swift.String) -> MoEngageCore.MoEngageDataCenter
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
@@ -67,6 +69,7 @@ public struct MoEngageFileData {
   open func migrateDataFromPreviousVersions(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   open func migrateDataFromNoNEncryptionToEncryption(sdkInstance: MoEngageCore.MoEngageSDKInstance, currentSDKInstance: MoEngageCore.MoEngageSDKInstance)
   open func removeEncryptedFolder(sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  open func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc deinit
 }
 @objc public class MoEngageEncryptedStandardUserDefaults : ObjectiveC.NSObject, MoEngageCore.MoEngageUserDefaults {
@@ -158,6 +161,19 @@ public func integrationInfoToDictionary(_ integrationInfo: [MoEngageCore.MoEngag
   }
   @objc deinit
 }
+@_hasMissingDesignatedInitializers final public class MoEngageSDKCoreData : MoEngageCore.MoEngageDictionaryConvertible {
+  final public var appVersionAppStatus: Swift.String?
+  final public var hasDeviceAddFailed: Swift.Bool
+  final public var geofenceEnabled: Swift.Bool
+  final public var installRegistered: Swift.Bool
+  final public var deviceTypeTracked: Swift.Bool
+  final public var trackedIDFA: Swift.String?
+  final public var metaData: [Swift.String : Any]
+  public init()
+  public init(from decoder: any Swift.Decoder) throws
+  final public func encode(to encoder: any Swift.Encoder) throws
+  @objc deinit
+}
 public typealias UserRegistrationHandler = (MoEngageCore.MoEngageRegistrationData) -> Swift.Void
 public typealias UserRegistrationStatusHandler = (MoEngageCore.MoEngageUserRegistrationStatus) -> Swift.Void
 public typealias UserInfoHandler = (MoEngageCore.MoEngageUserInformation) -> Swift.Void
@@ -189,7 +205,7 @@ public typealias UserInfoHandler = (MoEngageCore.MoEngageUserInformation) -> Swi
   required public init(from decoder: any Swift.Decoder) throws
 }
 public struct MoEngageFileDataHandler {
-  public init(folderPath: Swift.String, filePath: Swift.String, sdkInstance: MoEngageCore.MoEngageSDKInstance, shouldFetchExtensionSharedPath: Swift.Bool = false)
+  public init(folderPath: Swift.String, filePath: Swift.String, sdkInstance: MoEngageCore.MoEngageSDKInstance, shouldFetchExtensionSharedPath: Swift.Bool = false, isInstanceSpecific: Swift.Bool = false)
   public func fetchData() -> MoEngageCore.MoEngageFileData
   public func saveData(response: [Swift.String : Any])
 }
@@ -262,10 +278,13 @@ public struct MoEngageGzipError : Swift.Error {
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MoEngageConfigCoordinator : ObjectiveC.NSObject {
   @objc public static let sharedInstance: MoEngageCore.MoEngageConfigCoordinator
-  @objc deinit
+  public var sdkInstanceCache: [Swift.String : MoEngageCore.MoEngageSDKInstance] {
+    get
+  }
   @objc public func getSdkInstance(forSDKConfig sdkConfig: MoEngageCore.MoEngageSDKConfig, withCompletionHandler completionHandler: @escaping ((MoEngageCore.MoEngageSDKInstance?) -> Swift.Void))
   @objc public func getSdkInstance(_ instanceId: Swift.String?, completionHandler: @escaping ((MoEngageCore.MoEngageSDKInstance?) -> Swift.Void))
   @objc public func getDefaultSdkInstance(_ completionHandler: @escaping ((MoEngageCore.MoEngageSDKInstance?) -> Swift.Void))
+  @objc deinit
 }
 @objc public enum MoEngageLoggerType : Swift.Int, MoEngageCore.MoEngageDictionaryConvertible {
   case verbose = 0
@@ -279,12 +298,14 @@ public struct MoEngageGzipError : Swift.Error {
     get
   }
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MoEngageMessagingManager : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MoEngageMessagingManager : ObjectiveC.NSObject, MoEngageCore.MoEngageEnvironmentMigratable {
   @objc public static let sharedInstance: MoEngageCore.MoEngageMessagingManager
   @objc open func initializeMessaging(launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]? = nil, sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc open func applicationDidEnterForeground(sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  @objc open func migrateDataFromPreviousVersions(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc open func migrateDataFromNoNEncryptionToEncryption(sdkInstance: MoEngageCore.MoEngageSDKInstance, currentSDKInstance: MoEngageCore.MoEngageSDKInstance)
   @objc open func logout(sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  @objc open func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MoEngageStorageProvider : ObjectiveC.NSObject {
@@ -323,13 +344,14 @@ public enum MoEngageNetworkTaskType {
   override public func migrateDataFromPreviousVersion(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   override public func migrateDataFromNoNEncryptionToEncryption(sdkInstance: MoEngageCore.MoEngageSDKInstance, currentSDKInstance: MoEngageCore.MoEngageSDKInstance)
   override public func removeEncryptedFolder(sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  override public func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc deinit
 }
 public struct MoEngageDeviceEntryUtils {
   public static func getNewDeviceEntryRequestBody(sdkInstance: MoEngageCore.MoEngageSDKInstance, withCompletionHandler completionHandler: @escaping ([Swift.String : Any]?, Swift.String?) -> Swift.Void)
   public static func getDevicePreferences(sdkInstance: MoEngageCore.MoEngageSDKInstance, forOnlyOptOutStatus onlyOptout: Swift.Bool) -> [Swift.String : Swift.Bool]?
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MoEngageAnalyticsManager : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MoEngageAnalyticsManager : ObjectiveC.NSObject, MoEngageCore.MoEngageEnvironmentMigratable {
   @objc public static let sharedInstance: MoEngageCore.MoEngageAnalyticsManager
   @objc open func initializeAnalytics(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc open func moengageSDKStateUpdated(sdkInstance: MoEngageCore.MoEngageSDKInstance)
@@ -343,6 +365,7 @@ public struct MoEngageDeviceEntryUtils {
   @objc open func removeEncryptedFolder(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc open func resetDataAfterUnRegistration(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc open func syncExistingDataBeforeUnRegisteration(sdkInstance: MoEngageCore.MoEngageSDKInstance, withCompletionBlock completionBlock: ((Swift.Bool) -> Swift.Void)? = nil)
+  @objc open func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers open class MoEngageAsyncOperation : Foundation.Operation {
@@ -379,7 +402,7 @@ public struct MoEngageDeviceEntryUtils {
   @objc override dynamic public func main()
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MoEngageCardsManager : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MoEngageCardsManager : ObjectiveC.NSObject, MoEngageCore.MoEngageEnvironmentMigratable {
   @objc public static let sharedInstance: MoEngageCore.MoEngageCardsManager
   public func logout(onUserReset: Swift.Bool = true, sdkInstance: MoEngageCore.MoEngageSDKInstance, onCompleted: @escaping () -> Swift.Void)
   public func updateModule(sdkInstance: MoEngageCore.MoEngageSDKInstance)
@@ -390,6 +413,7 @@ public struct MoEngageDeviceEntryUtils {
   @objc open func migrateDataFromNoNEncryptionToEncryption(sdkInstance: MoEngageCore.MoEngageSDKInstance, currentSDKInstance: MoEngageCore.MoEngageSDKInstance)
   @objc open func removeEncryptedFolder(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   public func removeCardsDataFromStorage(sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  @objc open func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers public class MoEngageRemoteRealTimeTriggerConfig : ObjectiveC.NSObject, MoEngageCore.MoEngageDictionaryConvertible {
@@ -414,7 +438,7 @@ public struct MoEngageDeviceEntryUtils {
   public static func getKeyChainFromAppGroupId(sdkConfig: MoEngageCore.MoEngageSDKConfig) -> Swift.String
   public static func fetchStorageEncryptionKey(sdkConfig: MoEngageCore.MoEngageSDKConfig) -> Swift.String
   public static func shouldResetStorageData(sdkConfig: MoEngageCore.MoEngageSDKConfig) -> Swift.Bool
-  public static func fetchCurrentNetworkEncryptionKey(sdkConfig: MoEngageCore.MoEngageSDKConfig) -> Swift.String?
+  public static func fetchCurrentNetworkEncryptionKey(sdkInstance: MoEngageCore.MoEngageSDKInstance) -> Swift.String?
   public static func getCurrentNetworkEncryptionStateFromAppGroupId(sdkConfig: MoEngageCore.MoEngageSDKConfig) -> Swift.Bool
   @objc deinit
 }
@@ -444,8 +468,10 @@ public struct MoEngageRemoteNetworkConfig : MoEngageCore.MoEngageStringConvertib
   @objc required override dynamic public init()
   open func initializeMessaging(launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]? = nil, sdkInstance: MoEngageCore.MoEngageSDKInstance)
   open func applicationDidEnterForeground(sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  open func migrateDataFromPreviousVersions(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   open func migrateDataFromNoNEncryptionToEncryption(sdkInstance: MoEngageCore.MoEngageSDKInstance, currentSDKInstance: MoEngageCore.MoEngageSDKInstance)
   open func logout(sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  open func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc deinit
 }
 @objc public class MoEngageLogger : ObjectiveC.NSObject {
@@ -465,20 +491,22 @@ public struct MoEngageRemoteNetworkConfig : MoEngageCore.MoEngageStringConvertib
   open func migrateDataFromPreviousVersions(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   open func migrateDataFromNoNEncryptionToEncryption(sdkInstance: MoEngageCore.MoEngageSDKInstance, currentSDKInstance: MoEngageCore.MoEngageSDKInstance)
   open func removeEncryptedFolder(sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  open func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MoEngageGeofenceManager : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MoEngageGeofenceManager : ObjectiveC.NSObject, MoEngageCore.MoEngageEnvironmentMigratable {
   @objc public static let sharedInstance: MoEngageCore.MoEngageGeofenceManager
   @objc open func initializeGeofence(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc open func moengageSDKStateUpdated(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   public func onDataTrackingDisabled(_ sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  @objc open func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MoEngageCoreHandler : ObjectiveC.NSObject {
   @objc public static let sharedInstance: MoEngageCore.MoEngageCoreHandler
   @objc public static let globalQueue: Dispatch.DispatchQueue
   public func setupSDK(_ sdkConfig: MoEngageCore.MoEngageSDKConfig, isDefault: Swift.Bool = true, completionHandler: @escaping (MoEngageCore.MoEngageSDKInstance?) -> Swift.Void)
-  @objc public func initializeModule(sdkInstance: MoEngageCore.MoEngageSDKInstance, sdkState: MoEngageCore.MoEngageSDKState)
+  public func initializeModule(sdkInstance: MoEngageCore.MoEngageSDKInstance, sdkState: MoEngageCore.MoEngageSDKState, dataManager: any MoEngageCore.MoEngageEnvironmentMigrationHandlerDataManager = MoEngageCoreDataManager(), environmentChangeHandler: any MoEngageCore.MoEngageEnvironmentMigrationHandlerProtocol = MoEngageEnvironmentMigrationHandler())
   @objc public func initializeInstanceWithSDKConfig(_ sdkConfig: MoEngageCore.MoEngageSDKConfig, isDefaultInstance: Swift.Bool, withCompletionBlock completion: @escaping ((MoEngageCore.MoEngageSDKInstance?) -> Swift.Void))
   @objc public func getDefaultSDKConfiguration() -> MoEngageCore.MoEngageSDKConfig?
   @objc public func getSDKConfig(forAppID appID: Swift.String) -> MoEngageCore.MoEngageSDKConfig?
@@ -492,7 +520,7 @@ public struct MoEngageRemoteNetworkConfig : MoEngageCore.MoEngageStringConvertib
   @objc public func dismissRichLandingWebViewControllerWithAnimation(_ animate: Swift.Bool)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MoEngageRealTimeTriggerManager : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MoEngageRealTimeTriggerManager : ObjectiveC.NSObject, MoEngageCore.MoEngageEnvironmentMigratable {
   @objc public static let sharedInstance: MoEngageCore.MoEngageRealTimeTriggerManager
   public func trackEvent(eventName: Swift.String, eventAttribute: [Swift.String : Any], sdkInstance: MoEngageCore.MoEngageSDKInstance)
   public func logout(sdkInstance: MoEngageCore.MoEngageSDKInstance, onCompleted: @escaping () -> Swift.Void)
@@ -503,9 +531,10 @@ public struct MoEngageRemoteNetworkConfig : MoEngageCore.MoEngageStringConvertib
   @objc open func migrateDataFromPreviousVersions(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc open func migrateDataFromNoNEncryptionToEncryption(sdkInstance: MoEngageCore.MoEngageSDKInstance, currentSDKInstance: MoEngageCore.MoEngageSDKInstance)
   @objc open func removeEncryptedFolder(sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  @objc open func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MoEngageInboxManager : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MoEngageInboxManager : ObjectiveC.NSObject, MoEngageCore.MoEngageEnvironmentMigratable {
   @objc public static let sharedInstance: MoEngageCore.MoEngageInboxManager
   public func logout(sdkInstance: MoEngageCore.MoEngageSDKInstance, onCompleted: @escaping () -> Swift.Void)
   public func updateModule(sdkInstance: MoEngageCore.MoEngageSDKInstance)
@@ -514,6 +543,7 @@ public struct MoEngageRemoteNetworkConfig : MoEngageCore.MoEngageStringConvertib
   @objc open func migrateDataFromPreviousVersions(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc open func migrateDataFromNoNEncryptionToEncryption(sdkInstance: MoEngageCore.MoEngageSDKInstance, currentSDKInstance: MoEngageCore.MoEngageSDKInstance)
   @objc open func removeEncryptedFolder(sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  @objc open func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc deinit
 }
 public protocol MoEngageNetworkPreProcessor {
@@ -623,6 +653,21 @@ public struct MoEngageCoreConstants {
   }
   @objc deinit
 }
+public struct MoEngageEnvironmentMigrationHandler : MoEngageCore.MoEngageEnvironmentMigrationHandlerProtocol {
+  public init()
+  public func migrateEnvironmentIfNeeded(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance, usingDataManager dataManager: any MoEngageCore.MoEngageEnvironmentMigrationHandlerDataManager, migrating modules: any MoEngageCore.MoEngageEnvironmentMigratable...)
+}
+public protocol MoEngageEnvironmentMigratable {
+  func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
+}
+public protocol MoEngageEnvironmentMigrationHandlerProtocol {
+  func migrateEnvironmentIfNeeded(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance, usingDataManager dataManager: any MoEngageCore.MoEngageEnvironmentMigrationHandlerDataManager, migrating modules: any MoEngageCore.MoEngageEnvironmentMigratable...)
+}
+public protocol MoEngageEnvironmentMigrationHandlerDataManager {
+  func fetchCoreData(sdkInstance: MoEngageCore.MoEngageSDKInstance) -> MoEngageCore.MoEngageSDKCoreData?
+  func saveCoreData(_ data: MoEngageCore.MoEngageSDKCoreData, sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  func resetCoreData(afterEnvironmentUpdatedForSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
+}
 @objc public class MoEngageKeyChainConfig : ObjectiveC.NSObject {
   @objc final public let groupName: Swift.String
   @objc public static func defaultConfig() -> MoEngageCore.MoEngageKeyChainConfig
@@ -651,7 +696,7 @@ public struct MoEngageCoreConstants {
   @objc final public let certificateData: Foundation.Data
   @objc public init(isEnabled: Swift.Bool = true, certificateData: Foundation.Data)
   @objc public static func defaultConfig() -> MoEngageCore.MoEngageSSLVerificationConfig
-  @objc public static func storedConfig(forSDKConfig sdkConfig: MoEngageCore.MoEngageSDKConfig) -> MoEngageCore.MoEngageSSLVerificationConfig
+  @objc public static func storedConfig(forSDKInstance sdkInstance: MoEngageCore.MoEngageSDKInstance) -> MoEngageCore.MoEngageSSLVerificationConfig
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class MoEngageCoreCache : ObjectiveC.NSObject {
@@ -664,9 +709,10 @@ public struct MoEngageCoreConstants {
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class MoEngageNetworkUtils : ObjectiveC.NSObject {
-  @objc public static func getQueryParams(sdkConfig: MoEngageCore.MoEngageSDKConfig, isV1ParamsRequired: Swift.Bool = false) -> [Swift.String : Any]
+  @objc public static func getQueryParams(sdkInstance: MoEngageCore.MoEngageSDKInstance, isV1ParamsRequired: Swift.Bool = false) -> [Swift.String : Any]
   public static func getTimeParams(sdkConfig: MoEngageCore.MoEngageSDKConfig) -> [Swift.String : Any]
   public static func getAppVersionParamForExtensions() -> [Swift.String : Swift.String]
+  public static func getSDKVersionParamForExtensions() -> [Swift.String : Swift.String]
   @objc public static func getDeviceUniqueID() -> Swift.String?
   @objc public static func isDeviceUniqueIDPresentInKeyChain() -> Swift.Bool
   @objc override dynamic public init()
@@ -750,6 +796,21 @@ public struct MoEngageNetworkConstants {
   @objc final public let integrationVersion: Swift.String
   @objc public init(pluginType: Swift.String, version: Swift.String)
   @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class MoEngageSDKCommonData : MoEngageCore.MoEngageDictionaryConvertible {
+  final public var trackedSDKVersion: Swift.String?
+  final public var prevSDKVersion: Swift.String?
+  final public var trackedReInstall: Swift.Bool
+  public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  final public func encode(to encoder: any Swift.Encoder) throws
+}
+extension MoEngageCore.MoEngageSDKCommonData {
+  public static var sharedInstance: MoEngageCore.MoEngageSDKCommonData {
+    get
+  }
+  public static func load()
+  final public func save()
 }
 @objc public class MoEngageUserRegistrationConfig : ObjectiveC.NSObject {
   @objc public var isUserRegistrationEnabled: Swift.Bool
@@ -862,6 +923,7 @@ public enum MoEngageNetworkDownloadPostProcessorResult {
   open func removeEncryptedFolder(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   open func resetDataAfterUnRegistration(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   open func syncExistingDataBeforeUnRegisteration(sdkInstance: MoEngageCore.MoEngageSDKInstance, withCompletionBlock completionBlock: ((Swift.Bool) -> Swift.Void)? = nil)
+  open func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc deinit
 }
 public protocol MoEngageNetworkSessionProtocol : AnyObject {
@@ -944,6 +1006,7 @@ public protocol MoEngageNetworkTaskDelegate {
   open func migrateDataFromNoNEncryptionToEncryption(sdkInstance: MoEngageCore.MoEngageSDKInstance, currentSDKInstance: MoEngageCore.MoEngageSDKInstance)
   open func removeEncryptedFolder(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   open func removeCardsDataFromStorage(sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  open func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers open class MoEngageGeofenceHandler : ObjectiveC.NSObject {
@@ -951,6 +1014,7 @@ public protocol MoEngageNetworkTaskDelegate {
   open func initializeGeofence(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   open func moengageSDKStateUpdated(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   open func onDataTrackingDisabled(_ sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  open func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class MoEngageSDKStateHelper : ObjectiveC.NSObject {
@@ -988,7 +1052,7 @@ public enum MoEngageExceptions : Swift.Error {
   public static func removeDirectory(folderPath: Swift.String, sdkInstance: MoEngageCore.MoEngageSDKInstance)
   public static func getAbsolutePath(folderPath: Swift.String, relativePath: Swift.String, sdkInstance: MoEngageCore.MoEngageSDKInstance) -> Swift.String?
   public static func removeFilePath(folderPath: Swift.String, relativePath: Swift.String, sdkInstance: MoEngageCore.MoEngageSDKInstance)
-  public static func getAbsolutePathForSingleInstance(folderPath: Swift.String, relativePath: Swift.String, sdkInstance: MoEngageCore.MoEngageSDKInstance) -> Swift.String?
+  public static func getAbsolutePathForSingleInstance(folderPath: Swift.String, relativePath: Swift.String) -> Swift.String?
   public static func getFolderPathForInstanceId(folderPath: Swift.String, identifier: Swift.String, shouldCreateFolder: Swift.Bool = true) -> Swift.String?
   @objc public static func getTopMostViewController() -> UIKit.UIViewController?
   @objc public static func showAlertView(withMessage msg: Swift.String, andTitle title: Swift.String)
@@ -1009,8 +1073,8 @@ public enum MoEngageExceptions : Swift.Error {
   @objc public static func getDeviceOSVersion() -> Swift.String
   @objc public static func getDeviceModelName() -> Swift.String
   @objc public static func getDeviceModelType() -> Swift.String
-  @objc public static func savePushToken(token: Swift.String, sdkConfig: MoEngageCore.MoEngageSDKConfig)
-  @objc public static func getPushToken(sdkConfig: MoEngageCore.MoEngageSDKConfig) -> Swift.String?
+  @objc public static func savePushToken(token: Swift.String, sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  @objc public static func getPushToken(sdkInstance: MoEngageCore.MoEngageSDKInstance) -> Swift.String?
   @objc public static func getSDKUniqueIdForInstance(withConfig sdkConfig: MoEngageCore.MoEngageSDKConfig) -> Swift.String
   @objc public static func generateSDKUniqueID() -> Swift.String
   @objc public static func isSdkEnabledForInstance(withConfig sdkConfig: MoEngageCore.MoEngageSDKConfig) -> Swift.Bool
@@ -1030,15 +1094,15 @@ public enum MoEngageExceptions : Swift.Error {
   public static func isValidNumber<T>(number: T) -> Swift.Bool where T : Swift.ExpressibleByFloatLiteral, T : Swift.FloatingPoint
   @objc public static func getAccountMeta(sdkInstance: MoEngageCore.MoEngageSDKInstance) -> MoEngageCore.MoEngageAccountMeta
   @objc public static func getStringRepresentation(event: MoEngageCore.MoEngageInAppWhiteList) -> Swift.String
-  @objc public static func isUserRegistered(sdkConfig: MoEngageCore.MoEngageSDKConfig) -> Swift.Bool
-  @objc public static func updateUserRegisterState(state: MoEngageCore.MoEngageRegistrationState, sdkConfig: MoEngageCore.MoEngageSDKConfig)
+  @objc public static func isUserRegistered(sdkInstance: MoEngageCore.MoEngageSDKInstance) -> Swift.Bool
+  @objc public static func updateUserRegisterState(state: MoEngageCore.MoEngageRegistrationState, sdkInstance: MoEngageCore.MoEngageSDKInstance)
   public static func getIDFA() -> Swift.String?
   @objc public static func generateHashValue(from input: Swift.String) -> Swift.String
   public static func mapJSONToString(data: [Swift.String : Any]) -> Swift.String?
   public static func mapAnyObjectToDict(data: Any?) -> [Swift.String : Any]?
   public static func mapStringToJSON(str: Swift.String) -> [Swift.String : Any]?
   public static func mapBase64ToJSON(str: Swift.String) -> [Swift.String : Any]?
-  public static func getIntegrationInfoFromAppGroupId(sdkConfig: MoEngageCore.MoEngageSDKConfig) -> [[Swift.String : Any]]?
+  public static func getIntegrationInfoFromAppGroupId(sdkInstance: MoEngageCore.MoEngageSDKInstance) -> [[Swift.String : Any]]?
   public static func getStringFromHTML(_ htmlString: Swift.String) -> Swift.String?
   public static func getDoubleValue(from string: Swift.String) -> Swift.Double?
   @objc override dynamic public init()
@@ -1087,13 +1151,21 @@ extension MoEngageCore.MoEngageNetworkTask {
   @objc public static func defaultConfig() -> MoEngageCore.MoEngageNetworkDataSecurityConfig
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class MoEngageConfigManager {
+public struct MoEngageCoreDataManager : MoEngageCore.MoEngageEnvironmentMigrationHandlerDataManager {
+  public init()
+  public func fetchRemoteConfiguration(sdkInstance: MoEngageCore.MoEngageSDKInstance) -> MoEngageCore.MoEngageRemoteConfiguration?
+  public func fetchCoreData(sdkInstance: MoEngageCore.MoEngageSDKInstance) -> MoEngageCore.MoEngageSDKCoreData?
+  public func saveCoreData(_ data: MoEngageCore.MoEngageSDKCoreData, sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  public func resetCoreData(afterEnvironmentUpdatedForSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
+}
+@_hasMissingDesignatedInitializers public class MoEngageConfigManager : MoEngageCore.MoEngageEnvironmentMigratable {
   public static let sharedInstance: MoEngageCore.MoEngageConfigManager
   public func logout(sdkInstance: MoEngageCore.MoEngageSDKInstance, onCompleted: @escaping () -> Swift.Void)
   public func updateModule(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   public func migrateDataFromPreviousVersion(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   public func migrateDataFromNoNEncryptionToEncryption(sdkInstance: MoEngageCore.MoEngageSDKInstance, currentSDKInstance: MoEngageCore.MoEngageSDKInstance)
   public func removeEncryptedFolder(sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  public func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc deinit
 }
 extension MoEngageCore.MoEngageNetworkTask {
@@ -1149,6 +1221,7 @@ extension MoEngageCore.MoEngageNetworkTask {
   open func migrateDataFromPreviousVersion(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   open func migrateDataFromNoNEncryptionToEncryption(sdkInstance: MoEngageCore.MoEngageSDKInstance, currentSDKInstance: MoEngageCore.MoEngageSDKInstance)
   open func removeEncryptedFolder(sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  open func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc deinit
 }
 public struct MoEngageFolderDataHandler {
@@ -1204,12 +1277,21 @@ public typealias completionHandler = ((Swift.Bool, [Swift.AnyHashable : Any]?) -
 public typealias completionHandlerWithResponseCode = ((Swift.Bool, Swift.Int, [Swift.AnyHashable : Any]?) -> Swift.Void)
 public typealias dataCompletionHandler = ((Swift.Bool, Foundation.Data?) -> Swift.Void)
 public typealias richNotificationCompletionHandler = ((_ tempURL: Foundation.URL?) -> Swift.Void)
+public struct MoEngageFileSaver {
+  public init()
+  public func save(payload: [Swift.String : Any], to filePath: Swift.String, folderPath: Swift.String, sdkInstance: MoEngageCore.MoEngageSDKInstance, isInstanceSpecific: Swift.Bool)
+  public func fetchFile(from filePath: Swift.String, folderPath: Swift.String, sdkInstance: MoEngageCore.MoEngageSDKInstance, isInstanceSpecific: Swift.Bool) -> MoEngageCore.MoEngageFileData
+}
 @_hasMissingDesignatedInitializers public class MoEngageQueueManager {
   final public let operationQueue: Foundation.OperationQueue
   @objc deinit
 }
 @objc public class MoEngageInAppConfig : ObjectiveC.NSObject {
-  public init(safeAreaInset: CoreFoundation.CGFloat)
+  @objc public var shouldProvideDeeplinkCallback: Swift.Bool
+  @objc public init(safeAreaInset: CoreFoundation.CGFloat)
+  @objc public init(shouldProvideDeeplinkCallback: Swift.Bool = false)
+  @objc public init(safeAreaInset: CoreFoundation.CGFloat, shouldProvideDeeplinkCallback: Swift.Bool)
+  @objc public static func defaultConfig() -> MoEngageCore.MoEngageInAppConfig
   @objc override dynamic public var description: Swift.String {
     @objc get
   }
@@ -1234,7 +1316,7 @@ public typealias richNotificationCompletionHandler = ((_ tempURL: Foundation.URL
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MoEngageInAppManager : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MoEngageInAppManager : ObjectiveC.NSObject, MoEngageCore.MoEngageEnvironmentMigratable {
   @objc public static let sharedInstance: MoEngageCore.MoEngageInAppManager
   public func trackEvent(eventName: Swift.String, eventAttribute: [Swift.String : Any], sdkInstance: MoEngageCore.MoEngageSDKInstance)
   public func logout(sdkInstance: MoEngageCore.MoEngageSDKInstance, onCompleted: @escaping () -> Swift.Void)
@@ -1251,6 +1333,7 @@ public typealias richNotificationCompletionHandler = ((_ tempURL: Foundation.URL
   public func removeEncryptedFolder(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   public func syncInAppStatsData(for sdkInstance: MoEngageCore.MoEngageSDKInstance, onCompleted: @escaping () -> Swift.Void)
   public func removeInAppStorageData(for sdkInstance: MoEngageCore.MoEngageSDKInstance, onCompleted: @escaping () -> Swift.Void)
+  @objc open func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc deinit
 }
 extension MoEngageCore.MoEngagePartnerIntegrationType : Swift.Equatable {}

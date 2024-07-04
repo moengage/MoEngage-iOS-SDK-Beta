@@ -2,6 +2,33 @@
 =============================
 
 ## Change Log:
+### Version 6.00.3 *(12th June 2024)*
+-------------------------------------------
+* BugFix - InApp touch directs to the parent controller.
+
+### Version 6.00.2 *(21st May 2024)*
+-------------------------------------------
+* BugFix - Fixed SwiftUI reference crash on iOS 12.
+
+### Version 6.00.1 *(02nd May 2024)*
+-------------------------------------------
+* BugFix - Fixed non-Intrusive InApp breaking with tabbar
+
+### Version 6.00.0 *(18th April 2024)*
+-------------------------------------------
+* Added support to provide optional deep link callback to MoEngageInAppNativeDelegate protocol via MoEngageInAppConfig.
+* BugFix - Fixed type name collision
+
+### Version 5.02.0 *(8th April 2024)*
+-------------------------------------------
+* Added Intrusive InApp support for tvOS
+* BugFix - Fixed type name collision
+
+### Version 5.01.0 *(18th March 2024)*
+-------------------------------------------
+* Dismiss inapp on context change
+* Added tvOS platform identifier changes
+* Added AND Support
 
 ### Version 5.00.0 *(07th March 2024)*
 -------------------------------------------

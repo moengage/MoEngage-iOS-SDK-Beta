@@ -13,6 +13,24 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+@objc public enum MoEngageNavigationType : Swift.Int {
+  case navigateToScreen
+  case deepLink
+  case richLanding
+  case externalBrowser
+  case none
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class MoEngageInAppNavigationAction : MoEngageInApps.MoEngageInAppAction {
+  @objc final public let navigationType: MoEngageInApps.MoEngageNavigationType
+  @objc final public let navigationUrl: Swift.String?
+  @objc public init(navigationType: MoEngageInApps.MoEngageNavigationType, actionType: MoEngageInApps.MoEngageInAppActionType, navigationUrl: Swift.String?, keyValuePairs: [Swift.String : Any])
+  @objc deinit
+}
 @objc extension MoEngageInApps.MoEngageInAppController {
   @objc dynamic public func isNudgeCampaignEligible(_ campaignMeta: MoEngageInApps.MoEngageInAppCampaignMeta, inPrioratizingStage: Swift.Bool) -> Swift.Bool
   @objc dynamic public func syncInApps(withCompletionBlock completionBlock: @escaping (Swift.Bool) -> Swift.Void)
@@ -50,6 +68,7 @@ extension MoEngageInApps.MoEngageInAppVideoWidget : MoEngageInApps.MoEngageInApp
 }
 extension MoEngageInApps.MoEngageInAppUtils {
   @objc public static func getStringRepresentation(for sdkCampaignType: MoEngageInApps.MoEngageInAppSDKCampaignType) -> Swift.String
+  @objc public static func mapNavigationType(from type: MoEngageInApps.MoEngageNavActionType) -> MoEngageInApps.MoEngageNavigationType
 }
 @objc public protocol MoEngageInAppWidgetResizingDelegate : ObjectiveC.NSObjectProtocol {
   @objc var originalWidth: CoreFoundation.CGFloat { get }
@@ -133,6 +152,12 @@ extension MoEngageInApps.MoEngageInAppUtils {
   @objc public static func getStringValue(for alignment: MoEngageInApps.MoEngageInAppTemplateAlignment) -> Swift.String?
   @objc deinit
 }
+extension MoEngageInApps.MoEngageInAppPrimaryContainerView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func touchesEnded(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func touchesCancelled(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func touchesMoved(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+}
 @_inheritsConvenienceInitializers @objc public class MoEngageInAppFileStorageHandler : ObjectiveC.NSObject {
   @objc public func migrateInAppsData(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc public func saveNoNEncryptedInAppData(data: MoEngageInApps.MoEngageInAppCampaignsData, sdkInstance: MoEngageCore.MoEngageSDKInstance)
@@ -154,7 +179,7 @@ extension MoEngageInApps.MoEngageInAppUtils {
 }
 @objc public protocol MoEngageInAppNativeDelegate : ObjectiveC.NSObjectProtocol {
   @objc func inAppShown(withCampaignInfo inappCampaign: MoEngageInApps.MoEngageInAppCampaign, forAccountMeta accountMeta: MoEngageCore.MoEngageAccountMeta)
-  @objc func inAppClicked(withCampaignInfo inappCampaign: MoEngageInApps.MoEngageInAppCampaign, andNavigationActionInfo navigationAction: MoEngageInApps.MoEngageInAppAction, forAccountMeta accountMeta: MoEngageCore.MoEngageAccountMeta)
+  @objc func inAppClicked(withCampaignInfo inappCampaign: MoEngageInApps.MoEngageInAppCampaign, andNavigationActionInfo navigationAction: MoEngageInApps.MoEngageInAppNavigationAction, forAccountMeta accountMeta: MoEngageCore.MoEngageAccountMeta)
   @objc func inAppClicked(withCampaignInfo inappCampaign: MoEngageInApps.MoEngageInAppCampaign, andCustomActionInfo customAction: MoEngageInApps.MoEngageInAppAction, forAccountMeta accountMeta: MoEngageCore.MoEngageAccountMeta)
   @objc func inAppDismissed(withCampaignInfo inappCampaign: MoEngageInApps.MoEngageInAppCampaign, forAccountMeta accountMeta: MoEngageCore.MoEngageAccountMeta)
   @objc func selfHandledInAppTriggered(withInfo inappCampaign: MoEngageInApps.MoEngageInAppSelfHandledCampaign, forAccountMeta accountMeta: MoEngageCore.MoEngageAccountMeta)
@@ -168,10 +193,8 @@ extension MoEngageInApps.MoEngageInAppUtils {
 }
 @objc public class MoEngageInAppAction : MoEngageInApps.MoEngageModelObject {
   @objc final public let actionType: MoEngageInApps.MoEngageInAppActionType
-  @objc final public let screenName: Swift.String?
   @objc final public let keyValuePairs: [Swift.String : Any]
-  @objc public init(actionType: MoEngageInApps.MoEngageInAppActionType, screenName: Swift.String?, keyValuePairs: [Swift.String : Any])
-  @objc convenience public init(actionType: MoEngageInApps.MoEngageInAppActionType, keyValuePairs: [Swift.String : Any])
+  @objc public init(actionType: MoEngageInApps.MoEngageInAppActionType, keyValuePairs: [Swift.String : Any])
   @objc deinit
 }
 @objc public class MoEngageInAppCampaign : MoEngageInApps.MoEngageModelObject {
@@ -251,6 +274,9 @@ extension MoEngageInApps.MoEngageInAppUtils {
   @objc public func resetInAppDelegate(forAppId appId: Swift.String? = nil)
   @objc deinit
 }
+extension MoEngageInApps.MoEngageNavigationType : Swift.Equatable {}
+extension MoEngageInApps.MoEngageNavigationType : Swift.Hashable {}
+extension MoEngageInApps.MoEngageNavigationType : Swift.RawRepresentable {}
 extension MoEngageInApps.MoEngageInAppRatingType : Swift.Equatable {}
 extension MoEngageInApps.MoEngageInAppRatingType : Swift.Hashable {}
 extension MoEngageInApps.MoEngageInAppRatingType : Swift.RawRepresentable {}

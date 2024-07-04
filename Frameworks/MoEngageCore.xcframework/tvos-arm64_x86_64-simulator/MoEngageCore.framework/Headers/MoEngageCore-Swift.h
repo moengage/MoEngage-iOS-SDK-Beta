@@ -277,6 +277,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreFoundation;
 @import Dispatch;
 @import Foundation;
 @import ObjectiveC;
@@ -346,6 +347,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageAnal
 - (void)removeEncryptedFolderWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 - (void)resetDataAfterUnRegistrationWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 - (void)syncExistingDataBeforeUnRegisterationWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance withCompletionBlock:(void (^ _Nullable)(BOOL))completionBlock;
+/// Handle callback for environment change.
+/// \param sdkInstance The instance to migrate.
+///
+- (void)migrateEnvironmentForSDK:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 @end
 
 
@@ -382,6 +387,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageCard
 - (void)migrateDataFromPreviousVersionsWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 - (void)migrateDataFromNoNEncryptionToEncryptionWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance currentSDKInstance:(MoEngageSDKInstance * _Nonnull)currentSDKInstance;
 - (void)removeEncryptedFolderWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
+/// Handle callback for environment change.
+/// \param sdkInstance The instance to migrate.
+///
+- (void)migrateEnvironmentForSDK:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 @end
 
 @class MoEngageSDKConfig;
@@ -448,7 +457,6 @@ SWIFT_CLASS("_TtC12MoEngageCore17MoEngageCoreCache")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-enum MoEngageSDKState : NSInteger;
 
 /// :nodoc:
 SWIFT_CLASS("_TtC12MoEngageCore19MoEngageCoreHandler")
@@ -459,7 +467,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) dispatch_que
 + (dispatch_queue_t _Nonnull)globalQueue SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-- (void)initializeModuleWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance sdkState:(enum MoEngageSDKState)sdkState;
 - (void)initializeInstanceWithSDKConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig isDefaultInstance:(BOOL)isDefaultInstance withCompletionBlock:(void (^ _Nonnull)(MoEngageSDKInstance * _Nullable))completion;
 - (MoEngageSDKConfig * _Nullable)getDefaultSDKConfiguration SWIFT_WARN_UNUSED_RESULT;
 - (MoEngageSDKConfig * _Nullable)getSDKConfigForAppID:(NSString * _Nonnull)appID SWIFT_WARN_UNUSED_RESULT;
@@ -489,6 +496,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageCore
 
 @class UIViewController;
 @class NSURL;
+enum MoEngageSDKState : NSInteger;
 @class UIApplication;
 enum MoEngageInAppWhiteList : NSInteger;
 enum MoEngageRegistrationState : NSInteger;
@@ -519,8 +527,8 @@ SWIFT_CLASS("_TtC12MoEngageCore17MoEngageCoreUtils")
 + (NSString * _Nonnull)getDeviceOSVersion SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nonnull)getDeviceModelName SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nonnull)getDeviceModelType SWIFT_WARN_UNUSED_RESULT;
-+ (void)savePushTokenWithToken:(NSString * _Nonnull)token sdkConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig;
-+ (NSString * _Nullable)getPushTokenWithSdkConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig SWIFT_WARN_UNUSED_RESULT;
++ (void)savePushTokenWithToken:(NSString * _Nonnull)token sdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
++ (NSString * _Nullable)getPushTokenWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nonnull)getSDKUniqueIdForInstanceWithConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nonnull)generateSDKUniqueID SWIFT_WARN_UNUSED_RESULT;
 + (BOOL)isSdkEnabledForInstanceWithConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig SWIFT_WARN_UNUSED_RESULT;
@@ -540,8 +548,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isAppInBackground;)
 + (BOOL)isIDFVTrackingEnabledForSDKConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig SWIFT_WARN_UNUSED_RESULT;
 + (MoEngageAccountMeta * _Nonnull)getAccountMetaWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nonnull)getStringRepresentationWithEvent:(enum MoEngageInAppWhiteList)event SWIFT_WARN_UNUSED_RESULT;
-+ (BOOL)isUserRegisteredWithSdkConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig SWIFT_WARN_UNUSED_RESULT;
-+ (void)updateUserRegisterStateWithState:(enum MoEngageRegistrationState)state sdkConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig;
++ (BOOL)isUserRegisteredWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance SWIFT_WARN_UNUSED_RESULT;
++ (void)updateUserRegisterStateWithState:(enum MoEngageRegistrationState)state sdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 /// Geneartes SHA256 hash string from input string.
 /// \param input The string to be hashed.
 ///
@@ -559,9 +567,11 @@ typedef SWIFT_ENUM(NSInteger, MoEngageDataCenter, open) {
   MoEngageDataCenterData_center_01 = 1,
   MoEngageDataCenterData_center_02 = 2,
   MoEngageDataCenterData_center_03 = 3,
-  MoEngageDataCenterData_center_04 = 4,
-  MoEngageDataCenterData_center_05 = 5,
-  MoEngageDataCenterData_center_100 = 6,
+  MoEngageDataCenterData_center_03_secondary = 4,
+  MoEngageDataCenterData_center_04 = 5,
+  MoEngageDataCenterData_center_05 = 6,
+  MoEngageDataCenterData_center_100 = 7,
+  MoEngageDataCenterData_center_06 = 8,
 };
 
 @class NSDateFormatter;
@@ -793,12 +803,45 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageGeof
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (void)initializeGeofenceWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 - (void)moengageSDKStateUpdatedWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
+/// Handle callback for environment change.
+/// \param sdkInstance The instance to migrate.
+///
+- (void)migrateEnvironmentForSDK:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 @end
 
 
 /// Class to configure the InApp.
 SWIFT_CLASS("_TtC12MoEngageCore19MoEngageInAppConfig")
 @interface MoEngageInAppConfig : NSObject
+/// If yes , callback is provided through MoEngageInAppNativeDelegate method
+@property (nonatomic) BOOL shouldProvideDeeplinkCallback;
+/// Init method for MoEngageInAppConfig
+/// \param safeAreaInset Inset value for nudge placement
+///
+- (nonnull instancetype)initWithSafeAreaInset:(CGFloat)safeAreaInset OBJC_DESIGNATED_INITIALIZER;
+/// Init method for MoEngageInAppConfig
+/// \param safeAreaInset Inset value for nudge placement
+///
+- (nonnull instancetype)initWithShouldProvideDeeplinkCallback:(BOOL)shouldProvideDeeplinkCallback OBJC_DESIGNATED_INITIALIZER;
+/// Init method for MoEngageInAppConfig
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     safeAreaInset: Inset value for nudge placement
+///   </li>
+///   <li>
+///     shouldProvideDeeplinkCallback: If yes , callback is provided through MoEngageInAppNativeDelegate method
+///   </li>
+/// </ul>
+- (nonnull instancetype)initWithSafeAreaInset:(CGFloat)safeAreaInset shouldProvideDeeplinkCallback:(BOOL)shouldProvideDeeplinkCallback OBJC_DESIGNATED_INITIALIZER;
+/// Returns the instance of type <code>MoEngageInAppConfig</code>  with default configuration
+///
+/// returns:
+/// Instance of type <code>MoEngageInAppConfig</code>
+/// :nodoc:
++ (MoEngageInAppConfig * _Nonnull)defaultConfig SWIFT_WARN_UNUSED_RESULT;
 /// :nodoc:
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -815,6 +858,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageInAp
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (void)initializeInAppWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
+/// Handle callback for environment change.
+/// \param sdkInstance The instance to migrate.
+///
+- (void)migrateEnvironmentForSDK:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 @end
 
 /// :nodoc:
@@ -848,6 +895,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageInbo
 - (void)migrateDataFromPreviousVersionsWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 - (void)migrateDataFromNoNEncryptionToEncryptionWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance currentSDKInstance:(MoEngageSDKInstance * _Nonnull)currentSDKInstance;
 - (void)removeEncryptedFolderWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
+/// Handle callback for environment change.
+/// \param sdkInstance The instance to migrate.
+///
+- (void)migrateEnvironmentForSDK:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 @end
 
 
@@ -953,8 +1004,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageMess
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (void)initializeMessagingWithLaunchOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> * _Nullable)launchOptions sdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 - (void)applicationDidEnterForegroundWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
+- (void)migrateDataFromPreviousVersionsWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 - (void)migrateDataFromNoNEncryptionToEncryptionWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance currentSDKInstance:(MoEngageSDKInstance * _Nonnull)currentSDKInstance;
 - (void)logoutWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
+/// Handle callback for environment change.
+/// \param sdkInstance The instance to migrate.
+///
+- (void)migrateEnvironmentForSDK:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 @end
 
 
@@ -1087,7 +1143,7 @@ typedef SWIFT_ENUM(NSInteger, MoEngageNetworkService, open) {
 /// :nodoc:
 SWIFT_CLASS("_TtC12MoEngageCore20MoEngageNetworkUtils")
 @interface MoEngageNetworkUtils : NSObject
-+ (NSDictionary<NSString *, id> * _Nonnull)getQueryParamsWithSdkConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig isV1ParamsRequired:(BOOL)isV1ParamsRequired SWIFT_WARN_UNUSED_RESULT;
++ (NSDictionary<NSString *, id> * _Nonnull)getQueryParamsWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance isV1ParamsRequired:(BOOL)isV1ParamsRequired SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nullable)getDeviceUniqueID SWIFT_WARN_UNUSED_RESULT;
 + (BOOL)isDeviceUniqueIDPresentInKeyChain SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -1122,6 +1178,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageReal
 - (void)migrateDataFromPreviousVersionsWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 - (void)migrateDataFromNoNEncryptionToEncryptionWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance currentSDKInstance:(MoEngageSDKInstance * _Nonnull)currentSDKInstance;
 - (void)removeEncryptedFolderWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
+/// Handle callback for environment change.
+/// \param sdkInstance The instance to migrate.
+///
+- (void)migrateEnvironmentForSDK:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 @end
 
 enum MoEngageRegistrationType : NSInteger;
@@ -1463,7 +1523,7 @@ SWIFT_CLASS("_TtC12MoEngageCore29MoEngageSSLVerificationConfig")
 ///
 /// returns:
 /// Instance of <code>MoEngageSSLVerificationConfig</code>.
-+ (MoEngageSSLVerificationConfig * _Nonnull)storedConfigForSDKConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig SWIFT_WARN_UNUSED_RESULT;
++ (MoEngageSSLVerificationConfig * _Nonnull)storedConfigForSDKInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1911,6 +1971,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreFoundation;
 @import Dispatch;
 @import Foundation;
 @import ObjectiveC;
@@ -1980,6 +2041,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageAnal
 - (void)removeEncryptedFolderWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 - (void)resetDataAfterUnRegistrationWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 - (void)syncExistingDataBeforeUnRegisterationWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance withCompletionBlock:(void (^ _Nullable)(BOOL))completionBlock;
+/// Handle callback for environment change.
+/// \param sdkInstance The instance to migrate.
+///
+- (void)migrateEnvironmentForSDK:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 @end
 
 
@@ -2016,6 +2081,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageCard
 - (void)migrateDataFromPreviousVersionsWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 - (void)migrateDataFromNoNEncryptionToEncryptionWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance currentSDKInstance:(MoEngageSDKInstance * _Nonnull)currentSDKInstance;
 - (void)removeEncryptedFolderWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
+/// Handle callback for environment change.
+/// \param sdkInstance The instance to migrate.
+///
+- (void)migrateEnvironmentForSDK:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 @end
 
 @class MoEngageSDKConfig;
@@ -2082,7 +2151,6 @@ SWIFT_CLASS("_TtC12MoEngageCore17MoEngageCoreCache")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-enum MoEngageSDKState : NSInteger;
 
 /// :nodoc:
 SWIFT_CLASS("_TtC12MoEngageCore19MoEngageCoreHandler")
@@ -2093,7 +2161,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) dispatch_que
 + (dispatch_queue_t _Nonnull)globalQueue SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-- (void)initializeModuleWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance sdkState:(enum MoEngageSDKState)sdkState;
 - (void)initializeInstanceWithSDKConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig isDefaultInstance:(BOOL)isDefaultInstance withCompletionBlock:(void (^ _Nonnull)(MoEngageSDKInstance * _Nullable))completion;
 - (MoEngageSDKConfig * _Nullable)getDefaultSDKConfiguration SWIFT_WARN_UNUSED_RESULT;
 - (MoEngageSDKConfig * _Nullable)getSDKConfigForAppID:(NSString * _Nonnull)appID SWIFT_WARN_UNUSED_RESULT;
@@ -2123,6 +2190,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageCore
 
 @class UIViewController;
 @class NSURL;
+enum MoEngageSDKState : NSInteger;
 @class UIApplication;
 enum MoEngageInAppWhiteList : NSInteger;
 enum MoEngageRegistrationState : NSInteger;
@@ -2153,8 +2221,8 @@ SWIFT_CLASS("_TtC12MoEngageCore17MoEngageCoreUtils")
 + (NSString * _Nonnull)getDeviceOSVersion SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nonnull)getDeviceModelName SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nonnull)getDeviceModelType SWIFT_WARN_UNUSED_RESULT;
-+ (void)savePushTokenWithToken:(NSString * _Nonnull)token sdkConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig;
-+ (NSString * _Nullable)getPushTokenWithSdkConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig SWIFT_WARN_UNUSED_RESULT;
++ (void)savePushTokenWithToken:(NSString * _Nonnull)token sdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
++ (NSString * _Nullable)getPushTokenWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nonnull)getSDKUniqueIdForInstanceWithConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nonnull)generateSDKUniqueID SWIFT_WARN_UNUSED_RESULT;
 + (BOOL)isSdkEnabledForInstanceWithConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig SWIFT_WARN_UNUSED_RESULT;
@@ -2174,8 +2242,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isAppInBackground;)
 + (BOOL)isIDFVTrackingEnabledForSDKConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig SWIFT_WARN_UNUSED_RESULT;
 + (MoEngageAccountMeta * _Nonnull)getAccountMetaWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nonnull)getStringRepresentationWithEvent:(enum MoEngageInAppWhiteList)event SWIFT_WARN_UNUSED_RESULT;
-+ (BOOL)isUserRegisteredWithSdkConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig SWIFT_WARN_UNUSED_RESULT;
-+ (void)updateUserRegisterStateWithState:(enum MoEngageRegistrationState)state sdkConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig;
++ (BOOL)isUserRegisteredWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance SWIFT_WARN_UNUSED_RESULT;
++ (void)updateUserRegisterStateWithState:(enum MoEngageRegistrationState)state sdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 /// Geneartes SHA256 hash string from input string.
 /// \param input The string to be hashed.
 ///
@@ -2193,9 +2261,11 @@ typedef SWIFT_ENUM(NSInteger, MoEngageDataCenter, open) {
   MoEngageDataCenterData_center_01 = 1,
   MoEngageDataCenterData_center_02 = 2,
   MoEngageDataCenterData_center_03 = 3,
-  MoEngageDataCenterData_center_04 = 4,
-  MoEngageDataCenterData_center_05 = 5,
-  MoEngageDataCenterData_center_100 = 6,
+  MoEngageDataCenterData_center_03_secondary = 4,
+  MoEngageDataCenterData_center_04 = 5,
+  MoEngageDataCenterData_center_05 = 6,
+  MoEngageDataCenterData_center_100 = 7,
+  MoEngageDataCenterData_center_06 = 8,
 };
 
 @class NSDateFormatter;
@@ -2427,12 +2497,45 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageGeof
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (void)initializeGeofenceWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 - (void)moengageSDKStateUpdatedWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
+/// Handle callback for environment change.
+/// \param sdkInstance The instance to migrate.
+///
+- (void)migrateEnvironmentForSDK:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 @end
 
 
 /// Class to configure the InApp.
 SWIFT_CLASS("_TtC12MoEngageCore19MoEngageInAppConfig")
 @interface MoEngageInAppConfig : NSObject
+/// If yes , callback is provided through MoEngageInAppNativeDelegate method
+@property (nonatomic) BOOL shouldProvideDeeplinkCallback;
+/// Init method for MoEngageInAppConfig
+/// \param safeAreaInset Inset value for nudge placement
+///
+- (nonnull instancetype)initWithSafeAreaInset:(CGFloat)safeAreaInset OBJC_DESIGNATED_INITIALIZER;
+/// Init method for MoEngageInAppConfig
+/// \param safeAreaInset Inset value for nudge placement
+///
+- (nonnull instancetype)initWithShouldProvideDeeplinkCallback:(BOOL)shouldProvideDeeplinkCallback OBJC_DESIGNATED_INITIALIZER;
+/// Init method for MoEngageInAppConfig
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     safeAreaInset: Inset value for nudge placement
+///   </li>
+///   <li>
+///     shouldProvideDeeplinkCallback: If yes , callback is provided through MoEngageInAppNativeDelegate method
+///   </li>
+/// </ul>
+- (nonnull instancetype)initWithSafeAreaInset:(CGFloat)safeAreaInset shouldProvideDeeplinkCallback:(BOOL)shouldProvideDeeplinkCallback OBJC_DESIGNATED_INITIALIZER;
+/// Returns the instance of type <code>MoEngageInAppConfig</code>  with default configuration
+///
+/// returns:
+/// Instance of type <code>MoEngageInAppConfig</code>
+/// :nodoc:
++ (MoEngageInAppConfig * _Nonnull)defaultConfig SWIFT_WARN_UNUSED_RESULT;
 /// :nodoc:
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -2449,6 +2552,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageInAp
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (void)initializeInAppWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
+/// Handle callback for environment change.
+/// \param sdkInstance The instance to migrate.
+///
+- (void)migrateEnvironmentForSDK:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 @end
 
 /// :nodoc:
@@ -2482,6 +2589,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageInbo
 - (void)migrateDataFromPreviousVersionsWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 - (void)migrateDataFromNoNEncryptionToEncryptionWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance currentSDKInstance:(MoEngageSDKInstance * _Nonnull)currentSDKInstance;
 - (void)removeEncryptedFolderWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
+/// Handle callback for environment change.
+/// \param sdkInstance The instance to migrate.
+///
+- (void)migrateEnvironmentForSDK:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 @end
 
 
@@ -2587,8 +2698,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageMess
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (void)initializeMessagingWithLaunchOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> * _Nullable)launchOptions sdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 - (void)applicationDidEnterForegroundWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
+- (void)migrateDataFromPreviousVersionsWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 - (void)migrateDataFromNoNEncryptionToEncryptionWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance currentSDKInstance:(MoEngageSDKInstance * _Nonnull)currentSDKInstance;
 - (void)logoutWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
+/// Handle callback for environment change.
+/// \param sdkInstance The instance to migrate.
+///
+- (void)migrateEnvironmentForSDK:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 @end
 
 
@@ -2721,7 +2837,7 @@ typedef SWIFT_ENUM(NSInteger, MoEngageNetworkService, open) {
 /// :nodoc:
 SWIFT_CLASS("_TtC12MoEngageCore20MoEngageNetworkUtils")
 @interface MoEngageNetworkUtils : NSObject
-+ (NSDictionary<NSString *, id> * _Nonnull)getQueryParamsWithSdkConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig isV1ParamsRequired:(BOOL)isV1ParamsRequired SWIFT_WARN_UNUSED_RESULT;
++ (NSDictionary<NSString *, id> * _Nonnull)getQueryParamsWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance isV1ParamsRequired:(BOOL)isV1ParamsRequired SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nullable)getDeviceUniqueID SWIFT_WARN_UNUSED_RESULT;
 + (BOOL)isDeviceUniqueIDPresentInKeyChain SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -2756,6 +2872,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageReal
 - (void)migrateDataFromPreviousVersionsWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 - (void)migrateDataFromNoNEncryptionToEncryptionWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance currentSDKInstance:(MoEngageSDKInstance * _Nonnull)currentSDKInstance;
 - (void)removeEncryptedFolderWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance;
+/// Handle callback for environment change.
+/// \param sdkInstance The instance to migrate.
+///
+- (void)migrateEnvironmentForSDK:(MoEngageSDKInstance * _Nonnull)sdkInstance;
 @end
 
 enum MoEngageRegistrationType : NSInteger;
@@ -3097,7 +3217,7 @@ SWIFT_CLASS("_TtC12MoEngageCore29MoEngageSSLVerificationConfig")
 ///
 /// returns:
 /// Instance of <code>MoEngageSSLVerificationConfig</code>.
-+ (MoEngageSSLVerificationConfig * _Nonnull)storedConfigForSDKConfig:(MoEngageSDKConfig * _Nonnull)sdkConfig SWIFT_WARN_UNUSED_RESULT;
++ (MoEngageSSLVerificationConfig * _Nonnull)storedConfigForSDKInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

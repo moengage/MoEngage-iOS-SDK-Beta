@@ -2,6 +2,55 @@
 =================================
 
 ## Changelog:
+### Version 9.17.5 *(12th June 2024)*
+-------------------------------------------
+* Added JSON object support to user attributes.
+* Handled environment update with same installation.
+* BugFix
+    - Fixed tracked object attributes duplication.
+    - Notification impression not tracked after app update.
+    - Reset user completion handler not invoked
+- CrashFix
+    - Code optimization where multiple thread access the resource when application comes to foreground.
+
+### Version 9.17.4 *(21st May 2024)*
+-------------------------------------------
+* Adding support of Array in triggered-based InApps.
+* BugFix - Fixed geofence enabled migration with encryption
+
+### Version 9.17.3 *(16th May 2024)*
+-------------------------------------------
+* Added DC-06 support.
+* BugFix - Fixed where notification received event was tracked when SDK was disabled.
+* BugFix - Fixed push token migration from 7.x version
+
+### Version 9.17.2 *(02nd May 2024)*
+-------------------------------------------
+* CrashFix: Fixed migration crash from 8.2.0 to 9.17.0
+* BugFix - Fixed the issue where push token was not being sent in API call when app group id is missing.
+* BugFix - Fixed the issue where API call is made when sdk is disabled.
+* BugFix - Fixed the issue where ReInstall was getting tracked.
+
+### Version 9.17.1 *(18th April 2024)*
+-------------------------------------------
+*  Added support to provide optional deep link callback to MoEngageInAppNativeDelegate protocol via MoEngageInAppConfig.
+
+### Version 9.17.0 *(8th April 2024)*
+-------------------------------------------
+* Handled UserDefault storage limit
+
+### Version 9.16.2 *(21st March 2024)*
+-------------------------------------------
+* Fixed the app rejection issue due to privacy manifest
+
+### Version 9.16.1 *(18th March 2024)*
+-------------------------------------------
+* Added AND Support
+* Fixed the issue where Session start was not tracked in some cases.
+* Provided callback when force logout is done.
+* Added tvOS platform identifier changes
+* Remove linking to AdSupport by default.
+* BugFix - MOEN-30596: Fixed crash in network session delegate.
 
 ### Version 9.16.0 *(27th February 2024)*
 -------------------------------------------

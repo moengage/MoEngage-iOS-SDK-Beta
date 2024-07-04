@@ -90,6 +90,154 @@
         "moduleName": "MoEngageTriggerEvaluator"
       },
       {
+        "kind": "TypeDecl",
+        "name": "MoEngageCampaignPathsHandler",
+        "printedName": "MoEngageCampaignPathsHandler",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(sdkInstance:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MoEngageCampaignPathsHandler",
+                "printedName": "MoEngageTriggerEvaluator.MoEngageCampaignPathsHandler",
+                "usr": "c:@M@MoEngageTriggerEvaluator@objc(cs)MoEngageCampaignPathsHandler"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MoEngageSDKInstance",
+                "printedName": "MoEngageCore.MoEngageSDKInstance",
+                "usr": "c:@M@MoEngageCore@objc(cs)MoEngageSDKInstance"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@MoEngageTriggerEvaluator@objc(cs)MoEngageCampaignPathsHandler(im)initWithSdkInstance:",
+            "mangledName": "$s24MoEngageTriggerEvaluator0aB20CampaignPathsHandlerC11sdkInstanceAC0aB4Core0aB11SDKInstanceC_tcfc",
+            "moduleName": "MoEngageTriggerEvaluator",
+            "objc_name": "initWithSdkInstance:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "reset",
+            "printedName": "reset()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@MoEngageTriggerEvaluator@objc(cs)MoEngageCampaignPathsHandler(im)reset",
+            "mangledName": "$s24MoEngageTriggerEvaluator0aB20CampaignPathsHandlerC5resetyyF",
+            "moduleName": "MoEngageTriggerEvaluator",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MoEngageCampaignPathsHandler",
+                "printedName": "MoEngageTriggerEvaluator.MoEngageCampaignPathsHandler",
+                "usr": "c:@M@MoEngageTriggerEvaluator@objc(cs)MoEngageCampaignPathsHandler"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@MoEngageTriggerEvaluator@objc(cs)MoEngageCampaignPathsHandler(im)init",
+            "mangledName": "$s24MoEngageTriggerEvaluator0aB20CampaignPathsHandlerCACycfc",
+            "moduleName": "MoEngageTriggerEvaluator",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@MoEngageTriggerEvaluator@objc(cs)MoEngageCampaignPathsHandler",
+        "mangledName": "$s24MoEngageTriggerEvaluator0aB20CampaignPathsHandlerC",
+        "moduleName": "MoEngageTriggerEvaluator",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -1204,252 +1352,259 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageCampaignPathsHandler.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageCampaignPathsHandler.swift",
       "kind": "Dictionary",
-      "offset": 388,
+      "offset": 424,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageCampaignPathsHandler.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageCampaignPathsHandler.swift",
       "kind": "Dictionary",
-      "offset": 538,
+      "offset": 574,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageCampaignPathsHandler.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageCampaignPathsHandler.swift",
       "kind": "Array",
-      "offset": 671,
+      "offset": 707,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageCampaignPathNode.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageCampaignPathsHandler.swift",
+      "kind": "StringLiteral",
+      "offset": 241,
+      "length": 28,
+      "value": "\"MoEngageTriggerEvaluator.MoEngageCampaignPathsHandler\""
+    },
+    {
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageCampaignPathNode.swift",
       "kind": "BooleanLiteral",
       "offset": 1510,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Public\/CallBacksAndEvalutationResult.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Public\/CallBacksAndEvalutationResult.swift",
       "kind": "StringLiteral",
       "offset": 322,
       "length": 31,
       "value": "\"MoEngageTriggerEvaluator.MoEngageTriggerEvaluationResult\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageCampaignPath.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageCampaignPath.swift",
       "kind": "Array",
       "offset": 1121,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageCampaignPath.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageCampaignPath.swift",
       "kind": "BooleanLiteral",
       "offset": 1625,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageCampaignPath.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageCampaignPath.swift",
       "kind": "BooleanLiteral",
       "offset": 2010,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageCampaignPath.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageCampaignPath.swift",
       "kind": "BooleanLiteral",
       "offset": 9448,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageCampaignPath.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageCampaignPath.swift",
       "kind": "BooleanLiteral",
       "offset": 11260,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageCampaignPath.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageCampaignPath.swift",
       "kind": "BooleanLiteral",
       "offset": 12790,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Public\/MoEngageTriggerEvaluatorManager.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Public\/MoEngageTriggerEvaluatorManager.swift",
       "kind": "StringLiteral",
       "offset": 292,
       "length": 31,
       "value": "\"MoEngageTriggerEvaluator.MoEngageTriggerEvaluatorManager\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageTriggerEvaluatorEnvironment.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageTriggerEvaluatorEnvironment.swift",
       "kind": "StringLiteral",
       "offset": 298,
-      "length": 7,
-      "value": "\"1.0.0\""
+      "length": 8,
+      "value": "\"1.01.1\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageTriggerEvaluatorEnvironment.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageTriggerEvaluatorEnvironment.swift",
       "kind": "StringLiteral",
-      "offset": 344,
+      "offset": 345,
       "length": 44,
       "value": "\"TriggerEvaluator\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageTriggerEvaluatorEnvironment.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageTriggerEvaluatorEnvironment.swift",
       "kind": "StringLiteral",
-      "offset": 387,
+      "offset": 388,
       "length": 1,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageTriggerEvaluatorEnvironment.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/MoEngageTriggerEvaluatorEnvironment.swift",
       "kind": "StringLiteral",
-      "offset": 557,
+      "offset": 558,
       "length": 36,
       "value": "\"com.moengage.triggerEvaluatorQueue\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 254,
       "length": 15,
       "value": "\"CampaignPaths\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 304,
       "length": 21,
       "value": "\"CampaignEventsCache\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 365,
       "length": 14,
       "value": "\"primaryCache\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 421,
       "length": 16,
       "value": "\"secondaryCache\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 517,
       "length": 13,
       "value": "\"EVENT_ATTRS\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 609,
       "length": 9,
       "value": "\"trigger\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 654,
       "length": 19,
       "value": "\"primary_condition\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 710,
       "length": 18,
       "value": "\"included_filters\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 765,
       "length": 21,
       "value": "\"secondary_condition\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 815,
       "length": 13,
       "value": "\"action_name\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 857,
       "length": 12,
       "value": "\"attributes\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 902,
       "length": 10,
       "value": "\"executed\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 939,
       "length": 9,
       "value": "\"filters\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 984,
       "length": 17,
       "value": "\"filter_operator\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1022,
       "length": 4,
       "value": "\"or\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1057,
       "length": 13,
       "value": "\"expiry_time\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1100,
       "length": 13,
       "value": "\"campaign_id\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1145,
       "length": 13,
       "value": "\"expiry_time\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1192,
       "length": 19,
       "value": "\"trigger_wait_time\""
     },
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/pocs\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
+      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageTriggerEvaluator\/Internal\/Utility\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1241,
       "length": 13,

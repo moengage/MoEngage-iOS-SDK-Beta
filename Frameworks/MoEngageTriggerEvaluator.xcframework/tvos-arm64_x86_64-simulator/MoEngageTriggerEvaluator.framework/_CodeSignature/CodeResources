@@ -4,9 +4,13 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>CHANGELOG.md</key>
+		<data>
+		PCrh41VkTz2mVtmh3YoLWO8sP4I=
+		</data>
 		<key>Headers/MoEngageTriggerEvaluator-Swift.h</key>
 		<data>
-		ksdzti3DZHQzo8niNtlAsAYwZF8=
+		QwgueKKFaynD7n73+elPyPsG2YI=
 		</data>
 		<key>Headers/MoEngageTriggerEvaluator.h</key>
 		<data>
@@ -14,47 +18,51 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		3NQVEx0J2eMgukcvmh/um/VKLw0=
+		75NaTvGRdnmUpTvMIDodNQIiFIw=
+		</data>
+		<key>LICENSE</key>
+		<data>
+		ih5AQhHYR6MqQ2cinlT1HtiVYGQ=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-tvos-simulator.abi.json</key>
 		<data>
-		TIg2f5iyxj+8bdd2pGDn2i19Uz8=
+		7Kicd/WAxj2Al7DhXIbilvZhQlc=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-tvos-simulator.private.swiftinterface</key>
 		<data>
-		fTyusQl8tHF0TydPL0D35+6z+S0=
+		11wogQfWsLB+BaAfyOcgd2u3/mI=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-tvos-simulator.swiftdoc</key>
 		<data>
-		ETSOG1Umj+r82YeOsaanCbt3W3s=
+		MudeICSajBDQRWzRr+dnFyUBjbQ=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-tvos-simulator.swiftinterface</key>
 		<data>
-		fTyusQl8tHF0TydPL0D35+6z+S0=
+		11wogQfWsLB+BaAfyOcgd2u3/mI=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		3gGHMqeQS6Ok+As4lwyt3c0ZWP8=
+		nfgPxH60g4p/2pqeeWenv4KYivI=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/x86_64-apple-tvos-simulator.abi.json</key>
 		<data>
-		TIg2f5iyxj+8bdd2pGDn2i19Uz8=
+		7Kicd/WAxj2Al7DhXIbilvZhQlc=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/x86_64-apple-tvos-simulator.private.swiftinterface</key>
 		<data>
-		iKX9VJxEt874n+E1qK2oiyDxCbw=
+		knF4CzrGcYM6vonw8jMFb11GVCA=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<data>
-		4Y54cuSO+qnQ6KUdXgohI5umVHE=
+		s45TdNxafq4ItWVIFVaZHWdu6HE=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/x86_64-apple-tvos-simulator.swiftinterface</key>
 		<data>
-		iKX9VJxEt874n+E1qK2oiyDxCbw=
+		knF4CzrGcYM6vonw8jMFb11GVCA=
 		</data>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<data>
-		bDBsoD8tK8HZ7egvyITqLs1l2+k=
+		PjdhD1CI9FgiP6cYhKAr41jAc9U=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -63,11 +71,18 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>CHANGELOG.md</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Sgrsvi0KSj3n/TMU2aCPCYS51kD0lgG3w9dq9RAPgZE=
+			</data>
+		</dict>
 		<key>Headers/MoEngageTriggerEvaluator-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hty5PTolMJmxsuGVOiTSXYpOoACqROckaoQZqVfRY0I=
+			1/I5NsdxYrYqV5hspbGyQKRgHglSHAhEf1R8+5+3awQ=
 			</data>
 		</dict>
 		<key>Headers/MoEngageTriggerEvaluator.h</key>
@@ -77,74 +92,81 @@
 			c/ET2tgJ7H6I7UINCdRVDLC1dn+GWdgUDbpujb8Y22c=
 			</data>
 		</dict>
+		<key>LICENSE</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			DHxoqa3SWsSeiRWX4o3nIP0kO6sTBMPVanytCdzu7ME=
+			</data>
+		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-tvos-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			e1gHRW561+j8Zbhien6MAs1dKafcVFsJNhQGuI1UWek=
+			y/BC+C+cp0DQsZ7GBIcgpXOIyLxjch17A/lkHcNhfJg=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-tvos-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dhNbiZ65dn3rMHetrE/l+dY6JtsxksQxFX8/YdtXlYM=
+			mZ1FOOMyv6hwkgDyEADGVa/+UIcaJXgWvLQGP+ouasc=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-tvos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5vwGRc6pllpuMgTQ8bZ3GK/bp9JyCrJhFWzJfaV5lgA=
+			ANIrtROfbs3nhYf10KnGgQfTU0kK1gYFaKRYiaD402Y=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-tvos-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dhNbiZ65dn3rMHetrE/l+dY6JtsxksQxFX8/YdtXlYM=
+			mZ1FOOMyv6hwkgDyEADGVa/+UIcaJXgWvLQGP+ouasc=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/arm64-apple-tvos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vzSM9F1eHdgIDN2GrIY9IbUpmaIx59l5uhozDLIPgB4=
+			fjmUPqEVrvinViOI2HeBP77vOf6/9DFTLUXWWcY9OxI=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/x86_64-apple-tvos-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			e1gHRW561+j8Zbhien6MAs1dKafcVFsJNhQGuI1UWek=
+			y/BC+C+cp0DQsZ7GBIcgpXOIyLxjch17A/lkHcNhfJg=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/x86_64-apple-tvos-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			huoBs5kxPE4/joP8IXWcMdSz5i3TDzh8C1EGVKE+Gt8=
+			qyEb9guGeUEUBZMX/QRMU/3OnInS2CGCQuDWM21uY2w=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PbWdZ3V6WV+CuyFBF7pKMMORQ418RvF+hwIKz+PS3DY=
+			j4gxVbR4xei+zQrhq48x622USP2OkwaTWk7juY7IxuE=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/x86_64-apple-tvos-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			huoBs5kxPE4/joP8IXWcMdSz5i3TDzh8C1EGVKE+Gt8=
+			qyEb9guGeUEUBZMX/QRMU/3OnInS2CGCQuDWM21uY2w=
 			</data>
 		</dict>
 		<key>Modules/MoEngageTriggerEvaluator.swiftmodule/x86_64-apple-tvos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q1F6f5j0WcjGRuzIjvkjpEsSp11GiTJ1/T63CUlq5/w=
+			CDFoWY/VktyHEEa9vGbqm3j/fTDiZzo67IkxNtQ2W6E=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

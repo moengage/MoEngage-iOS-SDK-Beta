@@ -299,6 +299,18 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
+@class MoEngageSDKInstance;
+
+/// :nodoc:
+SWIFT_CLASS("_TtC24MoEngageTriggerEvaluator28MoEngageCampaignPathsHandler")
+@interface MoEngageCampaignPathsHandler : NSObject
+- (nonnull instancetype)initWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance OBJC_DESIGNATED_INITIALIZER;
+- (void)reset;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 @class NSString;
 @class MoEngageTriggerEvaluationResult;
 
@@ -321,7 +333,6 @@ SWIFT_CLASS("_TtC24MoEngageTriggerEvaluator31MoEngageTriggerEvaluationResult")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class MoEngageSDKInstance;
 
 /// :nodoc:
 /// The <code>MoEngageTriggerEvaluator</code> class is responsible for handling the evaluation and management of campaign paths.
@@ -670,6 +681,18 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
+@class MoEngageSDKInstance;
+
+/// :nodoc:
+SWIFT_CLASS("_TtC24MoEngageTriggerEvaluator28MoEngageCampaignPathsHandler")
+@interface MoEngageCampaignPathsHandler : NSObject
+- (nonnull instancetype)initWithSdkInstance:(MoEngageSDKInstance * _Nonnull)sdkInstance OBJC_DESIGNATED_INITIALIZER;
+- (void)reset;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 @class NSString;
 @class MoEngageTriggerEvaluationResult;
 
@@ -692,7 +715,6 @@ SWIFT_CLASS("_TtC24MoEngageTriggerEvaluator31MoEngageTriggerEvaluationResult")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class MoEngageSDKInstance;
 
 /// :nodoc:
 /// The <code>MoEngageTriggerEvaluator</code> class is responsible for handling the evaluation and management of campaign paths.

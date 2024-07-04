@@ -311,8 +311,6 @@ SWIFT_CLASS("_TtC14MoEngageInApps19MoEngageInAppAction")
 @interface MoEngageInAppAction : MoEngageModelObject
 /// Gives the action type Navigation/Custom Action
 @property (nonatomic, readonly) MoEngageInAppActionType actionType;
-/// If the action type is Navigation then the <code>screenName</code> indicates the name of the screen to which  navigation has to be performed
-@property (nonatomic, readonly, copy) NSString * _Nullable screenName;
 /// Custom key-value pairs entered while creating the campaign for the action.
 @property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull keyValuePairs;
 /// Method to create an instance of MoEngageInAppAction
@@ -324,16 +322,7 @@ SWIFT_CLASS("_TtC14MoEngageInApps19MoEngageInAppAction")
 ///
 /// \param keyValuePairs Custom key-value pairs entered while creating the campaign for the action.
 ///
-- (nonnull instancetype)initWithActionType:(MoEngageInAppActionType)actionType screenName:(NSString * _Nullable)screenName keyValuePairs:(NSDictionary<NSString *, id> * _Nonnull)keyValuePairs OBJC_DESIGNATED_INITIALIZER;
-/// Method to create an instance of MoEngageInAppAction
-/// note:
-/// This method is for internal purpose. Do not call it explicitly.
-/// :nodoc:
-/// \param actionType Gives the action type Navigation/Custom Action
-///
-/// \param keyValuePairs Custom key-value pairs entered while creating the campaign for the action.
-///
-- (nonnull instancetype)initWithActionType:(MoEngageInAppActionType)actionType keyValuePairs:(NSDictionary<NSString *, id> * _Nonnull)keyValuePairs;
+- (nonnull instancetype)initWithActionType:(MoEngageInAppActionType)actionType keyValuePairs:(NSDictionary<NSString *, id> * _Nonnull)keyValuePairs OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithDictionary:(NSDictionary * _Nullable)dict SWIFT_UNAVAILABLE;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -640,6 +629,7 @@ SWIFT_CLASS("_TtC14MoEngageInApps22MoEngageInAppMigration")
 @end
 
 @class MoEngageAccountMeta;
+@class MoEngageInAppNavigationAction;
 @class MoEngageInAppSelfHandledCampaign;
 
 /// Confirm to this protocol to get all the InApp campaigns related callbacks
@@ -658,7 +648,7 @@ SWIFT_PROTOCOL("_TtP14MoEngageInApps27MoEngageInAppNativeDelegate_")
 ///
 /// \param accountMeta MoEngageAccountMeta instance providing the info of the MoEngage Account to which the campaign belongs
 ///
-- (void)inAppClickedWithCampaignInfo:(MoEngageInAppCampaign * _Nonnull)inappCampaign andNavigationActionInfo:(MoEngageInAppAction * _Nonnull)navigationAction forAccountMeta:(MoEngageAccountMeta * _Nonnull)accountMeta;
+- (void)inAppClickedWithCampaignInfo:(MoEngageInAppCampaign * _Nonnull)inappCampaign andNavigationActionInfo:(MoEngageInAppNavigationAction * _Nonnull)navigationAction forAccountMeta:(MoEngageAccountMeta * _Nonnull)accountMeta;
 /// Callback received when an inApp Campaign is clicked by the user to perform Custom Action
 /// \param inappCampaign MoEngageInAppCampaign instance providing the info of the campaign which is clicked by the user
 ///
@@ -679,6 +669,30 @@ SWIFT_PROTOCOL("_TtP14MoEngageInApps27MoEngageInAppNativeDelegate_")
 /// \param accountMeta MoEngageAccountMeta instance providing the info of the MoEngage Account to which the campaign belongs
 ///
 - (void)selfHandledInAppTriggeredWithInfo:(MoEngageInAppSelfHandledCampaign * _Nonnull)inappCampaign forAccountMeta:(MoEngageAccountMeta * _Nonnull)accountMeta;
+@end
+
+enum MoEngageNavigationType : NSInteger;
+
+/// Model describing the navigation action for inapp
+SWIFT_CLASS("_TtC14MoEngageInApps29MoEngageInAppNavigationAction")
+@interface MoEngageInAppNavigationAction : MoEngageInAppAction
+/// Navigation Type
+@property (nonatomic, readonly) enum MoEngageNavigationType navigationType;
+/// Url/Screen-name to which the user should be navigated.
+@property (nonatomic, readonly, copy) NSString * _Nullable navigationUrl;
+/// :nodoc
+- (nonnull instancetype)initWithNavigationType:(enum MoEngageNavigationType)navigationType actionType:(MoEngageInAppActionType)actionType navigationUrl:(NSString * _Nullable)navigationUrl keyValuePairs:(NSDictionary<NSString *, id> * _Nonnull)keyValuePairs OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithActionType:(MoEngageInAppActionType)actionType keyValuePairs:(NSDictionary<NSString *, id> * _Nonnull)keyValuePairs SWIFT_UNAVAILABLE;
+@end
+
+@class UITouch;
+@class UIEvent;
+
+@interface MoEngageInAppPrimaryContainerView (SWIFT_EXTENSION(MoEngageInApps))
+- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesEnded:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesCancelled:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesMoved:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
 @end
 
 @protocol MoEngageInAppWidgetResizingCallbackListnerDelegate;
@@ -851,6 +865,7 @@ SWIFT_CLASS("_TtC14MoEngageInApps34MoEngageInAppTemplateAlignmentUtil")
 
 @interface MoEngageInAppUtils (SWIFT_EXTENSION(MoEngageInApps))
 + (NSString * _Nonnull)getStringRepresentationFor:(MoEngageInAppSDKCampaignType)sdkCampaignType SWIFT_WARN_UNUSED_RESULT;
++ (enum MoEngageNavigationType)mapNavigationTypeFrom:(MoEngageNavActionType)type SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class NSCoder;
@@ -1008,6 +1023,15 @@ SWIFT_CLASS("_TtC14MoEngageInApps32MoEngageInAppWidgetAlignmentUtil")
 /// Whether widget can receive focus.
 @property (nonatomic, readonly) BOOL isFocusable;
 @end
+
+/// Navigation Type
+typedef SWIFT_ENUM(NSInteger, MoEngageNavigationType, open) {
+  MoEngageNavigationTypeNavigateToScreen = 0,
+  MoEngageNavigationTypeDeepLink = 1,
+  MoEngageNavigationTypeRichLanding = 2,
+  MoEngageNavigationTypeExternalBrowser = 3,
+  MoEngageNavigationTypeNone = 4,
+};
 
 
 /// Utility class for NudgePositons
@@ -1490,8 +1514,6 @@ SWIFT_CLASS("_TtC14MoEngageInApps19MoEngageInAppAction")
 @interface MoEngageInAppAction : MoEngageModelObject
 /// Gives the action type Navigation/Custom Action
 @property (nonatomic, readonly) MoEngageInAppActionType actionType;
-/// If the action type is Navigation then the <code>screenName</code> indicates the name of the screen to which  navigation has to be performed
-@property (nonatomic, readonly, copy) NSString * _Nullable screenName;
 /// Custom key-value pairs entered while creating the campaign for the action.
 @property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull keyValuePairs;
 /// Method to create an instance of MoEngageInAppAction
@@ -1503,16 +1525,7 @@ SWIFT_CLASS("_TtC14MoEngageInApps19MoEngageInAppAction")
 ///
 /// \param keyValuePairs Custom key-value pairs entered while creating the campaign for the action.
 ///
-- (nonnull instancetype)initWithActionType:(MoEngageInAppActionType)actionType screenName:(NSString * _Nullable)screenName keyValuePairs:(NSDictionary<NSString *, id> * _Nonnull)keyValuePairs OBJC_DESIGNATED_INITIALIZER;
-/// Method to create an instance of MoEngageInAppAction
-/// note:
-/// This method is for internal purpose. Do not call it explicitly.
-/// :nodoc:
-/// \param actionType Gives the action type Navigation/Custom Action
-///
-/// \param keyValuePairs Custom key-value pairs entered while creating the campaign for the action.
-///
-- (nonnull instancetype)initWithActionType:(MoEngageInAppActionType)actionType keyValuePairs:(NSDictionary<NSString *, id> * _Nonnull)keyValuePairs;
+- (nonnull instancetype)initWithActionType:(MoEngageInAppActionType)actionType keyValuePairs:(NSDictionary<NSString *, id> * _Nonnull)keyValuePairs OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithDictionary:(NSDictionary * _Nullable)dict SWIFT_UNAVAILABLE;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -1819,6 +1832,7 @@ SWIFT_CLASS("_TtC14MoEngageInApps22MoEngageInAppMigration")
 @end
 
 @class MoEngageAccountMeta;
+@class MoEngageInAppNavigationAction;
 @class MoEngageInAppSelfHandledCampaign;
 
 /// Confirm to this protocol to get all the InApp campaigns related callbacks
@@ -1837,7 +1851,7 @@ SWIFT_PROTOCOL("_TtP14MoEngageInApps27MoEngageInAppNativeDelegate_")
 ///
 /// \param accountMeta MoEngageAccountMeta instance providing the info of the MoEngage Account to which the campaign belongs
 ///
-- (void)inAppClickedWithCampaignInfo:(MoEngageInAppCampaign * _Nonnull)inappCampaign andNavigationActionInfo:(MoEngageInAppAction * _Nonnull)navigationAction forAccountMeta:(MoEngageAccountMeta * _Nonnull)accountMeta;
+- (void)inAppClickedWithCampaignInfo:(MoEngageInAppCampaign * _Nonnull)inappCampaign andNavigationActionInfo:(MoEngageInAppNavigationAction * _Nonnull)navigationAction forAccountMeta:(MoEngageAccountMeta * _Nonnull)accountMeta;
 /// Callback received when an inApp Campaign is clicked by the user to perform Custom Action
 /// \param inappCampaign MoEngageInAppCampaign instance providing the info of the campaign which is clicked by the user
 ///
@@ -1858,6 +1872,30 @@ SWIFT_PROTOCOL("_TtP14MoEngageInApps27MoEngageInAppNativeDelegate_")
 /// \param accountMeta MoEngageAccountMeta instance providing the info of the MoEngage Account to which the campaign belongs
 ///
 - (void)selfHandledInAppTriggeredWithInfo:(MoEngageInAppSelfHandledCampaign * _Nonnull)inappCampaign forAccountMeta:(MoEngageAccountMeta * _Nonnull)accountMeta;
+@end
+
+enum MoEngageNavigationType : NSInteger;
+
+/// Model describing the navigation action for inapp
+SWIFT_CLASS("_TtC14MoEngageInApps29MoEngageInAppNavigationAction")
+@interface MoEngageInAppNavigationAction : MoEngageInAppAction
+/// Navigation Type
+@property (nonatomic, readonly) enum MoEngageNavigationType navigationType;
+/// Url/Screen-name to which the user should be navigated.
+@property (nonatomic, readonly, copy) NSString * _Nullable navigationUrl;
+/// :nodoc
+- (nonnull instancetype)initWithNavigationType:(enum MoEngageNavigationType)navigationType actionType:(MoEngageInAppActionType)actionType navigationUrl:(NSString * _Nullable)navigationUrl keyValuePairs:(NSDictionary<NSString *, id> * _Nonnull)keyValuePairs OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithActionType:(MoEngageInAppActionType)actionType keyValuePairs:(NSDictionary<NSString *, id> * _Nonnull)keyValuePairs SWIFT_UNAVAILABLE;
+@end
+
+@class UITouch;
+@class UIEvent;
+
+@interface MoEngageInAppPrimaryContainerView (SWIFT_EXTENSION(MoEngageInApps))
+- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesEnded:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesCancelled:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesMoved:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
 @end
 
 @protocol MoEngageInAppWidgetResizingCallbackListnerDelegate;
@@ -2030,6 +2068,7 @@ SWIFT_CLASS("_TtC14MoEngageInApps34MoEngageInAppTemplateAlignmentUtil")
 
 @interface MoEngageInAppUtils (SWIFT_EXTENSION(MoEngageInApps))
 + (NSString * _Nonnull)getStringRepresentationFor:(MoEngageInAppSDKCampaignType)sdkCampaignType SWIFT_WARN_UNUSED_RESULT;
++ (enum MoEngageNavigationType)mapNavigationTypeFrom:(MoEngageNavActionType)type SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class NSCoder;
@@ -2187,6 +2226,15 @@ SWIFT_CLASS("_TtC14MoEngageInApps32MoEngageInAppWidgetAlignmentUtil")
 /// Whether widget can receive focus.
 @property (nonatomic, readonly) BOOL isFocusable;
 @end
+
+/// Navigation Type
+typedef SWIFT_ENUM(NSInteger, MoEngageNavigationType, open) {
+  MoEngageNavigationTypeNavigateToScreen = 0,
+  MoEngageNavigationTypeDeepLink = 1,
+  MoEngageNavigationTypeRichLanding = 2,
+  MoEngageNavigationTypeExternalBrowser = 3,
+  MoEngageNavigationTypeNone = 4,
+};
 
 
 /// Utility class for NudgePositons

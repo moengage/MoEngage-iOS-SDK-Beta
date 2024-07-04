@@ -37,8 +37,10 @@ public class MoEngageMessageDelegateHandler : MoEngageCore.MoEngageMessagingHand
   @objc public func userNotificationCenterWillPresent(_ notification: UserNotifications.UNNotification?)
   @objc public func userNotificationCenterDidReceive(_ response: UserNotifications.UNNotificationResponse?)
   override public func applicationDidEnterForeground(sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  override public func migrateDataFromPreviousVersions(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   override public func migrateDataFromNoNEncryptionToEncryption(sdkInstance: MoEngageCore.MoEngageSDKInstance, currentSDKInstance: MoEngageCore.MoEngageSDKInstance)
   override public func logout(sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  override public func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc deinit
 }
 public protocol MoEngageNotificationStateProtocol {
