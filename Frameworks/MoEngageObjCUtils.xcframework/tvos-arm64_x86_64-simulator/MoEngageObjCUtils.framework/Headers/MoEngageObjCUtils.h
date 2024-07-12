@@ -1,23 +1,26 @@
 //
-//  MoEngageObjCUtilsTvOS.h
-//  MoEngageObjCUtilsTvOS
+//  MoEngageObjCUtils.h
+//  MoEngageObjCUtils
 //
-//  Created by Rakshitha on 10/02/22.
-//  Copyright © 2022 MoEngage. All rights reserved.
+//  Created by Chengappa C D on 23/09/21.
+//  Copyright © 2021 MoEngage. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#if !defined(__has_include)
+#error Umbrella header not found use "@import" to import module
+#else
 
-//! Project version number for MoEngageObjCUtilsTvOS.
-FOUNDATION_EXPORT double MoEngageObjCUtilsTvOSVersionNumber;
-
-//! Project version string for MoEngageObjCUtilsTvOS.
-FOUNDATION_EXPORT const unsigned char MoEngageObjCUtilsTvOSVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <MoEngageObjCUtilsTvOS/PublicHeader.h>
-
-
-#import <MoEngageObjCUtils/MoEngageAppDelegateSwizzler.h>
-#import <MoEngageObjCUtils/MoEngageAppDelegateProxy.h>
-#import <MoEngageObjCUtils/MoEngageObjCUtils.h>
-#import <MoEngageObjCUtils/MoEngageProxyUtils.h>
+#if __has_include(<MoEngageObjCUtils/MoEngageObjCUtils-umbrella.h>)
+#import <MoEngageObjCUtils/MoEngageObjCUtils-umbrella.h>
+#elif TARGET_OS_IOS && __has_include(<MoEngageObjCUtils/MoEngageObjCUtils-framework-iOS-umbrella.h>)
+#import <MoEngageObjCUtils/MoEngageObjCUtils-framework-iOS-umbrella.h>
+#elif TARGET_OS_TV && __has_include(<MoEngageObjCUtils/MoEngageObjCUtils-framework-tvOS-umbrella.h>)
+#import <MoEngageObjCUtils/MoEngageObjCUtils-framework-tvOS-umbrella.h>
+#elif TARGET_OS_IOS && __has_include(<MoEngageObjCUtils/MoEngageObjCUtils-library-iOS-umbrella>)
+#import <MoEngageObjCUtils/MoEngageObjCUtils-library-iOS-umbrella>
+#elif TARGET_OS_TV && __has_include(<MoEngageObjCUtils/MoEngageObjCUtils-framework-tvOS-umbrella.h>)
+#import <MoEngageObjCUtils/MoEngageObjCUtils-library-tvOS-umbrella.h>
+#else
+#error Umbrella header not found use "@import" to import module
+#endif
+#endif

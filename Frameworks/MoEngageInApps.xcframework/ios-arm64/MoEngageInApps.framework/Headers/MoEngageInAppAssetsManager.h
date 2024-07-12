@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "MoEngageInAppUtils.h"
 
+@class MoEngageSDKInstance;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MoEngageInAppAssetsManager : NSObject

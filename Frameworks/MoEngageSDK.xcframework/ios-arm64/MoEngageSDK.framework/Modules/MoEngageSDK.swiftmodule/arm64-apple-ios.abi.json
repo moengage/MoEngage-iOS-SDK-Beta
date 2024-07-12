@@ -29,6 +29,13 @@
         "moduleName": "MoEngageSDK"
       },
       {
+        "kind": "Import",
+        "name": "MoEngageMessaging",
+        "printedName": "MoEngageMessaging",
+        "declKind": "Import",
+        "moduleName": "MoEngageSDK"
+      },
+      {
         "kind": "TypeDecl",
         "name": "MoEngage",
         "printedName": "MoEngage",
@@ -556,9 +563,9 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/soumya.mahunt\/Documents\/moengage\/MoEngage-iPhone-SDK\/MoEFramework\/MoEngage\/MoEngageSDK\/MoEngage.swift",
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageSDK\/MoEngage.swift",
       "kind": "BooleanLiteral",
-      "offset": 4122,
+      "offset": 4147,
       "length": 5,
       "value": "false"
     }

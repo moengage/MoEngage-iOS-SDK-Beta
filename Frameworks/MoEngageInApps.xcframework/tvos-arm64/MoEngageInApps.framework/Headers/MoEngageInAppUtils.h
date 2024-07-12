@@ -8,9 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <MoEngageObjCUtils/MoEngageObjCUtils.h>
-#import <MoEngageCore/MoEngageCore-Swift.h>
-#import <MoEngageInApps/MoEngageInAppCommonUtils.h>
+#import "MoEngageInAppCommonUtils.h"
 
 @class MoEngageInAppContainer;
 

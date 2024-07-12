@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <MoEngageInApps/MoEngageModelObject.h>
+#import "MoEngageModelObject.h"
 
 @interface MoEngageInAppState : MoEngageModelObject <NSCoding>
 @property(nonatomic, strong) NSString*              campaign_id;

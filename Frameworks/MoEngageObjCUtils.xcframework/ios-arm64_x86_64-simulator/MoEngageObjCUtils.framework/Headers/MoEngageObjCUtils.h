@@ -6,15 +6,21 @@
 //  Copyright © 2021 MoEngage. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#if !defined(__has_include)
+#error Umbrella header not found use "@import" to import module
+#else
 
-//! Project version number for MoEngageObjCUtils.
-FOUNDATION_EXPORT double MoEngageObjCUtilsVersionNumber;
-
-//! Project version string for MoEngageObjCUtils.
-FOUNDATION_EXPORT const unsigned char MoEngageObjCUtilsVersionString[];
-
-#import <MoEngageObjCUtils/MoEngageAppDelegateSwizzler.h>
-#import <MoEngageObjCUtils/MoEngageAppDelegateProxy.h>
-#import <MoEngageObjCUtils/MoEngageProxyUtils.h>
-#import <MoEngageObjCUtils/MoEngageMutableDictionary.h>
+#if __has_include(<MoEngageObjCUtils/MoEngageObjCUtils-umbrella.h>)
+#import <MoEngageObjCUtils/MoEngageObjCUtils-umbrella.h>
+#elif TARGET_OS_IOS && __has_include(<MoEngageObjCUtils/MoEngageObjCUtils-framework-iOS-umbrella.h>)
+#import <MoEngageObjCUtils/MoEngageObjCUtils-framework-iOS-umbrella.h>
+#elif TARGET_OS_TV && __has_include(<MoEngageObjCUtils/MoEngageObjCUtils-framework-tvOS-umbrella.h>)
+#import <MoEngageObjCUtils/MoEngageObjCUtils-framework-tvOS-umbrella.h>
+#elif TARGET_OS_IOS && __has_include(<MoEngageObjCUtils/MoEngageObjCUtils-library-iOS-umbrella>)
+#import <MoEngageObjCUtils/MoEngageObjCUtils-library-iOS-umbrella>
+#elif TARGET_OS_TV && __has_include(<MoEngageObjCUtils/MoEngageObjCUtils-framework-tvOS-umbrella.h>)
+#import <MoEngageObjCUtils/MoEngageObjCUtils-library-tvOS-umbrella.h>
+#else
+#error Umbrella header not found use "@import" to import module
+#endif
+#endif

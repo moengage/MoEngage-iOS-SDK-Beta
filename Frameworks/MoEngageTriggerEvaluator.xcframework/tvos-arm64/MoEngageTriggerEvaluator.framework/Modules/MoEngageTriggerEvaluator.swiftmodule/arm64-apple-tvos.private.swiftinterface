@@ -9,11 +9,6 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-@objc public class MoEngageCampaignPathsHandler : ObjectiveC.NSObject {
-  @objc public init(sdkInstance: MoEngageCore.MoEngageSDKInstance)
-  @objc public func reset()
-  @objc deinit
-}
 @objc @_hasMissingDesignatedInitializers @objcMembers public class MoEngageTriggerEvaluationResult : ObjectiveC.NSObject {
   @objc final public let isSuccess: Swift.Bool
   @objc public var campaignIds: [Swift.String]
@@ -26,9 +21,10 @@ import _SwiftConcurrencyShims
   @objc func didTimeoutSecondaryWihoutPathCompletion(campaignId: Swift.String)
   @objc func pathSatisfiedWhenUserWasOnBckground(campaignId: Swift.String)
 }
-public struct MoEngageTriggerEvaluatorMigrationHandler {
-  public static func migrateDataFromNoNEncryptionToEncryption(sdkInstance: MoEngageCore.MoEngageSDKInstance, currentSDKInstance: MoEngageCore.MoEngageSDKInstance)
-  public static func removeEncryptedFolder(sdkInstance: MoEngageCore.MoEngageSDKInstance)
+@objc public class MoEngageCampaignPathsHandler : ObjectiveC.NSObject {
+  @objc public init(sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  @objc public func reset()
+  @objc deinit
 }
 @objc @objcMembers public class MoEngageTriggerEvaluatorManager : ObjectiveC.NSObject {
   @objc public init(sdkInstance: MoEngageCore.MoEngageSDKInstance, delegate: any MoEngageTriggerEvaluator.MoEngageTriggerEvaluationCallBacksHandler)
@@ -39,4 +35,8 @@ public struct MoEngageTriggerEvaluatorMigrationHandler {
   @objc public func appEnteredForeGround()
   @objc public func reset()
   @objc deinit
+}
+public struct MoEngageTriggerEvaluatorMigrationHandler {
+  public static func migrateDataFromNoNEncryptionToEncryption(sdkInstance: MoEngageCore.MoEngageSDKInstance, currentSDKInstance: MoEngageCore.MoEngageSDKInstance)
+  public static func removeEncryptedFolder(sdkInstance: MoEngageCore.MoEngageSDKInstance)
 }

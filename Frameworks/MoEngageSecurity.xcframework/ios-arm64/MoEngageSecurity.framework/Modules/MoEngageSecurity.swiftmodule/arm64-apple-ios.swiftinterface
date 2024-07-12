@@ -457,6 +457,51 @@ public enum MoEngageAESPadding : MoEngageSecurity.MoEngageAESPaddingProtocol {
     get
   }
 }
+extension MoEngageSecurity.MoEngageCipher {
+  public func encrypt(_ bytes: [Swift.UInt8]) throws -> [Swift.UInt8]
+  public func decrypt(_ bytes: [Swift.UInt8]) throws -> [Swift.UInt8]
+}
+extension MoEngageSecurity.MoEngageAESCryptors {
+  public static func randomIV(_ count: Swift.Int) -> [Swift.UInt8]
+}
+extension MoEngageSecurity.MoEngageAESUpdatable {
+  @inlinable public mutating func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool = false, output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
+        let processed = try update(withBytes: bytes, isLast: isLast)
+        if !processed.isEmpty {
+            output(processed)
+        }
+    }
+  @inlinable public mutating func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool = false) throws -> [Swift.UInt8] {
+        try self.update(withBytes: bytes, isLast: isLast)
+    }
+  @inlinable public mutating func update(withBytes bytes: [Swift.UInt8], isLast: Swift.Bool = false) throws -> [Swift.UInt8] {
+        try self.update(withBytes: MoEngageAESUtils.slice(array: bytes), isLast: isLast)
+    }
+  @inlinable public mutating func update(withBytes bytes: [Swift.UInt8], isLast: Swift.Bool = false, output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
+        try self.update(withBytes: MoEngageAESUtils.slice(array: bytes), isLast: isLast, output: output)
+    }
+  @inlinable public mutating func finish(withBytes bytes: Swift.ArraySlice<Swift.UInt8>) throws -> [Swift.UInt8] {
+        try self.update(withBytes: bytes, isLast: true)
+    }
+  @inlinable public mutating func finish(withBytes bytes: [Swift.UInt8]) throws -> [Swift.UInt8] {
+        try self.finish(withBytes: MoEngageAESUtils.slice(array: bytes))
+    }
+  @inlinable public mutating func finish() throws -> [Swift.UInt8] {
+        try self.update(withBytes: [], isLast: true)
+    }
+  @inlinable public mutating func finish(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
+        let processed = try update(withBytes: bytes, isLast: true)
+        if !processed.isEmpty {
+            output(processed)
+        }
+    }
+  @inlinable public mutating func finish(withBytes bytes: [Swift.UInt8], output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
+        try self.finish(withBytes: MoEngageAESUtils.slice(array: bytes), output: output)
+    }
+  @inlinable public mutating func finish(output: (Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
+        try self.finish(withBytes: [], output: output)
+    }
+}
 public protocol MoEngageAESCryptors : AnyObject {
   func makeEncryptor() throws -> any MoEngageSecurity.MoEngageAESCryptor & MoEngageSecurity.MoEngageAESUpdatable
   func makeDecryptor() throws -> any MoEngageSecurity.MoEngageAESCryptor & MoEngageSecurity.MoEngageAESUpdatable
@@ -506,51 +551,6 @@ public protocol MoEngageAESFinalizingDecryptModeWorker : MoEngageSecurity.MoEnga
   mutating func willDecryptLast(bytes ciphertext: Swift.ArraySlice<Swift.UInt8>) throws -> Swift.ArraySlice<Swift.UInt8>
   mutating func didDecryptLast(bytes plaintext: Swift.ArraySlice<Swift.UInt8>) throws -> Swift.ArraySlice<Swift.UInt8>
   mutating func finalize(decrypt plaintext: Swift.ArraySlice<Swift.UInt8>) throws -> Swift.ArraySlice<Swift.UInt8>
-}
-extension MoEngageSecurity.MoEngageCipher {
-  public func encrypt(_ bytes: [Swift.UInt8]) throws -> [Swift.UInt8]
-  public func decrypt(_ bytes: [Swift.UInt8]) throws -> [Swift.UInt8]
-}
-extension MoEngageSecurity.MoEngageAESCryptors {
-  public static func randomIV(_ count: Swift.Int) -> [Swift.UInt8]
-}
-extension MoEngageSecurity.MoEngageAESUpdatable {
-  @inlinable public mutating func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool = false, output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
-        let processed = try update(withBytes: bytes, isLast: isLast)
-        if !processed.isEmpty {
-            output(processed)
-        }
-    }
-  @inlinable public mutating func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool = false) throws -> [Swift.UInt8] {
-        try self.update(withBytes: bytes, isLast: isLast)
-    }
-  @inlinable public mutating func update(withBytes bytes: [Swift.UInt8], isLast: Swift.Bool = false) throws -> [Swift.UInt8] {
-        try self.update(withBytes: MoEngageAESUtils.slice(array: bytes), isLast: isLast)
-    }
-  @inlinable public mutating func update(withBytes bytes: [Swift.UInt8], isLast: Swift.Bool = false, output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
-        try self.update(withBytes: MoEngageAESUtils.slice(array: bytes), isLast: isLast, output: output)
-    }
-  @inlinable public mutating func finish(withBytes bytes: Swift.ArraySlice<Swift.UInt8>) throws -> [Swift.UInt8] {
-        try self.update(withBytes: bytes, isLast: true)
-    }
-  @inlinable public mutating func finish(withBytes bytes: [Swift.UInt8]) throws -> [Swift.UInt8] {
-        try self.finish(withBytes: MoEngageAESUtils.slice(array: bytes))
-    }
-  @inlinable public mutating func finish() throws -> [Swift.UInt8] {
-        try self.update(withBytes: [], isLast: true)
-    }
-  @inlinable public mutating func finish(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
-        let processed = try update(withBytes: bytes, isLast: true)
-        if !processed.isEmpty {
-            output(processed)
-        }
-    }
-  @inlinable public mutating func finish(withBytes bytes: [Swift.UInt8], output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
-        try self.finish(withBytes: MoEngageAESUtils.slice(array: bytes), output: output)
-    }
-  @inlinable public mutating func finish(output: (Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
-        try self.finish(withBytes: [], output: output)
-    }
 }
 extension Swift.Collection {
   @inlinable internal func batched(by size: Swift.Int) -> MoEngageSecurity.MoEngageAESBatchedCollection<Self> {

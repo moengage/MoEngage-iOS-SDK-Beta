@@ -1,0 +1,75 @@
+{
+  "name": "MoE-iOS-SDK-Beta",
+  "version": "9.17.6",
+  "tagPrefix": "moe-iOS-sdk-",
+  "frameworksDir": "Frameworks",
+  "packages": [
+    {
+      "name": "MoE-Security-Beta",
+      "framework": "MoEngageSecurity",
+      "version": "1.9.6",
+      "tagPrefix": "moe-security-"
+    },
+    {
+      "name": "MoE-Core-Beta",
+      "framework": "MoEngageCore",
+      "version": "9.17.6",
+      "tagPrefix": "moe-core-"
+    },
+    {
+      "name": "MoE-ObjCUtils-Beta",
+      "framework": "MoEngageObjCUtils",
+      "version": "3.17.6",
+      "tagPrefix": "moe-objcutils-"
+    },
+    {
+      "name": "MoE-Analytics-Beta",
+      "framework": "MoEngageAnalytics",
+      "version": "4.17.6",
+      "tagPrefix": "moe-analytics-"
+    },
+    {
+      "name": "MoE-Messaging-Beta",
+      "framework": "MoEngageMessaging",
+      "version": "4.17.6",
+      "tagPrefix": "moe-messaging-"
+    },
+    {
+      "name": "MoE-SDK-Beta",
+      "framework": "MoEngageSDK",
+      "version": "9.17.6",
+      "tagPrefix": "moe-sdk-"
+    },
+    {
+      "name": "MoE-TriggerEvaluator-Beta",
+      "framework": "MoEngageTriggerEvaluator",
+      "version": "1.01.2",
+      "tagPrefix": "moe-triggerEvalvator-"
+    },
+    {
+      "name": "MoE-InApp-Beta",
+      "framework": "MoEngageInApps",
+      "version": "6.00.4",
+      "tagPrefix": "moe-inapp-"
+    },
+    {
+      "name": "MoE-Geofence",
+      "framework": "MoEngageGeofence",
+      "version": "5.16.4",
+      "tagPrefix": "moe-geofence-"
+    },
+    {
+      "name": "MoE-RichNotification",
+      "framework": "MoEngageRichNotification",
+      "version": "7.16.2",
+      "tagPrefix": "moe-richPush-"
+    },
+    {
+      "name": "MoE-RealTimeTrigger",
+      "framework": "MoEngageRealTimeTrigger",
+      "version": "2.16.2",
+      "tagPrefix": "moe-rtt-"
+    }
+  ],
+  "blacklisted": null
+}

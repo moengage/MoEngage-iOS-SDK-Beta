@@ -6,7 +6,7 @@
 //  Copyright © 2019 MoEngage. All rights reserved.
 //
 
-#import <MoEngageInApps/MoEngageModelObject.h>
+#import "MoEngageModelObject.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

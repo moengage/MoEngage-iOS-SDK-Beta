@@ -12,20 +12,6 @@ import UserNotifications
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-@objc public protocol MoEngageMessagingDelegate {
-  @objc optional func notificationRegistered(withDeviceToken deviceToken: Swift.String)
-  @objc optional func notificationReceived(withPushPayload userInfo: [Swift.AnyHashable : Any])
-  @objc optional func notificationClicked(withPushPayload userInfo: [Swift.AnyHashable : Any])
-  @objc optional func notificationClicked(withScreenName screenName: Swift.String?, andKVPairs kvPairs: [Swift.AnyHashable : Any]?)
-  @objc optional func notificationClicked(withScreenName screenName: Swift.String?, kvPairs: [Swift.AnyHashable : Any]?, andPushPayload userInfo: [Swift.AnyHashable : Any])
-}
-@_inheritsConvenienceInitializers @objc public class MoEngageMessagingUtils : ObjectiveC.NSObject {
-  public static func getStatsAttributes(fromPayloadDict payloadDict: [Swift.AnyHashable : Any]) -> [Swift.String : Any]
-  public static func addEntryToInbox(payload: MoEngageMessaging.MoEngagePushPayload, sdkInstance: MoEngageCore.MoEngageSDKInstance)
-  public static func fetchAppIdFromPushPayload(payload: [Swift.AnyHashable : Any]) -> Swift.String?
-  @objc override dynamic public init()
-  @objc deinit
-}
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @available(iOSApplicationExtension, unavailable)
 public class MoEngageMessageDelegateHandler : MoEngageCore.MoEngageMessagingHandler, MoEngageObjCUtils.MoEngageAppDelegateMessagingProxyProtocol, UserNotifications.UNUserNotificationCenterDelegate {
   override public func initializeMessaging(launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]? = nil, sdkInstance: MoEngageCore.MoEngageSDKInstance)
@@ -41,51 +27,6 @@ public class MoEngageMessageDelegateHandler : MoEngageCore.MoEngageMessagingHand
   override public func migrateDataFromNoNEncryptionToEncryption(sdkInstance: MoEngageCore.MoEngageSDKInstance, currentSDKInstance: MoEngageCore.MoEngageSDKInstance)
   override public func logout(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   override public func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
-  @objc deinit
-}
-public protocol MoEngageNotificationStateProtocol {
-  static func notifyReceived(withPushPayload pushPayload: [Swift.AnyHashable : Any])
-  static func notifyClicked(withPushPayload pushPayload: [Swift.AnyHashable : Any])
-}
-public enum MoEngagePushTemplateType {
-  case StylizedBasic
-  case ImageCarousel
-  case Default
-  public static func == (a: MoEngageMessaging.MoEngagePushTemplateType, b: MoEngageMessaging.MoEngagePushTemplateType) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-public class MoEngagePushRichExpandedMode {
-  public var templateType: MoEngageMessaging.MoEngagePushTemplateType?
-  public var autoStart: Swift.Bool
-  public var backgroundColor: UIKit.UIColor
-  public var cards: [MoEngageMessaging.MoEngagePushCard]
-  public init?(_ pushModeDict: [Swift.String : Any]) throws
-  @objc deinit
-}
-public class MoEngagePushCard {
-  public var id: Swift.Int?
-  public var widgets: [MoEngageMessaging.MoEngagePushWidget]
-  public init(_ pushCardDict: [Swift.String : Any]) throws
-  @objc deinit
-}
-public enum MoEngagePushWidgetType {
-  case Text
-  case Button
-  case Image
-  case Unknown
-  public static func == (a: MoEngageMessaging.MoEngagePushWidgetType, b: MoEngageMessaging.MoEngagePushWidgetType) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-public class MoEngagePushWidget {
-  public var type: MoEngageMessaging.MoEngagePushWidgetType?
-  public var content: Swift.String?
-  public init(_ widgetDict: [Swift.String : Any]) throws
   @objc deinit
 }
 public struct MoEngageMessagingConstants {
@@ -167,6 +108,124 @@ public struct MoEngageMessagingConstants {
     }
   }
 }
+@objc public protocol MoEngageMessagingDelegate {
+  @objc optional func notificationRegistered(withDeviceToken deviceToken: Swift.String)
+  @objc optional func notificationReceived(withPushPayload userInfo: [Swift.AnyHashable : Any])
+  @objc optional func notificationClicked(withPushPayload userInfo: [Swift.AnyHashable : Any])
+  @objc optional func notificationClicked(withScreenName screenName: Swift.String?, andKVPairs kvPairs: [Swift.AnyHashable : Any]?)
+  @objc optional func notificationClicked(withScreenName screenName: Swift.String?, kvPairs: [Swift.AnyHashable : Any]?, andPushPayload userInfo: [Swift.AnyHashable : Any])
+}
+@_inheritsConvenienceInitializers @objc public class MoEngageMessagingUtils : ObjectiveC.NSObject {
+  public static func getStatsAttributes(fromPayloadDict payloadDict: [Swift.AnyHashable : Any]) -> [Swift.String : Any]
+  public static func addEntryToInbox(payload: MoEngageMessaging.MoEngagePushPayload, sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  public static func fetchAppIdFromPushPayload(payload: [Swift.AnyHashable : Any]) -> Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol MoEngageNotificationStateProtocol {
+  static func notifyReceived(withPushPayload pushPayload: [Swift.AnyHashable : Any])
+  static func notifyClicked(withPushPayload pushPayload: [Swift.AnyHashable : Any])
+}
+public enum MoEngageActionName {
+  case Navigate
+  case Coupon
+  case Unknown
+  public static func == (a: MoEngageMessaging.MoEngageActionName, b: MoEngageMessaging.MoEngageActionName) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum MoEngageActionType {
+  case RichLanding
+  case DeepLinking
+  case NavigateToScreen
+  case Unknown
+  public static func == (a: MoEngageMessaging.MoEngageActionType, b: MoEngageMessaging.MoEngageActionType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public class MoEngagePushAction {
+  public var actionName: MoEngageMessaging.MoEngageActionName?
+  public var actionType: MoEngageMessaging.MoEngageActionType?
+  public var value: Swift.String?
+  public var kvPairs: [Swift.String : Any]?
+  public init(_ actionDict: [Swift.String : Any]) throws
+  @objc deinit
+}
+public class MoEngagePushCard {
+  public var id: Swift.Int?
+  public var widgets: [MoEngageMessaging.MoEngagePushWidget]
+  public init(_ pushCardDict: [Swift.String : Any]) throws
+  @objc deinit
+}
+public class MoEngagePushPayload {
+  public var pushPayload: [Swift.AnyHashable : Any]
+  public var moengageDict: [Swift.String : Any]
+  public var mediaAttachment: Swift.String?
+  public var mediaType: Swift.String?
+  public var richPush: MoEngageMessaging.MoEngageRichPush?
+  public var appID: Swift.String
+  public var formattedCID: Swift.String
+  public var deeplinkUrl: Swift.String?
+  public var screenName: Swift.String?
+  public var richLandingUrl: Swift.String?
+  public var couponCode: Swift.String?
+  public var inAppV2CID: Swift.String?
+  public var inAppV3Dict: [Swift.String : Any]?
+  public var customKVPair: [Swift.String : Any]?
+  public init(withPushPayload payload: [Swift.AnyHashable : Any]) throws
+  @objc deinit
+}
+public enum MoEngagePushTemplateType {
+  case StylizedBasic
+  case ImageCarousel
+  case Default
+  public static func == (a: MoEngageMessaging.MoEngagePushTemplateType, b: MoEngageMessaging.MoEngagePushTemplateType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public class MoEngagePushRichExpandedMode {
+  public var templateType: MoEngageMessaging.MoEngagePushTemplateType?
+  public var autoStart: Swift.Bool
+  public var backgroundColor: UIKit.UIColor
+  public var cards: [MoEngageMessaging.MoEngagePushCard]
+  public init?(_ pushModeDict: [Swift.String : Any]) throws
+  @objc deinit
+}
+public enum MoEngagePushWidgetType {
+  case Text
+  case Button
+  case Image
+  case Unknown
+  public static func == (a: MoEngageMessaging.MoEngagePushWidgetType, b: MoEngageMessaging.MoEngagePushWidgetType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public class MoEngagePushWidget {
+  public var type: MoEngageMessaging.MoEngagePushWidgetType?
+  public var content: Swift.String?
+  public init(_ widgetDict: [Swift.String : Any]) throws
+  @objc deinit
+}
+public class MoEngageRichPush {
+  public var title: Swift.String?
+  public var subTitle: Swift.String?
+  public var body: Swift.String?
+  public var templateDisplayName: Swift.String?
+  public var category: Swift.String?
+  public var sound: Swift.String?
+  public var expandedMode: MoEngageMessaging.MoEngagePushRichExpandedMode?
+  public var defaultActions: [MoEngageMessaging.MoEngagePushAction]
+  public init(_ richPushDict: [Swift.String : Any]) throws
+  @objc deinit
+}
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MoEngageSDKMessaging : ObjectiveC.NSObject {
   @objc public static let sharedInstance: MoEngageMessaging.MoEngageSDKMessaging
   @available(tvOS, unavailable)
@@ -210,70 +269,11 @@ public struct MoEngageMessagingConstants {
   @objc public func isPushFromMoEngage(withPayload payload: [Swift.AnyHashable : Any]) -> Swift.Bool
   @objc deinit
 }
-public class MoEngageRichPush {
-  public var title: Swift.String?
-  public var subTitle: Swift.String?
-  public var body: Swift.String?
-  public var templateDisplayName: Swift.String?
-  public var category: Swift.String?
-  public var sound: Swift.String?
-  public var expandedMode: MoEngageMessaging.MoEngagePushRichExpandedMode?
-  public var defaultActions: [MoEngageMessaging.MoEngagePushAction]
-  public init(_ richPushDict: [Swift.String : Any]) throws
-  @objc deinit
-}
-public class MoEngagePushPayload {
-  public var pushPayload: [Swift.AnyHashable : Any]
-  public var moengageDict: [Swift.String : Any]
-  public var mediaAttachment: Swift.String?
-  public var mediaType: Swift.String?
-  public var richPush: MoEngageMessaging.MoEngageRichPush?
-  public var appID: Swift.String
-  public var formattedCID: Swift.String
-  public var deeplinkUrl: Swift.String?
-  public var screenName: Swift.String?
-  public var richLandingUrl: Swift.String?
-  public var couponCode: Swift.String?
-  public var inAppV2CID: Swift.String?
-  public var inAppV3Dict: [Swift.String : Any]?
-  public var customKVPair: [Swift.String : Any]?
-  public init(withPushPayload payload: [Swift.AnyHashable : Any]) throws
-  @objc deinit
-}
-public enum MoEngageActionName {
-  case Navigate
-  case Coupon
-  case Unknown
-  public static func == (a: MoEngageMessaging.MoEngageActionName, b: MoEngageMessaging.MoEngageActionName) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-public enum MoEngageActionType {
-  case RichLanding
-  case DeepLinking
-  case NavigateToScreen
-  case Unknown
-  public static func == (a: MoEngageMessaging.MoEngageActionType, b: MoEngageMessaging.MoEngageActionType) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-public class MoEngagePushAction {
-  public var actionName: MoEngageMessaging.MoEngageActionName?
-  public var actionType: MoEngageMessaging.MoEngageActionType?
-  public var value: Swift.String?
-  public var kvPairs: [Swift.String : Any]?
-  public init(_ actionDict: [Swift.String : Any]) throws
-  @objc deinit
-}
-extension MoEngageMessaging.MoEngagePushTemplateType : Swift.Equatable {}
-extension MoEngageMessaging.MoEngagePushTemplateType : Swift.Hashable {}
-extension MoEngageMessaging.MoEngagePushWidgetType : Swift.Equatable {}
-extension MoEngageMessaging.MoEngagePushWidgetType : Swift.Hashable {}
 extension MoEngageMessaging.MoEngageActionName : Swift.Equatable {}
 extension MoEngageMessaging.MoEngageActionName : Swift.Hashable {}
 extension MoEngageMessaging.MoEngageActionType : Swift.Equatable {}
 extension MoEngageMessaging.MoEngageActionType : Swift.Hashable {}
+extension MoEngageMessaging.MoEngagePushTemplateType : Swift.Equatable {}
+extension MoEngageMessaging.MoEngagePushTemplateType : Swift.Hashable {}
+extension MoEngageMessaging.MoEngagePushWidgetType : Swift.Equatable {}
+extension MoEngageMessaging.MoEngagePushWidgetType : Swift.Hashable {}

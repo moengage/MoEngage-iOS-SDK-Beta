@@ -2,61 +2,12 @@
 // swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
 // swift-module-flags: -target arm64-apple-tvos11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name MoEngageSecurity
 import Foundation
+@_exported import MoEngageSecurity
 import Swift
 import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-public protocol MoEngageAESCryptors : AnyObject {
-  func makeEncryptor() throws -> any MoEngageSecurity.MoEngageAESCryptor & MoEngageSecurity.MoEngageAESUpdatable
-  func makeDecryptor() throws -> any MoEngageSecurity.MoEngageAESCryptor & MoEngageSecurity.MoEngageAESUpdatable
-}
-public protocol MoEngageAESCryptor {
-  mutating func seek(to: Swift.Int) throws
-}
-public protocol MoEngageAESUpdatable {
-  mutating func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool) throws -> [Swift.UInt8]
-  mutating func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool, output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws
-}
-public protocol MoEngageAESSeekableModeWorker : MoEngageSecurity.MoEngageAESCipherModeWorker {
-  mutating func seek(to position: Swift.Int) throws
-}
-public protocol MoEngageAESStreamModeWorker : MoEngageSecurity.MoEngageAESCipherModeWorker {
-}
-public protocol MoEngageCipher : AnyObject {
-  var keySize: Swift.Int { get }
-  func encrypt(_ bytes: Swift.ArraySlice<Swift.UInt8>) throws -> [Swift.UInt8]
-  func encrypt(_ bytes: [Swift.UInt8]) throws -> [Swift.UInt8]
-  func decrypt(_ bytes: Swift.ArraySlice<Swift.UInt8>) throws -> [Swift.UInt8]
-  func decrypt(_ bytes: [Swift.UInt8]) throws -> [Swift.UInt8]
-}
-public protocol MoEngageAESPaddingProtocol {
-  func add(to: [Swift.UInt8], blockSize: Swift.Int) -> [Swift.UInt8]
-  func remove(from: [Swift.UInt8], blockSize: Swift.Int?) -> [Swift.UInt8]
-}
-public protocol MoEngageAESCipherModeWorker {
-  var cipherOperation: MoEngageSecurity.MoEngageAESCipherOperationOnBlock { get }
-  var additionalBufferSize: Swift.Int { get }
-  @inlinable mutating func encrypt(block plaintext: Swift.ArraySlice<Swift.UInt8>) -> [Swift.UInt8]
-  @inlinable mutating func decrypt(block ciphertext: Swift.ArraySlice<Swift.UInt8>) -> [Swift.UInt8]
-}
-public protocol MoEngageAESBlockMode {
-  var options: MoEngageSecurity.MoEngageAESBlockModeOption { get }
-  @inlinable func worker(blockSize: Swift.Int, cipherOperation: @escaping MoEngageSecurity.MoEngageAESCipherOperationOnBlock, encryptionOperation: @escaping MoEngageSecurity.MoEngageAESCipherOperationOnBlock) throws -> any MoEngageSecurity.MoEngageAESCipherModeWorker
-  var customBlockSize: Swift.Int? { get }
-}
-public protocol MoEngageAESBlockModeWorker : MoEngageSecurity.MoEngageAESCipherModeWorker {
-  var blockSize: Swift.Int { get }
-}
-public protocol MoEngageAESFinalizingEncryptModeWorker : MoEngageSecurity.MoEngageAESCipherModeWorker {
-  mutating func finalize(encrypt ciphertext: Swift.ArraySlice<Swift.UInt8>) throws -> Swift.ArraySlice<Swift.UInt8>
-}
-public protocol MoEngageAESFinalizingDecryptModeWorker : MoEngageSecurity.MoEngageAESCipherModeWorker {
-  @discardableResult
-  mutating func willDecryptLast(bytes ciphertext: Swift.ArraySlice<Swift.UInt8>) throws -> Swift.ArraySlice<Swift.UInt8>
-  mutating func didDecryptLast(bytes plaintext: Swift.ArraySlice<Swift.UInt8>) throws -> Swift.ArraySlice<Swift.UInt8>
-  mutating func finalize(decrypt plaintext: Swift.ArraySlice<Swift.UInt8>) throws -> Swift.ArraySlice<Swift.UInt8>
-}
 public typealias MoEngageAESCipherOperationOnBlock = (_ block: Swift.ArraySlice<Swift.UInt8>) -> [Swift.UInt8]?
 final public class MoEngageGCM : MoEngageSecurity.MoEngageAESBlockMode {
   public enum Mode {
@@ -506,6 +457,155 @@ public enum MoEngageAESPadding : MoEngageSecurity.MoEngageAESPaddingProtocol {
     get
   }
 }
+extension MoEngageSecurity.MoEngageCipher {
+  public func encrypt(_ bytes: [Swift.UInt8]) throws -> [Swift.UInt8]
+  public func decrypt(_ bytes: [Swift.UInt8]) throws -> [Swift.UInt8]
+}
+extension MoEngageSecurity.MoEngageAESCryptors {
+  public static func randomIV(_ count: Swift.Int) -> [Swift.UInt8]
+}
+extension MoEngageSecurity.MoEngageAESUpdatable {
+  @inlinable public mutating func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool = false, output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
+        let processed = try update(withBytes: bytes, isLast: isLast)
+        if !processed.isEmpty {
+            output(processed)
+        }
+    }
+  @inlinable public mutating func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool = false) throws -> [Swift.UInt8] {
+        try self.update(withBytes: bytes, isLast: isLast)
+    }
+  @inlinable public mutating func update(withBytes bytes: [Swift.UInt8], isLast: Swift.Bool = false) throws -> [Swift.UInt8] {
+        try self.update(withBytes: MoEngageAESUtils.slice(array: bytes), isLast: isLast)
+    }
+  @inlinable public mutating func update(withBytes bytes: [Swift.UInt8], isLast: Swift.Bool = false, output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
+        try self.update(withBytes: MoEngageAESUtils.slice(array: bytes), isLast: isLast, output: output)
+    }
+  @inlinable public mutating func finish(withBytes bytes: Swift.ArraySlice<Swift.UInt8>) throws -> [Swift.UInt8] {
+        try self.update(withBytes: bytes, isLast: true)
+    }
+  @inlinable public mutating func finish(withBytes bytes: [Swift.UInt8]) throws -> [Swift.UInt8] {
+        try self.finish(withBytes: MoEngageAESUtils.slice(array: bytes))
+    }
+  @inlinable public mutating func finish() throws -> [Swift.UInt8] {
+        try self.update(withBytes: [], isLast: true)
+    }
+  @inlinable public mutating func finish(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
+        let processed = try update(withBytes: bytes, isLast: true)
+        if !processed.isEmpty {
+            output(processed)
+        }
+    }
+  @inlinable public mutating func finish(withBytes bytes: [Swift.UInt8], output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
+        try self.finish(withBytes: MoEngageAESUtils.slice(array: bytes), output: output)
+    }
+  @inlinable public mutating func finish(output: (Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
+        try self.finish(withBytes: [], output: output)
+    }
+}
+public protocol MoEngageAESCryptors : AnyObject {
+  func makeEncryptor() throws -> any MoEngageSecurity.MoEngageAESCryptor & MoEngageSecurity.MoEngageAESUpdatable
+  func makeDecryptor() throws -> any MoEngageSecurity.MoEngageAESCryptor & MoEngageSecurity.MoEngageAESUpdatable
+}
+public protocol MoEngageAESCryptor {
+  mutating func seek(to: Swift.Int) throws
+}
+public protocol MoEngageAESUpdatable {
+  mutating func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool) throws -> [Swift.UInt8]
+  mutating func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool, output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws
+}
+public protocol MoEngageAESSeekableModeWorker : MoEngageSecurity.MoEngageAESCipherModeWorker {
+  mutating func seek(to position: Swift.Int) throws
+}
+public protocol MoEngageAESStreamModeWorker : MoEngageSecurity.MoEngageAESCipherModeWorker {
+}
+public protocol MoEngageCipher : AnyObject {
+  var keySize: Swift.Int { get }
+  func encrypt(_ bytes: Swift.ArraySlice<Swift.UInt8>) throws -> [Swift.UInt8]
+  func encrypt(_ bytes: [Swift.UInt8]) throws -> [Swift.UInt8]
+  func decrypt(_ bytes: Swift.ArraySlice<Swift.UInt8>) throws -> [Swift.UInt8]
+  func decrypt(_ bytes: [Swift.UInt8]) throws -> [Swift.UInt8]
+}
+public protocol MoEngageAESPaddingProtocol {
+  func add(to: [Swift.UInt8], blockSize: Swift.Int) -> [Swift.UInt8]
+  func remove(from: [Swift.UInt8], blockSize: Swift.Int?) -> [Swift.UInt8]
+}
+public protocol MoEngageAESCipherModeWorker {
+  var cipherOperation: MoEngageSecurity.MoEngageAESCipherOperationOnBlock { get }
+  var additionalBufferSize: Swift.Int { get }
+  @inlinable mutating func encrypt(block plaintext: Swift.ArraySlice<Swift.UInt8>) -> [Swift.UInt8]
+  @inlinable mutating func decrypt(block ciphertext: Swift.ArraySlice<Swift.UInt8>) -> [Swift.UInt8]
+}
+public protocol MoEngageAESBlockMode {
+  var options: MoEngageSecurity.MoEngageAESBlockModeOption { get }
+  @inlinable func worker(blockSize: Swift.Int, cipherOperation: @escaping MoEngageSecurity.MoEngageAESCipherOperationOnBlock, encryptionOperation: @escaping MoEngageSecurity.MoEngageAESCipherOperationOnBlock) throws -> any MoEngageSecurity.MoEngageAESCipherModeWorker
+  var customBlockSize: Swift.Int? { get }
+}
+public protocol MoEngageAESBlockModeWorker : MoEngageSecurity.MoEngageAESCipherModeWorker {
+  var blockSize: Swift.Int { get }
+}
+public protocol MoEngageAESFinalizingEncryptModeWorker : MoEngageSecurity.MoEngageAESCipherModeWorker {
+  mutating func finalize(encrypt ciphertext: Swift.ArraySlice<Swift.UInt8>) throws -> Swift.ArraySlice<Swift.UInt8>
+}
+public protocol MoEngageAESFinalizingDecryptModeWorker : MoEngageSecurity.MoEngageAESCipherModeWorker {
+  @discardableResult
+  mutating func willDecryptLast(bytes ciphertext: Swift.ArraySlice<Swift.UInt8>) throws -> Swift.ArraySlice<Swift.UInt8>
+  mutating func didDecryptLast(bytes plaintext: Swift.ArraySlice<Swift.UInt8>) throws -> Swift.ArraySlice<Swift.UInt8>
+  mutating func finalize(decrypt plaintext: Swift.ArraySlice<Swift.UInt8>) throws -> Swift.ArraySlice<Swift.UInt8>
+}
+extension Swift.Collection {
+  @inlinable internal func batched(by size: Swift.Int) -> MoEngageSecurity.MoEngageAESBatchedCollection<Self> {
+        MoEngageAESBatchedCollection(base: self, size: size)
+    }
+}
+public struct MoEngageAESBlockModeOption : Swift.OptionSet {
+  public let rawValue: Swift.Int
+  public init(rawValue: Swift.Int)
+  @usableFromInline
+  internal static let initializationVectorRequired: MoEngageSecurity.MoEngageAESBlockModeOption
+  @usableFromInline
+  internal static let paddingRequired: MoEngageSecurity.MoEngageAESBlockModeOption
+  @usableFromInline
+  internal static let useEncryptToDecrypt: MoEngageSecurity.MoEngageAESBlockModeOption
+  public typealias ArrayLiteralElement = MoEngageSecurity.MoEngageAESBlockModeOption
+  public typealias Element = MoEngageSecurity.MoEngageAESBlockModeOption
+  public typealias RawValue = Swift.Int
+}
+@usableFromInline
+internal struct MoEngageAESBatchedCollection<Base> : Swift.Collection where Base : Swift.Collection {
+  @usableFromInline
+  internal init(base: Base, size: Swift.Int)
+  @usableFromInline
+  internal typealias Index = MoEngageSecurity.MoEngageAESBatchedCollectionIndex<Base>
+  @usableFromInline
+  internal var startIndex: MoEngageSecurity.MoEngageAESBatchedCollection<Base>.Index {
+    get
+  }
+  @usableFromInline
+  internal var endIndex: MoEngageSecurity.MoEngageAESBatchedCollection<Base>.Index {
+    get
+  }
+  @usableFromInline
+  internal func index(after idx: MoEngageSecurity.MoEngageAESBatchedCollection<Base>.Index) -> MoEngageSecurity.MoEngageAESBatchedCollection<Base>.Index
+  @usableFromInline
+  internal subscript(idx: MoEngageSecurity.MoEngageAESBatchedCollection<Base>.Index) -> Base.SubSequence {
+    get
+  }
+  @usableFromInline
+  internal typealias Element = Base.SubSequence
+  @usableFromInline
+  internal typealias Indices = Swift.DefaultIndices<MoEngageSecurity.MoEngageAESBatchedCollection<Base>>
+  @usableFromInline
+  internal typealias Iterator = Swift.IndexingIterator<MoEngageSecurity.MoEngageAESBatchedCollection<Base>>
+  @usableFromInline
+  internal typealias SubSequence = Swift.Slice<MoEngageSecurity.MoEngageAESBatchedCollection<Base>>
+}
+@usableFromInline
+internal struct MoEngageAESBatchedCollectionIndex<Base> : Swift.Comparable where Base : Swift.Collection {
+  @usableFromInline
+  internal static func == <Base>(lhs: MoEngageSecurity.MoEngageAESBatchedCollectionIndex<Base>, rhs: MoEngageSecurity.MoEngageAESBatchedCollectionIndex<Base>) -> Swift.Bool where Base : Swift.Collection
+  @usableFromInline
+  internal static func < <Base>(lhs: MoEngageSecurity.MoEngageAESBatchedCollectionIndex<Base>, rhs: MoEngageSecurity.MoEngageAESBatchedCollectionIndex<Base>) -> Swift.Bool where Base : Swift.Collection
+}
 public struct MoEngageAESUtils {
   @inlinable internal static func rotateLeft(_ value: Swift.UInt8, by: Swift.UInt8) -> Swift.UInt8 {
         ((value << by) & 0xff) | (value >> (8 - by))
@@ -574,105 +674,6 @@ public struct MoEngageAESUtils {
 
         return val0 | val1 | val2 | val3
     }
-}
-extension MoEngageSecurity.MoEngageCipher {
-  public func encrypt(_ bytes: [Swift.UInt8]) throws -> [Swift.UInt8]
-  public func decrypt(_ bytes: [Swift.UInt8]) throws -> [Swift.UInt8]
-}
-extension MoEngageSecurity.MoEngageAESCryptors {
-  public static func randomIV(_ count: Swift.Int) -> [Swift.UInt8]
-}
-extension MoEngageSecurity.MoEngageAESUpdatable {
-  @inlinable public mutating func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool = false, output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
-        let processed = try update(withBytes: bytes, isLast: isLast)
-        if !processed.isEmpty {
-            output(processed)
-        }
-    }
-  @inlinable public mutating func update(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, isLast: Swift.Bool = false) throws -> [Swift.UInt8] {
-        try self.update(withBytes: bytes, isLast: isLast)
-    }
-  @inlinable public mutating func update(withBytes bytes: [Swift.UInt8], isLast: Swift.Bool = false) throws -> [Swift.UInt8] {
-        try self.update(withBytes: MoEngageAESUtils.slice(array: bytes), isLast: isLast)
-    }
-  @inlinable public mutating func update(withBytes bytes: [Swift.UInt8], isLast: Swift.Bool = false, output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
-        try self.update(withBytes: MoEngageAESUtils.slice(array: bytes), isLast: isLast, output: output)
-    }
-  @inlinable public mutating func finish(withBytes bytes: Swift.ArraySlice<Swift.UInt8>) throws -> [Swift.UInt8] {
-        try self.update(withBytes: bytes, isLast: true)
-    }
-  @inlinable public mutating func finish(withBytes bytes: [Swift.UInt8]) throws -> [Swift.UInt8] {
-        try self.finish(withBytes: MoEngageAESUtils.slice(array: bytes))
-    }
-  @inlinable public mutating func finish() throws -> [Swift.UInt8] {
-        try self.update(withBytes: [], isLast: true)
-    }
-  @inlinable public mutating func finish(withBytes bytes: Swift.ArraySlice<Swift.UInt8>, output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
-        let processed = try update(withBytes: bytes, isLast: true)
-        if !processed.isEmpty {
-            output(processed)
-        }
-    }
-  @inlinable public mutating func finish(withBytes bytes: [Swift.UInt8], output: (_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
-        try self.finish(withBytes: MoEngageAESUtils.slice(array: bytes), output: output)
-    }
-  @inlinable public mutating func finish(output: (Swift.Array<Swift.UInt8>) -> Swift.Void) throws {
-        try self.finish(withBytes: [], output: output)
-    }
-}
-extension Swift.Collection {
-  @inlinable internal func batched(by size: Swift.Int) -> MoEngageSecurity.MoEngageAESBatchedCollection<Self> {
-        MoEngageAESBatchedCollection(base: self, size: size)
-    }
-}
-public struct MoEngageAESBlockModeOption : Swift.OptionSet {
-  public let rawValue: Swift.Int
-  public init(rawValue: Swift.Int)
-  @usableFromInline
-  internal static let initializationVectorRequired: MoEngageSecurity.MoEngageAESBlockModeOption
-  @usableFromInline
-  internal static let paddingRequired: MoEngageSecurity.MoEngageAESBlockModeOption
-  @usableFromInline
-  internal static let useEncryptToDecrypt: MoEngageSecurity.MoEngageAESBlockModeOption
-  public typealias ArrayLiteralElement = MoEngageSecurity.MoEngageAESBlockModeOption
-  public typealias Element = MoEngageSecurity.MoEngageAESBlockModeOption
-  public typealias RawValue = Swift.Int
-}
-@usableFromInline
-internal struct MoEngageAESBatchedCollection<Base> : Swift.Collection where Base : Swift.Collection {
-  @usableFromInline
-  internal init(base: Base, size: Swift.Int)
-  @usableFromInline
-  internal typealias Index = MoEngageSecurity.MoEngageAESBatchedCollectionIndex<Base>
-  @usableFromInline
-  internal var startIndex: MoEngageSecurity.MoEngageAESBatchedCollection<Base>.Index {
-    get
-  }
-  @usableFromInline
-  internal var endIndex: MoEngageSecurity.MoEngageAESBatchedCollection<Base>.Index {
-    get
-  }
-  @usableFromInline
-  internal func index(after idx: MoEngageSecurity.MoEngageAESBatchedCollection<Base>.Index) -> MoEngageSecurity.MoEngageAESBatchedCollection<Base>.Index
-  @usableFromInline
-  internal subscript(idx: MoEngageSecurity.MoEngageAESBatchedCollection<Base>.Index) -> Base.SubSequence {
-    get
-  }
-  @usableFromInline
-  internal typealias Element = Base.SubSequence
-  @usableFromInline
-  internal typealias Indices = Swift.DefaultIndices<MoEngageSecurity.MoEngageAESBatchedCollection<Base>>
-  @usableFromInline
-  internal typealias Iterator = Swift.IndexingIterator<MoEngageSecurity.MoEngageAESBatchedCollection<Base>>
-  @usableFromInline
-  internal typealias SubSequence = Swift.Slice<MoEngageSecurity.MoEngageAESBatchedCollection<Base>>
-}
-@usableFromInline
-internal struct MoEngageAESBatchedCollectionIndex<Base> : Swift.Comparable where Base : Swift.Collection {
-  @usableFromInline
-  internal static func == <Base>(lhs: MoEngageSecurity.MoEngageAESBatchedCollectionIndex<Base>, rhs: MoEngageSecurity.MoEngageAESBatchedCollectionIndex<Base>) -> Swift.Bool where Base : Swift.Collection
-  @usableFromInline
-  internal static func < <Base>(lhs: MoEngageSecurity.MoEngageAESBatchedCollectionIndex<Base>, rhs: MoEngageSecurity.MoEngageAESBatchedCollectionIndex<Base>) -> Swift.Bool where Base : Swift.Collection
 }
 extension MoEngageSecurity.MoEngageGCM.Mode : Swift.Equatable {}
 extension MoEngageSecurity.MoEngageGCM.Mode : Swift.Hashable {}

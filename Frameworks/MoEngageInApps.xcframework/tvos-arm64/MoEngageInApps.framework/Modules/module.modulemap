@@ -1,7 +1,7 @@
 framework module MoEngageInApps {
-  umbrella header "MoEngageInApps.h"
-  export *
+  umbrella header "MoEngageInApps-framework-tvOS-umbrella.h"
 
+  export *
   module * { export * }
 }
 

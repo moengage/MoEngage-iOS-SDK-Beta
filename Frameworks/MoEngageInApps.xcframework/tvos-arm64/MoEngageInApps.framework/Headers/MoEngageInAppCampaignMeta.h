@@ -6,11 +6,11 @@
 //  Copyright © 2018 MoEngage. All rights reserved.
 //
 
-#import <MoEngageInApps/MoEngageModelObject.h>
-#import <MoEngageInApps/MoEngageInAppDisplay.h>
-#import <MoEngageInApps/MoEngageInAppDeliveryControl.h>
-#import <MoEngageInApps/MoEngageInAppTriggerCondition.h>
-#import <MoEngageInApps/MoEngageInAppCommonUtils.h>
+#import "MoEngageModelObject.h"
+#import "MoEngageInAppDisplay.h"
+#import "MoEngageInAppDeliveryControl.h"
+#import "MoEngageInAppTriggerCondition.h"
+#import "MoEngageInAppCommonUtils.h"
 
 @class MoEngageSDKInstance;
 

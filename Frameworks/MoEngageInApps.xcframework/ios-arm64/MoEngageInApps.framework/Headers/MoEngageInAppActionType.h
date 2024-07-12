@@ -6,7 +6,7 @@
 //  Copyright © 2019 MoEngage. All rights reserved.
 //
 
-#import <MoEngageInApps/MoEngageModelObject.h>
+#import "MoEngageModelObject.h"
 
 /// MoEngageInAppActionType defines the action type performed by the inApp click
 typedef enum MoEngageInAppActionType: NSUInteger {

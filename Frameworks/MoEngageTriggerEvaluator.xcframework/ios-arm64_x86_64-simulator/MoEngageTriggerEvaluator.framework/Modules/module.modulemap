@@ -1,7 +1,7 @@
 framework module MoEngageTriggerEvaluator {
-  umbrella header "MoEngageTriggerEvaluator.h"
-  export *
+  umbrella header "MoEngageTriggerEvaluator-framework-iOS-umbrella.h"
 
+  export *
   module * { export * }
 }
 

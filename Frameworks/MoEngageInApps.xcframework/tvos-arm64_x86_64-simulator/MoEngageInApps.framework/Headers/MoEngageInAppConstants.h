@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <MoEngageObjCUtils/MoEngageObjCUtils.h>
 
 //InApp Version
 extern NSString* const MO_INAPP_VERSION;

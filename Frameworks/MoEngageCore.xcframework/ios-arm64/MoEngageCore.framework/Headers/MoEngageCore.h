@@ -6,17 +6,21 @@
 //  Copyright © 2021 MoEngage. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#if !defined(__has_include)
+#error Umbrella header not found use "@import" to import module
+#else
 
-//! Project version number for MoEngageCore.
-FOUNDATION_EXPORT double MOCoreVersionNumber;
-
-//! Project version string for MoEngageCore.
-FOUNDATION_EXPORT const unsigned char MOCoreVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like
-
-
-
-#import <MoEngageCore/MoEngageInAppDelegate.h>
-#import <MoEngageCore/MoEngageExceptionUtils.h>
+#if __has_include(<MoEngageCore/MoEngageCore-umbrella.h>)
+#import <MoEngageCore/MoEngageCore-umbrella.h>
+#elif TARGET_OS_IOS && __has_include(<MoEngageCore/MoEngageCore-framework-iOS-umbrella.h>)
+#import <MoEngageCore/MoEngageCore-framework-iOS-umbrella.h>
+#elif TARGET_OS_TV && __has_include(<MoEngageCore/MoEngageCore-framework-tvOS-umbrella.h>)
+#import <MoEngageCore/MoEngageCore-framework-tvOS-umbrella.h>
+#elif TARGET_OS_IOS && __has_include(<MoEngageCore/MoEngageCore-library-iOS-umbrella>)
+#import <MoEngageCore/MoEngageCore-library-iOS-umbrella>
+#elif TARGET_OS_TV && __has_include(<MoEngageCore/MoEngageCore-framework-tvOS-umbrella.h>)
+#import <MoEngageCore/MoEngageCore-library-tvOS-umbrella.h>
+#else
+#error Umbrella header not found use "@import" to import module
+#endif
+#endif

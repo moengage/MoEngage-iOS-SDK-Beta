@@ -6,39 +6,21 @@
 //  Copyright © 2021 MoEngage. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#if !defined(__has_include)
+#error Umbrella header not found use "@import" to import module
+#else
 
-//! Project version number for MoEngageInApps.
-FOUNDATION_EXPORT double MoEngageInAppsVersionNumber;
-
-//! Project version string for MoEngageInApps.
-FOUNDATION_EXPORT const unsigned char MoEngageInAppsVersionString[];
-
-
-#import <MoEngageInApps/MoEngageInAppHandler.h>
-#import <MoEngageInApps/MoEngageModelObject.h>
-#import <MoEngageInApps/MoEngageInAppDebuggingService.h>
-#import <MoEngageInApps/MoEngageInAppActionType.h>
-#import <MoEngageInApps/MoEngageInAppCampaignsData.h>
-#import <MoEngageInApps/MoEngageInAppCampaignMeta.h>
-#import <MoEngageInApps/MoEngageInAppDisplay.h>
-#import <MoEngageInApps/MoEngageInAppDeliveryControl.h>
-#import <MoEngageInApps/MoEngageInAppTriggerCondition.h>
-#import <MoEngageInApps/MoEngageInAppState.h>
-#import <MoEngageInApps/MoEngageInAppCommonUtils.h>
-#import <MoEngageInApps/MoEngageInAppStatsTracking.h>
-#import <MoEngageInApps/MoEngageInAppConstants.h>
-#import <MoEngageInApps/MoEngageInAppUtils.h>
-#import <MoEngageInApps/MoEngageInAppWidgetStyle.h>
-#import <MoEngageInApps/MoEngageInAppWidget.h>
-#import <MoEngageInApps/MoEngageInAppContainer.h>
-#import <MoEngageInApps/MoEngageInAppViewPayload.h>
-#import <MoEngageInApps/MoEngageInAppWidgetAction.h>
-#import <MoEngageInApps/MoEngageInAppContainerView.h>
-#import <MoEngageInApps/MoEngageInAppController.h>
-#import <MoEngageInApps/MoEngageInAppHandler.h>
-#import <MoEngageInApps/MoEngageInAppDataManager.h>
-#import <MoEngageInApps/MoEngageInAppAssetsManager.h>
-#import <MoEngageInApps/MoEngageInAppStatsManager.h>
-#import <MoEngageInApps/MoEngageInAppWidgetStyle.h>
-#import <MoEngageInApps/MoEngageInAppViewPayload.h>
+#if __has_include(<MoEngageInApps/MoEngageInApps-umbrella.h>)
+#import <MoEngageInApps/MoEngageInApps-umbrella.h>
+#elif TARGET_OS_IOS && __has_include(<MoEngageInApps/MoEngageInApps-framework-iOS-umbrella.h>)
+#import <MoEngageInApps/MoEngageInApps-framework-iOS-umbrella.h>
+#elif TARGET_OS_TV && __has_include(<MoEngageInApps/MoEngageInApps-framework-tvOS-umbrella.h>)
+#import <MoEngageInApps/MoEngageInApps-framework-tvOS-umbrella.h>
+#elif TARGET_OS_IOS && __has_include(<MoEngageInApps/MoEngageInApps-library-iOS-umbrella>)
+#import <MoEngageInApps/MoEngageInApps-library-iOS-umbrella>
+#elif TARGET_OS_TV && __has_include(<MoEngageInApps/MoEngageInApps-framework-tvOS-umbrella.h>)
+#import <MoEngageInApps/MoEngageInApps-library-tvOS-umbrella.h>
+#else
+#error Umbrella header not found use "@import" to import module
+#endif
+#endif

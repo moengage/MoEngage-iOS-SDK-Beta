@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MoEngageCore/MoEngageCore-Swift.h>
-#import <MoEngageInApps/MoEngageInAppCommonUtils.h>
+#import "MoEngageInAppCommonUtils.h"
 
 @class MoEngageInAppCampaign;
 @class MoEngageInAppSelfHandledCampaign;

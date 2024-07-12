@@ -567,11 +567,10 @@ typedef SWIFT_ENUM(NSInteger, MoEngageDataCenter, open) {
   MoEngageDataCenterData_center_01 = 1,
   MoEngageDataCenterData_center_02 = 2,
   MoEngageDataCenterData_center_03 = 3,
-  MoEngageDataCenterData_center_03_secondary = 4,
-  MoEngageDataCenterData_center_04 = 5,
-  MoEngageDataCenterData_center_05 = 6,
-  MoEngageDataCenterData_center_100 = 7,
-  MoEngageDataCenterData_center_06 = 8,
+  MoEngageDataCenterData_center_04 = 4,
+  MoEngageDataCenterData_center_05 = 5,
+  MoEngageDataCenterData_center_100 = 6,
+  MoEngageDataCenterData_center_06 = 7,
 };
 
 @class NSDateFormatter;
@@ -807,6 +806,19 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageGeof
 /// \param sdkInstance The instance to migrate.
 ///
 - (void)migrateEnvironmentForSDK:(MoEngageSDKInstance * _Nonnull)sdkInstance;
+@end
+
+@class UIImageView;
+
+/// :nodoc:
+SWIFT_PROTOCOL("_TtP12MoEngageCore19MoEngageGifDelegate_")
+@protocol MoEngageGifDelegate
+@optional
+- (void)gifDidStartWithSender:(UIImageView * _Nonnull)sender;
+- (void)gifDidLoopWithSender:(UIImageView * _Nonnull)sender;
+- (void)gifDidStopWithSender:(UIImageView * _Nonnull)sender;
+- (void)gifURLDidFinishWithSender:(UIImageView * _Nonnull)sender;
+- (void)gifURLDidFailWithSender:(UIImageView * _Nonnull)sender url:(NSURL * _Nonnull)url error:(NSError * _Nullable)error;
 @end
 
 
@@ -1674,6 +1686,13 @@ SWIFT_CLASS("_TtC12MoEngageCore30MoEngageUserRegistrationStatus")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+
+
+
+
+
+
 
 
 
@@ -2261,11 +2280,10 @@ typedef SWIFT_ENUM(NSInteger, MoEngageDataCenter, open) {
   MoEngageDataCenterData_center_01 = 1,
   MoEngageDataCenterData_center_02 = 2,
   MoEngageDataCenterData_center_03 = 3,
-  MoEngageDataCenterData_center_03_secondary = 4,
-  MoEngageDataCenterData_center_04 = 5,
-  MoEngageDataCenterData_center_05 = 6,
-  MoEngageDataCenterData_center_100 = 7,
-  MoEngageDataCenterData_center_06 = 8,
+  MoEngageDataCenterData_center_04 = 4,
+  MoEngageDataCenterData_center_05 = 5,
+  MoEngageDataCenterData_center_100 = 6,
+  MoEngageDataCenterData_center_06 = 7,
 };
 
 @class NSDateFormatter;
@@ -2501,6 +2519,19 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MoEngageGeof
 /// \param sdkInstance The instance to migrate.
 ///
 - (void)migrateEnvironmentForSDK:(MoEngageSDKInstance * _Nonnull)sdkInstance;
+@end
+
+@class UIImageView;
+
+/// :nodoc:
+SWIFT_PROTOCOL("_TtP12MoEngageCore19MoEngageGifDelegate_")
+@protocol MoEngageGifDelegate
+@optional
+- (void)gifDidStartWithSender:(UIImageView * _Nonnull)sender;
+- (void)gifDidLoopWithSender:(UIImageView * _Nonnull)sender;
+- (void)gifDidStopWithSender:(UIImageView * _Nonnull)sender;
+- (void)gifURLDidFinishWithSender:(UIImageView * _Nonnull)sender;
+- (void)gifURLDidFailWithSender:(UIImageView * _Nonnull)sender url:(NSURL * _Nonnull)url error:(NSError * _Nullable)error;
 @end
 
 
@@ -3368,6 +3399,13 @@ SWIFT_CLASS("_TtC12MoEngageCore30MoEngageUserRegistrationStatus")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+
+
+
+
+
+
 
 
 

@@ -584,11 +584,10 @@ typedef SWIFT_ENUM(NSInteger, MoEngageDataCenter, open) {
   MoEngageDataCenterData_center_01 = 1,
   MoEngageDataCenterData_center_02 = 2,
   MoEngageDataCenterData_center_03 = 3,
-  MoEngageDataCenterData_center_03_secondary = 4,
-  MoEngageDataCenterData_center_04 = 5,
-  MoEngageDataCenterData_center_05 = 6,
-  MoEngageDataCenterData_center_100 = 7,
-  MoEngageDataCenterData_center_06 = 8,
+  MoEngageDataCenterData_center_04 = 4,
+  MoEngageDataCenterData_center_05 = 5,
+  MoEngageDataCenterData_center_100 = 6,
+  MoEngageDataCenterData_center_06 = 7,
 };
 
 @class NSDateFormatter;
