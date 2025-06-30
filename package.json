@@ -8,67 +8,78 @@
       "name": "MoE-Security-Beta",
       "framework": "MoEngageSecurity",
       "version": "1.9.6",
-      "tagPrefix": "moe-security-"
+      "tagPrefix": "moe-security-",
+      "changelog": "ChangeLogs/MoE-Security-Beta.md"
     },
     {
       "name": "MoE-Core-Beta",
       "framework": "MoEngageCore",
       "version": "9.17.6",
-      "tagPrefix": "moe-core-"
+      "tagPrefix": "moe-core-",
+      "changelog": "ChangeLogs/MoE-Core-Beta.md"
     },
     {
       "name": "MoE-ObjCUtils-Beta",
       "framework": "MoEngageObjCUtils",
       "version": "3.17.6",
-      "tagPrefix": "moe-objcutils-"
+      "tagPrefix": "moe-objcutils-",
+      "changelog": "ChangeLogs/MoE-ObjCUtils-Beta.md"
     },
     {
       "name": "MoE-Analytics-Beta",
       "framework": "MoEngageAnalytics",
       "version": "4.17.6",
-      "tagPrefix": "moe-analytics-"
+      "tagPrefix": "moe-analytics-",
+      "changelog": "ChangeLogs/MoE-Analytics-Beta.md"
     },
     {
       "name": "MoE-Messaging-Beta",
       "framework": "MoEngageMessaging",
       "version": "4.17.6",
-      "tagPrefix": "moe-messaging-"
+      "tagPrefix": "moe-messaging-",
+      "changelog": "ChangeLogs/MoE-Messaging-Beta.md"
     },
     {
       "name": "MoE-SDK-Beta",
       "framework": "MoEngageSDK",
       "version": "9.17.6",
-      "tagPrefix": "moe-sdk-"
+      "tagPrefix": "moe-sdk-",
+      "changelog": "ChangeLogs/MoE-SDK-Beta.md"
     },
     {
       "name": "MoE-TriggerEvaluator-Beta",
       "framework": "MoEngageTriggerEvaluator",
       "version": "1.01.2",
-      "tagPrefix": "moe-triggerEvalvator-"
+      "tagPrefix": "moe-triggerEvalvator-",
+      "changelog": "ChangeLogs/MoE-TriggerEvaluator-Beta.md"
     },
     {
       "name": "MoE-InApp-Beta",
       "framework": "MoEngageInApps",
       "version": "6.00.4",
-      "tagPrefix": "moe-inapp-"
+      "tagPrefix": "moe-inapp-",
+      "changelog": "ChangeLogs/MoE-InApp-Beta.md"
     },
     {
       "name": "MoE-Geofence",
       "framework": "MoEngageGeofence",
       "version": "5.16.4",
-      "tagPrefix": "moe-geofence-"
+      "tagPrefix": "moe-geofence-",
+      "changelog": "ChangeLogs/MoE-Geofence.md"
     },
     {
       "name": "MoE-RichNotification",
       "framework": "MoEngageRichNotification",
       "version": "7.16.2",
-      "tagPrefix": "moe-richPush-"
+      "tagPrefix": "moe-richPush-",
+      "changelog": "ChangeLogs/MoE-RichNotification.md"
     },
     {
       "name": "MoE-RealTimeTrigger",
       "framework": "MoEngageRealTimeTrigger",
       "version": "2.16.2",
-      "tagPrefix": "moe-rtt-"
+      "tagPrefix": "moe-rtt-",
+      "changelog": "ChangeLogs/MoE-RealTimeTrigger.md"
     }
   ],
   "blacklisted": null
