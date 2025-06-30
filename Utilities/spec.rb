@@ -1,6 +1,8 @@
+require 'fileutils'
 require 'json'
+require 'ostruct'
 
-module MoEngageSDK
+module MoEngageSDKBeta
   module Spec
     def define()
       podspec_path = caller.find do |trace|

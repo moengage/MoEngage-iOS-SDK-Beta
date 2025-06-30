@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   require_relative 'Utilities/spec'
-  s.extend MoEngageSDK::Spec
+  s.extend MoEngageSDKBeta::Spec
   s.define
 
   s.summary      = 'MoEngage for iOS'
