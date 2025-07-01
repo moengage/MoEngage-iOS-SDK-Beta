@@ -1,8 +1,8 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
-// swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name MoEngageRealTimeTrigger
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name MoEngageRealTimeTrigger
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import Foundation
-import MoEngageAnalytics
 import MoEngageCore
 import MoEngageMessaging
 @_exported import MoEngageRealTimeTrigger
@@ -14,7 +14,8 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 public typealias CompletionHandler = ((Swift.Bool) -> Swift.Void)?
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class MoEngageRealTimeTriggerDelegateHandler : MoEngageCore.MoEngageRealTimeTriggerDelegate {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class MoEngageRealTimeTriggerDelegateHandler : MoEngageCore.MoEngageRealTimeTriggerDelegate {
+  @objc override public func getInfo(sdkInstance: MoEngageCore.MoEngageSDKInstance) -> MoEngageCore.MoEngageModuleInfo?
   override public func trackEvent(eventName: Swift.String, eventAttribute: [Swift.String : Any], sdkInstance: MoEngageCore.MoEngageSDKInstance)
   override public func logout(sdkInstance: MoEngageCore.MoEngageSDKInstance, onCompleted: @escaping () -> Swift.Void)
   override public func updateModule(sdkInstance: MoEngageCore.MoEngageSDKInstance)
@@ -25,6 +26,7 @@ public typealias CompletionHandler = ((Swift.Bool) -> Swift.Void)?
   override public func migrateDataFromNoNEncryptionToEncryption(sdkInstance: MoEngageCore.MoEngageSDKInstance, currentSDKInstance: MoEngageCore.MoEngageSDKInstance)
   override public func removeEncryptedFolder(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   override public func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  override public func deinitialize(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MoEngageSDKRealTimeTrigger : ObjectiveC.NSObject {

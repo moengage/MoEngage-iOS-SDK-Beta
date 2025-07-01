@@ -12,6 +12,7 @@
 
 @class MoEngageInAppCampaign;
 @class MoEngageInAppSelfHandledCampaign;
+@class MoEngageInAppSelfHandledData;
 @protocol MoEngageInAppNativeDelegate;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -70,6 +71,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param appID MoEngage Account Identifier.
 /// @param completionBlock Completion Block which provides MoEngageInAppSelfHandledCampaign* instance(campaignInfo), incase one is active and satisfies all the rule checks OR else campaignInfo will be nil.
 -(void)getSelfHandledInAppForAppID:(NSString* _Nullable)appID withCompletionBlock:(void(^)(MoEngageInAppSelfHandledCampaign* _Nullable campaignInfo, MoEngageAccountMeta* _Nullable accountMeta)) completionBlock;
+
+-(void)getSelfHandledInAppsForAppID:(NSString* _Nullable)appID withCompletionBlock:(void(^)(MoEngageInAppSelfHandledData* campaignData)) completionBlock;
 
 /// Method to be called if a self-handled InApp is shown inside the app
 /// @param campaignInfo MoEngageInAppSelfHandledCampaign instance with the campaign info.

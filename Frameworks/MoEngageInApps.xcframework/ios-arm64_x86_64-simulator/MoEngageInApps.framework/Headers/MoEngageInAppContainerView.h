@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "MoEngageInAppViewPayload.h"
 #import "MoEngageInAppCommonUtils.h"
+#import <MoEngageCampaignsCore/MoEngageCampaignsCore-Swift.h>
+
 
 @protocol MoEngageInAppWidgetResizingDelegate;
 @protocol MoEngageInAppWidgetResizingCallbackListnerDelegate;

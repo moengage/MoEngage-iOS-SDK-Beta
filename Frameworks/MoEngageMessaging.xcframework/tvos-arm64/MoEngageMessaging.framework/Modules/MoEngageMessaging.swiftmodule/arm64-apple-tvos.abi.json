@@ -1,8 +1,8 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "TopLevel",
-    "printedName": "TopLevel",
+    "name": "MoEngageMessaging",
+    "printedName": "MoEngageMessaging",
     "children": [
       {
         "kind": "Import",
@@ -18,20 +18,6 @@
         "kind": "Import",
         "name": "MoEngageCore",
         "printedName": "MoEngageCore",
-        "declKind": "Import",
-        "moduleName": "MoEngageMessaging"
-      },
-      {
-        "kind": "Import",
-        "name": "MoEngageAnalytics",
-        "printedName": "MoEngageAnalytics",
-        "declKind": "Import",
-        "moduleName": "MoEngageMessaging"
-      },
-      {
-        "kind": "Import",
-        "name": "MoEngageObjCUtils",
-        "printedName": "MoEngageObjCUtils",
         "declKind": "Import",
         "moduleName": "MoEngageMessaging"
       },
@@ -92,59 +78,8 @@
             "overriding": true,
             "declAttributes": [
               "Override",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "userNotificationCenter",
-            "printedName": "userNotificationCenter(_:willPresent:withCompletionHandler:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "UNUserNotificationCenter",
-                "printedName": "UserNotifications.UNUserNotificationCenter",
-                "usr": "c:objc(cs)UNUserNotificationCenter"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "UNNotification",
-                "printedName": "UserNotifications.UNNotification",
-                "usr": "c:objc(cs)UNNotification"
-              },
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(UserNotifications.UNNotificationPresentationOptions) -> ()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "UNNotificationPresentationOptions",
-                    "printedName": "UserNotifications.UNNotificationPresentationOptions",
-                    "usr": "c:@E@UNNotificationPresentationOptions"
-                  }
-                ]
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:17MoEngageMessaging0aB22MessageDelegateHandlerC22userNotificationCenter_11willPresent014withCompletionF0ySo06UNUserhI0C_So14UNNotificationCySo0O19PresentationOptionsVctF",
-            "mangledName": "$s17MoEngageMessaging0aB22MessageDelegateHandlerC22userNotificationCenter_11willPresent014withCompletionF0ySo06UNUserhI0C_So14UNNotificationCySo0O19PresentationOptionsVctF",
-            "moduleName": "MoEngageMessaging",
-            "objc_name": "userNotificationCenter:willPresentNotification:withCompletionHandler:",
-            "declAttributes": [
-              "ObjC",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -174,7 +109,7 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:17MoEngageMessaging0aB22MessageDelegateHandlerC44applicationDidRegisterForRemoteNotifications15withDeviceTokeny10Foundation4DataVSg_tF",
+            "usr": "c:@M@MoEngageMessaging@objc(cs)MoEngageMessageDelegateHandler(im)applicationDidRegisterForRemoteNotificationsWithDeviceToken:",
             "mangledName": "$s17MoEngageMessaging0aB22MessageDelegateHandlerC44applicationDidRegisterForRemoteNotifications15withDeviceTokeny10Foundation4DataVSg_tF",
             "moduleName": "MoEngageMessaging",
             "objc_name": "applicationDidRegisterForRemoteNotificationsWithDeviceToken:",
@@ -210,7 +145,7 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:17MoEngageMessaging0aB22MessageDelegateHandlerC59applicationDidFailToRegisterForRemoteNotificationsWithErroryys0P0_pSgF",
+            "usr": "c:@M@MoEngageMessaging@objc(cs)MoEngageMessageDelegateHandler(im)applicationDidFailToRegisterForRemoteNotificationsWithError:",
             "mangledName": "$s17MoEngageMessaging0aB22MessageDelegateHandlerC59applicationDidFailToRegisterForRemoteNotificationsWithErroryys0P0_pSgF",
             "moduleName": "MoEngageMessaging",
             "objc_name": "applicationDidFailToRegisterForRemoteNotificationsWithError:",
@@ -259,7 +194,7 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:17MoEngageMessaging0aB22MessageDelegateHandlerC39applicationDidReceiveRemoteNotificationyySDys11AnyHashableVypGSgF",
+            "usr": "c:@M@MoEngageMessaging@objc(cs)MoEngageMessageDelegateHandler(im)applicationDidReceiveRemoteNotification:",
             "mangledName": "$s17MoEngageMessaging0aB22MessageDelegateHandlerC39applicationDidReceiveRemoteNotificationyySDys11AnyHashableVypGSgF",
             "moduleName": "MoEngageMessaging",
             "objc_name": "applicationDidReceiveRemoteNotification:",
@@ -295,7 +230,7 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:17MoEngageMessaging0aB22MessageDelegateHandlerC33userNotificationCenterWillPresentyySo14UNNotificationCSgF",
+            "usr": "c:@M@MoEngageMessaging@objc(cs)MoEngageMessageDelegateHandler(im)userNotificationCenterWillPresent:",
             "mangledName": "$s17MoEngageMessaging0aB22MessageDelegateHandlerC33userNotificationCenterWillPresentyySo14UNNotificationCSgF",
             "moduleName": "MoEngageMessaging",
             "objc_name": "userNotificationCenterWillPresent:",
@@ -329,7 +264,94 @@
             "overriding": true,
             "declAttributes": [
               "Override",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "logout",
+            "printedName": "logout(sdkInstance:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MoEngageSDKInstance",
+                "printedName": "MoEngageCore.MoEngageSDKInstance",
+                "usr": "c:@M@MoEngageCore@objc(cs)MoEngageSDKInstance"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17MoEngageMessaging0aB22MessageDelegateHandlerC6logout11sdkInstancey0aB4Core0aB11SDKInstanceC_tF",
+            "mangledName": "$s17MoEngageMessaging0aB22MessageDelegateHandlerC6logout11sdkInstancey0aB4Core0aB11SDKInstanceC_tF",
+            "moduleName": "MoEngageMessaging",
+            "overriding": true,
+            "declAttributes": [
+              "Override",
               "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "migrateEnvironment",
+            "printedName": "migrateEnvironment(forSDK:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MoEngageSDKInstance",
+                "printedName": "MoEngageCore.MoEngageSDKInstance",
+                "usr": "c:@M@MoEngageCore@objc(cs)MoEngageSDKInstance"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17MoEngageMessaging0aB22MessageDelegateHandlerC18migrateEnvironment6forSDKy0aB4Core0aB11SDKInstanceC_tF",
+            "mangledName": "$s17MoEngageMessaging0aB22MessageDelegateHandlerC18migrateEnvironment6forSDKy0aB4Core0aB11SDKInstanceC_tF",
+            "moduleName": "MoEngageMessaging",
+            "overriding": true,
+            "declAttributes": [
+              "Override",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "deinitialize",
+            "printedName": "deinitialize(sdkInstance:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MoEngageSDKInstance",
+                "printedName": "MoEngageCore.MoEngageSDKInstance",
+                "usr": "c:@M@MoEngageCore@objc(cs)MoEngageSDKInstance"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17MoEngageMessaging0aB22MessageDelegateHandlerC12deinitialize11sdkInstancey0aB4Core0aB11SDKInstanceC_tF",
+            "mangledName": "$s17MoEngageMessaging0aB22MessageDelegateHandlerC12deinitialize11sdkInstancey0aB4Core0aB11SDKInstanceC_tF",
+            "moduleName": "MoEngageMessaging",
+            "overriding": true,
+            "declAttributes": [
+              "Override",
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -397,13 +419,19 @@
           },
           {
             "kind": "Function",
-            "name": "logout",
-            "printedName": "logout(sdkInstance:)",
+            "name": "dataTrackingStatusUpdated",
+            "printedName": "dataTrackingStatusUpdated(to:for:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
               },
               {
                 "kind": "TypeNominal",
@@ -413,36 +441,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:17MoEngageMessaging0aB22MessageDelegateHandlerC6logout11sdkInstancey0aB4Core0aB11SDKInstanceC_tF",
-            "mangledName": "$s17MoEngageMessaging0aB22MessageDelegateHandlerC6logout11sdkInstancey0aB4Core0aB11SDKInstanceC_tF",
-            "moduleName": "MoEngageMessaging",
-            "overriding": true,
-            "declAttributes": [
-              "Override",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "migrateEnvironment",
-            "printedName": "migrateEnvironment(forSDK:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "MoEngageSDKInstance",
-                "printedName": "MoEngageCore.MoEngageSDKInstance",
-                "usr": "c:@M@MoEngageCore@objc(cs)MoEngageSDKInstance"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:17MoEngageMessaging0aB22MessageDelegateHandlerC18migrateEnvironment6forSDKy0aB4Core0aB11SDKInstanceC_tF",
-            "mangledName": "$s17MoEngageMessaging0aB22MessageDelegateHandlerC18migrateEnvironment6forSDKy0aB4Core0aB11SDKInstanceC_tF",
+            "usr": "s:17MoEngageMessaging0aB22MessageDelegateHandlerC25dataTrackingStatusUpdated2to3forySb_0aB4Core0aB11SDKInstanceCtF",
+            "mangledName": "$s17MoEngageMessaging0aB22MessageDelegateHandlerC25dataTrackingStatusUpdated2to3forySb_0aB4Core0aB11SDKInstanceCtF",
             "moduleName": "MoEngageMessaging",
             "overriding": true,
             "declAttributes": [
@@ -454,13 +454,14 @@
           }
         ],
         "declKind": "Class",
-        "usr": "s:17MoEngageMessaging0aB22MessageDelegateHandlerC",
+        "usr": "c:@M@MoEngageMessaging@objc(cs)MoEngageMessageDelegateHandler",
         "mangledName": "$s17MoEngageMessaging0aB22MessageDelegateHandlerC",
         "moduleName": "MoEngageMessaging",
         "declAttributes": [
           "AccessControl",
           "Available",
-          "RawDocComment"
+          "RawDocComment",
+          "ObjC"
         ],
         "superclassUsr": "c:@M@MoEngageCore@objc(cs)MoEngageMessagingHandler",
         "hasMissingDesignatedInitializers": true,
@@ -474,8 +475,22 @@
             "kind": "Conformance",
             "name": "MoEngageAppDelegateMessagingProxyProtocol",
             "printedName": "MoEngageAppDelegateMessagingProxyProtocol",
-            "usr": "c:@M@MoEngageObjCUtils@objc(pl)MoEngageAppDelegateMessagingProxyProtocol",
-            "mangledName": "$s17MoEngageObjCUtils0aB33AppDelegateMessagingProxyProtocolP"
+            "usr": "c:@M@MoEngageCore@objc(pl)MoEngageAppDelegateMessagingProxyProtocol",
+            "mangledName": "$s12MoEngageCore0aB33AppDelegateMessagingProxyProtocolP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -527,6 +542,30 @@
             "mangledName": "$ss28CustomDebugStringConvertibleP"
           }
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MoEngageMessaging",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MoEngageMessaging"
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageCore",
+        "printedName": "MoEngageCore",
+        "declKind": "Import",
+        "moduleName": "MoEngageMessaging"
       },
       {
         "kind": "Import",
@@ -743,6 +782,193 @@
             "moduleName": "MoEngageMessaging",
             "declAttributes": [
               "AccessControl"
+            ],
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              }
+            ]
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "EventAttributeNames",
+            "printedName": "EventAttributeNames",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "pushOptInMode",
+                "printedName": "pushOptInMode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:17MoEngageMessaging0abC9ConstantsV19EventAttributeNamesV13pushOptInModeSSvpZ",
+                "mangledName": "$s17MoEngageMessaging0abC9ConstantsV19EventAttributeNamesV13pushOptInModeSSvpZ",
+                "moduleName": "MoEngageMessaging",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:17MoEngageMessaging0abC9ConstantsV19EventAttributeNamesV13pushOptInModeSSvgZ",
+                    "mangledName": "$s17MoEngageMessaging0abC9ConstantsV19EventAttributeNamesV13pushOptInModeSSvgZ",
+                    "moduleName": "MoEngageMessaging",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "groupKey",
+                "printedName": "groupKey",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:17MoEngageMessaging0abC9ConstantsV19EventAttributeNamesV8groupKeySSvpZ",
+                "mangledName": "$s17MoEngageMessaging0abC9ConstantsV19EventAttributeNamesV8groupKeySSvpZ",
+                "moduleName": "MoEngageMessaging",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:17MoEngageMessaging0abC9ConstantsV19EventAttributeNamesV8groupKeySSvgZ",
+                    "mangledName": "$s17MoEngageMessaging0abC9ConstantsV19EventAttributeNamesV8groupKeySSvgZ",
+                    "moduleName": "MoEngageMessaging",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "collapseId",
+                "printedName": "collapseId",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:17MoEngageMessaging0abC9ConstantsV19EventAttributeNamesV10collapseIdSSvpZ",
+                "mangledName": "$s17MoEngageMessaging0abC9ConstantsV19EventAttributeNamesV10collapseIdSSvpZ",
+                "moduleName": "MoEngageMessaging",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:17MoEngageMessaging0abC9ConstantsV19EventAttributeNamesV10collapseIdSSvgZ",
+                    "mangledName": "$s17MoEngageMessaging0abC9ConstantsV19EventAttributeNamesV10collapseIdSSvgZ",
+                    "moduleName": "MoEngageMessaging",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Struct",
+            "usr": "s:17MoEngageMessaging0abC9ConstantsV19EventAttributeNamesV",
+            "mangledName": "$s17MoEngageMessaging0abC9ConstantsV19EventAttributeNamesV",
+            "moduleName": "MoEngageMessaging",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              }
             ]
           },
           {
@@ -884,6 +1110,100 @@
                     "declKind": "Accessor",
                     "usr": "s:17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV8appExtraSSvgZ",
                     "mangledName": "$s17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV8appExtraSSvgZ",
+                    "moduleName": "MoEngageMessaging",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "moeFeatures",
+                "printedName": "moeFeatures",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV11moeFeaturesSSvpZ",
+                "mangledName": "$s17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV11moeFeaturesSSvpZ",
+                "moduleName": "MoEngageMessaging",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV11moeFeaturesSSvgZ",
+                    "mangledName": "$s17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV11moeFeaturesSSvgZ",
+                    "moduleName": "MoEngageMessaging",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "moeCidAttr",
+                "printedName": "moeCidAttr",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV10moeCidAttrSSvpZ",
+                "mangledName": "$s17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV10moeCidAttrSSvpZ",
+                "moduleName": "MoEngageMessaging",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV10moeCidAttrSSvgZ",
+                    "mangledName": "$s17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV10moeCidAttrSSvgZ",
                     "moduleName": "MoEngageMessaging",
                     "static": true,
                     "implicit": true,
@@ -1177,6 +1497,53 @@
                         "accessorKind": "get"
                       }
                     ]
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "threadId",
+                    "printedName": "threadId",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV03ApsG0V8threadIdSSvpZ",
+                    "mangledName": "$s17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV03ApsG0V8threadIdSSvpZ",
+                    "moduleName": "MoEngageMessaging",
+                    "static": true,
+                    "declAttributes": [
+                      "HasInitialValue",
+                      "HasStorage",
+                      "AccessControl"
+                    ],
+                    "isLet": true,
+                    "hasStorage": true,
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV03ApsG0V8threadIdSSvgZ",
+                        "mangledName": "$s17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV03ApsG0V8threadIdSSvgZ",
+                        "moduleName": "MoEngageMessaging",
+                        "static": true,
+                        "implicit": true,
+                        "accessorKind": "get"
+                      }
+                    ]
                   }
                 ],
                 "declKind": "Struct",
@@ -1185,6 +1552,22 @@
                 "moduleName": "MoEngageMessaging",
                 "declAttributes": [
                   "AccessControl"
+                ],
+                "conformances": [
+                  {
+                    "kind": "Conformance",
+                    "name": "Copyable",
+                    "printedName": "Copyable",
+                    "usr": "s:s8CopyableP",
+                    "mangledName": "$ss8CopyableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "Escapable",
+                    "printedName": "Escapable",
+                    "usr": "s:s9EscapableP",
+                    "mangledName": "$ss9EscapableP"
+                  }
                 ]
               },
               {
@@ -1810,6 +2193,22 @@
                 "moduleName": "MoEngageMessaging",
                 "declAttributes": [
                   "AccessControl"
+                ],
+                "conformances": [
+                  {
+                    "kind": "Conformance",
+                    "name": "Copyable",
+                    "printedName": "Copyable",
+                    "usr": "s:s8CopyableP",
+                    "mangledName": "$ss8CopyableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "Escapable",
+                    "printedName": "Escapable",
+                    "usr": "s:s9EscapableP",
+                    "mangledName": "$ss9EscapableP"
+                  }
                 ]
               },
               {
@@ -1965,6 +2364,22 @@
                 "moduleName": "MoEngageMessaging",
                 "declAttributes": [
                   "AccessControl"
+                ],
+                "conformances": [
+                  {
+                    "kind": "Conformance",
+                    "name": "Copyable",
+                    "printedName": "Copyable",
+                    "usr": "s:s8CopyableP",
+                    "mangledName": "$ss8CopyableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "Escapable",
+                    "printedName": "Escapable",
+                    "usr": "s:s9EscapableP",
+                    "mangledName": "$ss9EscapableP"
+                  }
                 ]
               },
               {
@@ -2958,6 +3373,53 @@
                         "accessorKind": "get"
                       }
                     ]
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "collapseId",
+                    "printedName": "collapseId",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV0a8EFeatureG0V10collapseIdSSvpZ",
+                    "mangledName": "$s17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV0a8EFeatureG0V10collapseIdSSvpZ",
+                    "moduleName": "MoEngageMessaging",
+                    "static": true,
+                    "declAttributes": [
+                      "HasInitialValue",
+                      "HasStorage",
+                      "AccessControl"
+                    ],
+                    "isLet": true,
+                    "hasStorage": true,
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV0a8EFeatureG0V10collapseIdSSvgZ",
+                        "mangledName": "$s17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV0a8EFeatureG0V10collapseIdSSvgZ",
+                        "moduleName": "MoEngageMessaging",
+                        "static": true,
+                        "implicit": true,
+                        "accessorKind": "get"
+                      }
+                    ]
                   }
                 ],
                 "declKind": "Struct",
@@ -2966,6 +3428,223 @@
                 "moduleName": "MoEngageMessaging",
                 "declAttributes": [
                   "AccessControl"
+                ],
+                "conformances": [
+                  {
+                    "kind": "Conformance",
+                    "name": "Copyable",
+                    "printedName": "Copyable",
+                    "usr": "s:s8CopyableP",
+                    "mangledName": "$ss8CopyableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "Escapable",
+                    "printedName": "Escapable",
+                    "usr": "s:s9EscapableP",
+                    "mangledName": "$ss9EscapableP"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeDecl",
+                "name": "MoEAccessibilityKeys",
+                "printedName": "MoEAccessibilityKeys",
+                "children": [
+                  {
+                    "kind": "Var",
+                    "name": "label",
+                    "printedName": "label",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV0a14EAccessibilityG0V5labelSSvpZ",
+                    "mangledName": "$s17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV0a14EAccessibilityG0V5labelSSvpZ",
+                    "moduleName": "MoEngageMessaging",
+                    "static": true,
+                    "declAttributes": [
+                      "HasInitialValue",
+                      "HasStorage",
+                      "AccessControl"
+                    ],
+                    "isLet": true,
+                    "hasStorage": true,
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV0a14EAccessibilityG0V5labelSSvgZ",
+                        "mangledName": "$s17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV0a14EAccessibilityG0V5labelSSvgZ",
+                        "moduleName": "MoEngageMessaging",
+                        "static": true,
+                        "implicit": true,
+                        "accessorKind": "get"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "hint",
+                    "printedName": "hint",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV0a14EAccessibilityG0V4hintSSvpZ",
+                    "mangledName": "$s17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV0a14EAccessibilityG0V4hintSSvpZ",
+                    "moduleName": "MoEngageMessaging",
+                    "static": true,
+                    "declAttributes": [
+                      "HasInitialValue",
+                      "HasStorage",
+                      "AccessControl"
+                    ],
+                    "isLet": true,
+                    "hasStorage": true,
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV0a14EAccessibilityG0V4hintSSvgZ",
+                        "mangledName": "$s17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV0a14EAccessibilityG0V4hintSSvgZ",
+                        "moduleName": "MoEngageMessaging",
+                        "static": true,
+                        "implicit": true,
+                        "accessorKind": "get"
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "Struct",
+                "usr": "s:17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV0a14EAccessibilityG0V",
+                "mangledName": "$s17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV0a14EAccessibilityG0V",
+                "moduleName": "MoEngageMessaging",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "conformances": [
+                  {
+                    "kind": "Conformance",
+                    "name": "Copyable",
+                    "printedName": "Copyable",
+                    "usr": "s:s8CopyableP",
+                    "mangledName": "$ss8CopyableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "Escapable",
+                    "printedName": "Escapable",
+                    "usr": "s:s9EscapableP",
+                    "mangledName": "$ss9EscapableP"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeDecl",
+                "name": "MoECampaignAttributesKeys",
+                "printedName": "MoECampaignAttributesKeys",
+                "children": [
+                  {
+                    "kind": "Var",
+                    "name": "sentTime",
+                    "printedName": "sentTime",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV0a19ECampaignAttributesG0V8sentTimeSSvpZ",
+                    "mangledName": "$s17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV0a19ECampaignAttributesG0V8sentTimeSSvpZ",
+                    "moduleName": "MoEngageMessaging",
+                    "static": true,
+                    "declAttributes": [
+                      "HasInitialValue",
+                      "HasStorage",
+                      "AccessControl"
+                    ],
+                    "isLet": true,
+                    "hasStorage": true,
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV0a19ECampaignAttributesG0V8sentTimeSSvgZ",
+                        "mangledName": "$s17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV0a19ECampaignAttributesG0V8sentTimeSSvgZ",
+                        "moduleName": "MoEngageMessaging",
+                        "static": true,
+                        "implicit": true,
+                        "accessorKind": "get"
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "Struct",
+                "usr": "s:17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV0a19ECampaignAttributesG0V",
+                "mangledName": "$s17MoEngageMessaging0abC9ConstantsV15PushPayloadKeysV0a19ECampaignAttributesG0V",
+                "moduleName": "MoEngageMessaging",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "conformances": [
+                  {
+                    "kind": "Conformance",
+                    "name": "Copyable",
+                    "printedName": "Copyable",
+                    "usr": "s:s8CopyableP",
+                    "mangledName": "$ss8CopyableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "Escapable",
+                    "printedName": "Escapable",
+                    "usr": "s:s9EscapableP",
+                    "mangledName": "$ss9EscapableP"
+                  }
                 ]
               },
               {
@@ -3121,6 +3800,22 @@
                 "moduleName": "MoEngageMessaging",
                 "declAttributes": [
                   "AccessControl"
+                ],
+                "conformances": [
+                  {
+                    "kind": "Conformance",
+                    "name": "Copyable",
+                    "printedName": "Copyable",
+                    "usr": "s:s8CopyableP",
+                    "mangledName": "$ss8CopyableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "Escapable",
+                    "printedName": "Escapable",
+                    "usr": "s:s9EscapableP",
+                    "mangledName": "$ss9EscapableP"
+                  }
                 ]
               },
               {
@@ -3276,6 +3971,22 @@
                 "moduleName": "MoEngageMessaging",
                 "declAttributes": [
                   "AccessControl"
+                ],
+                "conformances": [
+                  {
+                    "kind": "Conformance",
+                    "name": "Copyable",
+                    "printedName": "Copyable",
+                    "usr": "s:s8CopyableP",
+                    "mangledName": "$ss8CopyableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "Escapable",
+                    "printedName": "Escapable",
+                    "usr": "s:s9EscapableP",
+                    "mangledName": "$ss9EscapableP"
+                  }
                 ]
               },
               {
@@ -3431,6 +4142,22 @@
                 "moduleName": "MoEngageMessaging",
                 "declAttributes": [
                   "AccessControl"
+                ],
+                "conformances": [
+                  {
+                    "kind": "Conformance",
+                    "name": "Copyable",
+                    "printedName": "Copyable",
+                    "usr": "s:s8CopyableP",
+                    "mangledName": "$ss8CopyableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "Escapable",
+                    "printedName": "Escapable",
+                    "usr": "s:s9EscapableP",
+                    "mangledName": "$ss9EscapableP"
+                  }
                 ]
               }
             ],
@@ -3440,6 +4167,242 @@
             "moduleName": "MoEngageMessaging",
             "declAttributes": [
               "AccessControl"
+            ],
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              }
+            ]
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "PushPermissionFlow",
+            "printedName": "PushPermissionFlow",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "self",
+                "printedName": "self",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(MoEngageMessaging.MoEngageMessagingConstants.PushPermissionFlow.Type) -> MoEngageMessaging.MoEngageMessagingConstants.PushPermissionFlow",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PushPermissionFlow",
+                        "printedName": "MoEngageMessaging.MoEngageMessagingConstants.PushPermissionFlow",
+                        "usr": "s:17MoEngageMessaging0abC9ConstantsV18PushPermissionFlowO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "MoEngageMessaging.MoEngageMessagingConstants.PushPermissionFlow.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PushPermissionFlow",
+                            "printedName": "MoEngageMessaging.MoEngageMessagingConstants.PushPermissionFlow",
+                            "usr": "s:17MoEngageMessaging0abC9ConstantsV18PushPermissionFlowO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:17MoEngageMessaging0abC9ConstantsV18PushPermissionFlowO4selfyA2EmF",
+                "mangledName": "$s17MoEngageMessaging0abC9ConstantsV18PushPermissionFlowO4selfyA2EmF",
+                "moduleName": "MoEngageMessaging",
+                "declAttributes": [
+                  "RawDocComment"
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "twoStepOptIn",
+                "printedName": "twoStepOptIn",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(MoEngageMessaging.MoEngageMessagingConstants.PushPermissionFlow.Type) -> MoEngageMessaging.MoEngageMessagingConstants.PushPermissionFlow",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PushPermissionFlow",
+                        "printedName": "MoEngageMessaging.MoEngageMessagingConstants.PushPermissionFlow",
+                        "usr": "s:17MoEngageMessaging0abC9ConstantsV18PushPermissionFlowO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "MoEngageMessaging.MoEngageMessagingConstants.PushPermissionFlow.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PushPermissionFlow",
+                            "printedName": "MoEngageMessaging.MoEngageMessagingConstants.PushPermissionFlow",
+                            "usr": "s:17MoEngageMessaging0abC9ConstantsV18PushPermissionFlowO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:17MoEngageMessaging0abC9ConstantsV18PushPermissionFlowO12twoStepOptInyA2EmF",
+                "mangledName": "$s17MoEngageMessaging0abC9ConstantsV18PushPermissionFlowO12twoStepOptInyA2EmF",
+                "moduleName": "MoEngageMessaging",
+                "declAttributes": [
+                  "RawDocComment"
+                ]
+              },
+              {
+                "kind": "Constructor",
+                "name": "init",
+                "printedName": "init(rawValue:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "MoEngageMessaging.MoEngageMessagingConstants.PushPermissionFlow?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PushPermissionFlow",
+                        "printedName": "MoEngageMessaging.MoEngageMessagingConstants.PushPermissionFlow",
+                        "usr": "s:17MoEngageMessaging0abC9ConstantsV18PushPermissionFlowO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Constructor",
+                "usr": "s:17MoEngageMessaging0abC9ConstantsV18PushPermissionFlowO8rawValueAESgSS_tcfc",
+                "mangledName": "$s17MoEngageMessaging0abC9ConstantsV18PushPermissionFlowO8rawValueAESgSS_tcfc",
+                "moduleName": "MoEngageMessaging",
+                "implicit": true,
+                "init_kind": "Designated"
+              },
+              {
+                "kind": "Var",
+                "name": "rawValue",
+                "printedName": "rawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:17MoEngageMessaging0abC9ConstantsV18PushPermissionFlowO8rawValueSSvp",
+                "mangledName": "$s17MoEngageMessaging0abC9ConstantsV18PushPermissionFlowO8rawValueSSvp",
+                "moduleName": "MoEngageMessaging",
+                "implicit": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:17MoEngageMessaging0abC9ConstantsV18PushPermissionFlowO8rawValueSSvg",
+                    "mangledName": "$s17MoEngageMessaging0abC9ConstantsV18PushPermissionFlowO8rawValueSSvg",
+                    "moduleName": "MoEngageMessaging",
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:17MoEngageMessaging0abC9ConstantsV18PushPermissionFlowO",
+            "mangledName": "$s17MoEngageMessaging0abC9ConstantsV18PushPermissionFlowO",
+            "moduleName": "MoEngageMessaging",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "enumRawTypeName": "String",
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Equatable",
+                "printedName": "Equatable",
+                "usr": "s:SQ",
+                "mangledName": "$sSQ"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Hashable",
+                "printedName": "Hashable",
+                "usr": "s:SH",
+                "mangledName": "$sSH"
+              },
+              {
+                "kind": "Conformance",
+                "name": "RawRepresentable",
+                "printedName": "RawRepresentable",
+                "children": [
+                  {
+                    "kind": "TypeWitness",
+                    "name": "RawValue",
+                    "printedName": "RawValue",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:SY",
+                "mangledName": "$sSY"
+              }
             ]
           }
         ],
@@ -3450,6 +4413,22 @@
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
         ]
       },
       {
@@ -3495,15 +4474,8 @@
       },
       {
         "kind": "Import",
-        "name": "MoEngageAnalytics",
-        "printedName": "MoEngageAnalytics",
-        "declKind": "Import",
-        "moduleName": "MoEngageMessaging"
-      },
-      {
-        "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
+        "name": "Foundation",
+        "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "MoEngageMessaging",
         "declAttributes": [
@@ -3512,22 +4484,8 @@
       },
       {
         "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "MoEngageMessaging"
-      },
-      {
-        "kind": "Import",
         "name": "MoEngageCore",
         "printedName": "MoEngageCore",
-        "declKind": "Import",
-        "moduleName": "MoEngageMessaging"
-      },
-      {
-        "kind": "Import",
-        "name": "MoEngageAnalytics",
-        "printedName": "MoEngageAnalytics",
         "declKind": "Import",
         "moduleName": "MoEngageMessaging"
       },
@@ -3837,6 +4795,347 @@
           "AccessControl",
           "ObjC",
           "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageCore",
+        "printedName": "MoEngageCore",
+        "declKind": "Import",
+        "moduleName": "MoEngageMessaging",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MoEngageMessagingIntegrator",
+        "printedName": "MoEngageMessagingIntegrator",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "receivedUserNotification",
+            "printedName": "receivedUserNotification(payload:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.AnyHashable : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AnyHashable",
+                    "printedName": "Swift.AnyHashable",
+                    "usr": "s:s11AnyHashableV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17MoEngageMessaging0abC10IntegratorC24receivedUserNotification7payloadySDys11AnyHashableVypG_tKFZ",
+            "mangledName": "$s17MoEngageMessaging0abC10IntegratorC24receivedUserNotification7payloadySDys11AnyHashableVypG_tKFZ",
+            "moduleName": "MoEngageMessaging",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "handleAction",
+            "printedName": "handleAction(withIdentifier:forRemoteNotification:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.AnyHashable : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AnyHashable",
+                    "printedName": "Swift.AnyHashable",
+                    "usr": "s:s11AnyHashableV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17MoEngageMessaging0abC10IntegratorC12handleAction14withIdentifier21forRemoteNotificationSbSS_SDys11AnyHashableVypGtKFZ",
+            "mangledName": "$s17MoEngageMessaging0abC10IntegratorC12handleAction14withIdentifier21forRemoteNotificationSbSS_SDys11AnyHashableVypGtKFZ",
+            "moduleName": "MoEngageMessaging",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "DiscardableResult",
+              "Available",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:17MoEngageMessaging0abC10IntegratorC",
+        "mangledName": "$s17MoEngageMessaging0abC10IntegratorC",
+        "moduleName": "MoEngageMessaging",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MoEngageMessaging",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageCore",
+        "printedName": "MoEngageCore",
+        "declKind": "Import",
+        "moduleName": "MoEngageMessaging"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MoEngageMessagingPermissionHandler",
+        "printedName": "MoEngageMessagingPermissionHandler",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MoEngageMessagingPermissionHandler",
+                "printedName": "MoEngageMessaging.MoEngageMessagingPermissionHandler",
+                "usr": "c:@M@MoEngageMessaging@objc(cs)MoEngageMessagingPermissionHandler"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@MoEngageMessaging@objc(cs)MoEngageMessagingPermissionHandler(cpy)shared",
+            "mangledName": "$s17MoEngageMessaging0abC17PermissionHandlerC6sharedACvpZ",
+            "moduleName": "MoEngageMessaging",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MoEngageMessagingPermissionHandler",
+                    "printedName": "MoEngageMessaging.MoEngageMessagingPermissionHandler",
+                    "usr": "c:@M@MoEngageMessaging@objc(cs)MoEngageMessagingPermissionHandler"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@MoEngageMessaging@objc(cs)MoEngageMessagingPermissionHandler(cm)shared",
+                "mangledName": "$s17MoEngageMessaging0abC17PermissionHandlerC6sharedACvgZ",
+                "moduleName": "MoEngageMessaging",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "isPushOptedIn",
+            "printedName": "isPushOptedIn(forInstance:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MoEngageSDKInstance",
+                "printedName": "MoEngageCore.MoEngageSDKInstance",
+                "usr": "c:@M@MoEngageCore@objc(cs)MoEngageSDKInstance"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@MoEngageMessaging@objc(cs)MoEngageMessagingPermissionHandler(im)isPushOptedInForInstance:",
+            "mangledName": "$s17MoEngageMessaging0abC17PermissionHandlerC13isPushOptedIn11forInstanceSb0aB4Core0aB11SDKInstanceC_tF",
+            "moduleName": "MoEngageMessaging",
+            "objc_name": "isPushOptedInForInstance:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@MoEngageMessaging@objc(cs)MoEngageMessagingPermissionHandler",
+        "mangledName": "$s17MoEngageMessaging0abC17PermissionHandlerC",
+        "moduleName": "MoEngageMessaging",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
         ]
       },
       {
@@ -4008,6 +5307,96 @@
             "funcSelfKind": "NonMutating"
           },
           {
+            "kind": "Function",
+            "name": "checkPushPreferenceAndAuthorizationStatus",
+            "printedName": "checkPushPreferenceAndAuthorizationStatus(for:authorizationStatus:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MoEngageSDKInstance",
+                "printedName": "MoEngageCore.MoEngageSDKInstance",
+                "usr": "c:@M@MoEngageCore@objc(cs)MoEngageSDKInstance"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(UserNotifications.UNAuthorizationStatus, UserNotifications.UNNotificationSetting) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(UserNotifications.UNAuthorizationStatus, UserNotifications.UNNotificationSetting)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UNAuthorizationStatus",
+                        "printedName": "UserNotifications.UNAuthorizationStatus",
+                        "usr": "c:@E@UNAuthorizationStatus"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UNNotificationSetting",
+                        "printedName": "UserNotifications.UNNotificationSetting",
+                        "usr": "c:@E@UNNotificationSetting"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17MoEngageMessaging0abC5UtilsC41checkPushPreferenceAndAuthorizationStatus3for013authorizationJ0y0aB4Core0aB11SDKInstanceC_ySo015UNAuthorizationJ0V_So21UNNotificationSettingVtctFZ",
+            "mangledName": "$s17MoEngageMessaging0abC5UtilsC41checkPushPreferenceAndAuthorizationStatus3for013authorizationJ0y0aB4Core0aB11SDKInstanceC_ySo015UNAuthorizationJ0V_So21UNNotificationSettingVtctFZ",
+            "moduleName": "MoEngageMessaging",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fetchProvisionalStatusString",
+            "printedName": "fetchProvisionalStatusString(authorizationStatus:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UNAuthorizationStatus",
+                "printedName": "UserNotifications.UNAuthorizationStatus",
+                "usr": "c:@E@UNAuthorizationStatus"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17MoEngageMessaging0abC5UtilsC28fetchProvisionalStatusString013authorizationG0SSSo015UNAuthorizationG0V_tFZ",
+            "mangledName": "$s17MoEngageMessaging0abC5UtilsC28fetchProvisionalStatusString013authorizationG0SSSo015UNAuthorizationG0V_tFZ",
+            "moduleName": "MoEngageMessaging",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init()",
@@ -4049,6 +5438,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -4218,6 +5621,312 @@
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MoEngageMessaging",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageCampaignsCore",
+        "printedName": "MoEngageCampaignsCore",
+        "declKind": "Import",
+        "moduleName": "MoEngageMessaging"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MoEngagePushAccessibility",
+        "printedName": "MoEngagePushAccessibility",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "accessibilityUtil",
+            "printedName": "accessibilityUtil",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MoEngageAccessibilityUtilProtocol",
+                "printedName": "any MoEngageCampaignsCore.MoEngageAccessibilityUtilProtocol",
+                "usr": "c:@M@MoEngageCampaignsCore@objc(pl)MoEngageAccessibilityUtilProtocol"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17MoEngageMessaging0aB17PushAccessibilityC17accessibilityUtil0aB13CampaignsCore0abeG8Protocol_pvpZ",
+            "mangledName": "$s17MoEngageMessaging0aB17PushAccessibilityC17accessibilityUtil0aB13CampaignsCore0abeG8Protocol_pvpZ",
+            "moduleName": "MoEngageMessaging",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MoEngageAccessibilityUtilProtocol",
+                    "printedName": "any MoEngageCampaignsCore.MoEngageAccessibilityUtilProtocol",
+                    "usr": "c:@M@MoEngageCampaignsCore@objc(pl)MoEngageAccessibilityUtilProtocol"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17MoEngageMessaging0aB17PushAccessibilityC17accessibilityUtil0aB13CampaignsCore0abeG8Protocol_pvgZ",
+                "mangledName": "$s17MoEngageMessaging0aB17PushAccessibilityC17accessibilityUtil0aB13CampaignsCore0abeG8Protocol_pvgZ",
+                "moduleName": "MoEngageMessaging",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MoEngageAccessibilityUtilProtocol",
+                    "printedName": "any MoEngageCampaignsCore.MoEngageAccessibilityUtilProtocol",
+                    "usr": "c:@M@MoEngageCampaignsCore@objc(pl)MoEngageAccessibilityUtilProtocol"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17MoEngageMessaging0aB17PushAccessibilityC17accessibilityUtil0aB13CampaignsCore0abeG8Protocol_pvsZ",
+                "mangledName": "$s17MoEngageMessaging0aB17PushAccessibilityC17accessibilityUtil0aB13CampaignsCore0abeG8Protocol_pvsZ",
+                "moduleName": "MoEngageMessaging",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17MoEngageMessaging0aB17PushAccessibilityC17accessibilityUtil0aB13CampaignsCore0abeG8Protocol_pvMZ",
+                "mangledName": "$s17MoEngageMessaging0aB17PushAccessibilityC17accessibilityUtil0aB13CampaignsCore0abeG8Protocol_pvMZ",
+                "moduleName": "MoEngageMessaging",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "fetchAccessibilityData",
+            "printedName": "fetchAccessibilityData(for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "MoEngageCampaignsCore.MoEngageAccessibilityData?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MoEngageAccessibilityData",
+                    "printedName": "MoEngageCampaignsCore.MoEngageAccessibilityData",
+                    "usr": "c:@M@MoEngageCampaignsCore@objc(cs)MoEngageAccessibilityData"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MoEngagePushPayload",
+                "printedName": "MoEngageMessaging.MoEngagePushPayload",
+                "usr": "s:17MoEngageMessaging0aB11PushPayloadC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17MoEngageMessaging0aB17PushAccessibilityC05fetchE4Data3for0aB13CampaignsCore0abeG0CSgAA0abD7PayloadC_tFZ",
+            "mangledName": "$s17MoEngageMessaging0aB17PushAccessibilityC05fetchE4Data3for0aB13CampaignsCore0abeG0CSgAA0abD7PayloadC_tFZ",
+            "moduleName": "MoEngageMessaging",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "shouldReplaceBackUpContent",
+            "printedName": "shouldReplaceBackUpContent(for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MoEngagePushPayload",
+                "printedName": "MoEngageMessaging.MoEngagePushPayload",
+                "usr": "s:17MoEngageMessaging0aB11PushPayloadC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17MoEngageMessaging0aB17PushAccessibilityC26shouldReplaceBackUpContent3forSbAA0abD7PayloadC_tFZ",
+            "mangledName": "$s17MoEngageMessaging0aB17PushAccessibilityC26shouldReplaceBackUpContent3forSbAA0abD7PayloadC_tFZ",
+            "moduleName": "MoEngageMessaging",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "shouldConsiderResourceFromRichPush",
+            "printedName": "shouldConsiderResourceFromRichPush(for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MoEngagePushPayload",
+                "printedName": "MoEngageMessaging.MoEngagePushPayload",
+                "usr": "s:17MoEngageMessaging0aB11PushPayloadC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17MoEngageMessaging0aB17PushAccessibilityC030shouldConsiderResourceFromRichD03forSbAA0abD7PayloadC_tFZ",
+            "mangledName": "$s17MoEngageMessaging0aB17PushAccessibilityC030shouldConsiderResourceFromRichD03forSbAA0abD7PayloadC_tFZ",
+            "moduleName": "MoEngageMessaging",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "shouldReplaceBackUpContent",
+            "printedName": "shouldReplaceBackUpContent(for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.AnyHashable : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AnyHashable",
+                    "printedName": "Swift.AnyHashable",
+                    "usr": "s:s11AnyHashableV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17MoEngageMessaging0aB17PushAccessibilityC26shouldReplaceBackUpContent3forSbSDys11AnyHashableVypG_tFZ",
+            "mangledName": "$s17MoEngageMessaging0aB17PushAccessibilityC26shouldReplaceBackUpContent3forSbSDys11AnyHashableVypG_tFZ",
+            "moduleName": "MoEngageMessaging",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:17MoEngageMessaging0aB17PushAccessibilityC",
+        "mangledName": "$s17MoEngageMessaging0aB17PushAccessibilityC",
+        "moduleName": "MoEngageMessaging",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
         ]
       },
       {
@@ -4459,6 +6168,20 @@
           "RawDocComment"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -4734,6 +6457,20 @@
           "RawDocComment"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -5283,6 +7020,171 @@
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageCore",
+        "printedName": "MoEngageCore",
+        "declKind": "Import",
+        "moduleName": "MoEngageMessaging",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MoEngagePushCallBackHandler",
+        "printedName": "MoEngagePushCallBackHandler",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "sharedInstance",
+            "printedName": "sharedInstance",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MoEngagePushCallBackHandler",
+                "printedName": "MoEngageMessaging.MoEngagePushCallBackHandler",
+                "usr": "c:@M@MoEngageMessaging@objc(cs)MoEngagePushCallBackHandler"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17MoEngageMessaging0aB19PushCallBackHandlerC14sharedInstanceACvpZ",
+            "mangledName": "$s17MoEngageMessaging0aB19PushCallBackHandlerC14sharedInstanceACvpZ",
+            "moduleName": "MoEngageMessaging",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MoEngagePushCallBackHandler",
+                    "printedName": "MoEngageMessaging.MoEngagePushCallBackHandler",
+                    "usr": "c:@M@MoEngageMessaging@objc(cs)MoEngagePushCallBackHandler"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17MoEngageMessaging0aB19PushCallBackHandlerC14sharedInstanceACvgZ",
+                "mangledName": "$s17MoEngageMessaging0aB19PushCallBackHandlerC14sharedInstanceACvgZ",
+                "moduleName": "MoEngageMessaging",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@MoEngageMessaging@objc(cs)MoEngagePushCallBackHandler",
+        "mangledName": "$s17MoEngageMessaging0aB19PushCallBackHandlerC",
+        "moduleName": "MoEngageMessaging",
+        "declAttributes": [
+          "AccessControl",
+          "Available",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
         ]
       },
       {
@@ -5583,6 +7485,411 @@
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MoEngageMessaging",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageCore",
+        "printedName": "MoEngageCore",
+        "declKind": "Import",
+        "moduleName": "MoEngageMessaging"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MoEngageMessaging",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageCore",
+        "printedName": "MoEngageCore",
+        "declKind": "Import",
+        "moduleName": "MoEngageMessaging"
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageCore",
+        "printedName": "MoEngageCore",
+        "declKind": "Import",
+        "moduleName": "MoEngageMessaging",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MoEngagePushExtensionData",
+        "printedName": "MoEngagePushExtensionData",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "flushDuration",
+            "printedName": "flushDuration",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DispatchTimeInterval",
+                "printedName": "Dispatch.DispatchTimeInterval",
+                "usr": "s:8Dispatch0A12TimeIntervalO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17MoEngageMessaging0aB17PushExtensionDataV13flushDuration8Dispatch0I12TimeIntervalOvpZ",
+            "mangledName": "$s17MoEngageMessaging0aB17PushExtensionDataV13flushDuration8Dispatch0I12TimeIntervalOvpZ",
+            "moduleName": "MoEngageMessaging",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DispatchTimeInterval",
+                    "printedName": "Dispatch.DispatchTimeInterval",
+                    "usr": "s:8Dispatch0A12TimeIntervalO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17MoEngageMessaging0aB17PushExtensionDataV13flushDuration8Dispatch0I12TimeIntervalOvgZ",
+                "mangledName": "$s17MoEngageMessaging0aB17PushExtensionDataV13flushDuration8Dispatch0I12TimeIntervalOvgZ",
+                "moduleName": "MoEngageMessaging",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DispatchTimeInterval",
+                    "printedName": "Dispatch.DispatchTimeInterval",
+                    "usr": "s:8Dispatch0A12TimeIntervalO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17MoEngageMessaging0aB17PushExtensionDataV13flushDuration8Dispatch0I12TimeIntervalOvsZ",
+                "mangledName": "$s17MoEngageMessaging0aB17PushExtensionDataV13flushDuration8Dispatch0I12TimeIntervalOvsZ",
+                "moduleName": "MoEngageMessaging",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17MoEngageMessaging0aB17PushExtensionDataV13flushDuration8Dispatch0I12TimeIntervalOvMZ",
+                "mangledName": "$s17MoEngageMessaging0aB17PushExtensionDataV13flushDuration8Dispatch0I12TimeIntervalOvMZ",
+                "moduleName": "MoEngageMessaging",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "notifications",
+            "printedName": "notifications",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[[Swift.String : MoEngageCore.AnyMoEngageCodable]]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : MoEngageCore.AnyMoEngageCodable]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AnyMoEngageCodable",
+                        "printedName": "MoEngageCore.AnyMoEngageCodable",
+                        "usr": "s:12MoEngageCore03AnyaB7CodableO"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17MoEngageMessaging0aB17PushExtensionDataV13notificationsSaySDySS0aB4Core03AnyaB7CodableOGGvp",
+            "mangledName": "$s17MoEngageMessaging0aB17PushExtensionDataV13notificationsSaySDySS0aB4Core03AnyaB7CodableOGGvp",
+            "moduleName": "MoEngageMessaging",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[[Swift.String : MoEngageCore.AnyMoEngageCodable]]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.String : MoEngageCore.AnyMoEngageCodable]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "AnyMoEngageCodable",
+                            "printedName": "MoEngageCore.AnyMoEngageCodable",
+                            "usr": "s:12MoEngageCore03AnyaB7CodableO"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17MoEngageMessaging0aB17PushExtensionDataV13notificationsSaySDySS0aB4Core03AnyaB7CodableOGGvg",
+                "mangledName": "$s17MoEngageMessaging0aB17PushExtensionDataV13notificationsSaySDySS0aB4Core03AnyaB7CodableOGGvg",
+                "moduleName": "MoEngageMessaging",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[[Swift.String : MoEngageCore.AnyMoEngageCodable]]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.String : MoEngageCore.AnyMoEngageCodable]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "AnyMoEngageCodable",
+                            "printedName": "MoEngageCore.AnyMoEngageCodable",
+                            "usr": "s:12MoEngageCore03AnyaB7CodableO"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17MoEngageMessaging0aB17PushExtensionDataV13notificationsSaySDySS0aB4Core03AnyaB7CodableOGGvs",
+                "mangledName": "$s17MoEngageMessaging0aB17PushExtensionDataV13notificationsSaySDySS0aB4Core03AnyaB7CodableOGGvs",
+                "moduleName": "MoEngageMessaging",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17MoEngageMessaging0aB17PushExtensionDataV13notificationsSaySDySS0aB4Core03AnyaB7CodableOGGvM",
+                "mangledName": "$s17MoEngageMessaging0aB17PushExtensionDataV13notificationsSaySDySS0aB4Core03AnyaB7CodableOGGvM",
+                "moduleName": "MoEngageMessaging",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MoEngagePushExtensionData",
+                "printedName": "MoEngageMessaging.MoEngagePushExtensionData",
+                "usr": "s:17MoEngageMessaging0aB17PushExtensionDataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:17MoEngageMessaging0aB17PushExtensionDataV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s17MoEngageMessaging0aB17PushExtensionDataV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "MoEngageMessaging",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17MoEngageMessaging0aB17PushExtensionDataV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s17MoEngageMessaging0aB17PushExtensionDataV6encode2toys7Encoder_p_tKF",
+            "moduleName": "MoEngageMessaging",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:17MoEngageMessaging0aB17PushExtensionDataV",
+        "mangledName": "$s17MoEngageMessaging0aB17PushExtensionDataV",
+        "moduleName": "MoEngageMessaging",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MoEngageDataModel",
+            "printedName": "MoEngageDataModel",
+            "usr": "s:12MoEngageCore0aB9DataModelP",
+            "mangledName": "$s12MoEngageCore0aB9DataModelP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
         ]
       },
       {
@@ -5672,52 +7979,8 @@
       },
       {
         "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "MoEngageMessaging",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "MoEngageCore",
-        "printedName": "MoEngageCore",
-        "declKind": "Import",
-        "moduleName": "MoEngageMessaging"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "MoEngageMessaging",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "MoEngageCore",
-        "printedName": "MoEngageCore",
-        "declKind": "Import",
-        "moduleName": "MoEngageMessaging"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "MoEngageMessaging",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "MoEngageCore",
-        "printedName": "MoEngageCore",
+        "name": "MoEngageCampaignsCore",
+        "printedName": "MoEngageCampaignsCore",
         "declKind": "Import",
         "moduleName": "MoEngageMessaging"
       },
@@ -7323,6 +9586,116 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "accessibilityData",
+            "printedName": "accessibilityData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "MoEngageCampaignsCore.MoEngageAccessibilityData?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MoEngageAccessibilityData",
+                    "printedName": "MoEngageCampaignsCore.MoEngageAccessibilityData",
+                    "usr": "c:@M@MoEngageCampaignsCore@objc(cs)MoEngageAccessibilityData"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17MoEngageMessaging0aB11PushPayloadC17accessibilityData0aB13CampaignsCore0ab13AccessibilityG0CSgvp",
+            "mangledName": "$s17MoEngageMessaging0aB11PushPayloadC17accessibilityData0aB13CampaignsCore0ab13AccessibilityG0CSgvp",
+            "moduleName": "MoEngageMessaging",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "MoEngageCampaignsCore.MoEngageAccessibilityData?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MoEngageAccessibilityData",
+                        "printedName": "MoEngageCampaignsCore.MoEngageAccessibilityData",
+                        "usr": "c:@M@MoEngageCampaignsCore@objc(cs)MoEngageAccessibilityData"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17MoEngageMessaging0aB11PushPayloadC17accessibilityData0aB13CampaignsCore0ab13AccessibilityG0CSgvg",
+                "mangledName": "$s17MoEngageMessaging0aB11PushPayloadC17accessibilityData0aB13CampaignsCore0ab13AccessibilityG0CSgvg",
+                "moduleName": "MoEngageMessaging",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "MoEngageCampaignsCore.MoEngageAccessibilityData?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MoEngageAccessibilityData",
+                        "printedName": "MoEngageCampaignsCore.MoEngageAccessibilityData",
+                        "usr": "c:@M@MoEngageCampaignsCore@objc(cs)MoEngageAccessibilityData"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17MoEngageMessaging0aB11PushPayloadC17accessibilityData0aB13CampaignsCore0ab13AccessibilityG0CSgvs",
+                "mangledName": "$s17MoEngageMessaging0aB11PushPayloadC17accessibilityData0aB13CampaignsCore0ab13AccessibilityG0CSgvs",
+                "moduleName": "MoEngageMessaging",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17MoEngageMessaging0aB11PushPayloadC17accessibilityData0aB13CampaignsCore0ab13AccessibilityG0CSgvM",
+                "mangledName": "$s17MoEngageMessaging0aB11PushPayloadC17accessibilityData0aB13CampaignsCore0ab13AccessibilityG0CSgvM",
+                "moduleName": "MoEngageMessaging",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(withPushPayload:)",
@@ -7371,6 +9744,22 @@
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
         ]
       },
       {
@@ -7619,6 +10008,20 @@
           "RawDocComment"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -8089,6 +10492,292 @@
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MoEngageMessaging",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageCore",
+        "printedName": "MoEngageCore",
+        "declKind": "Import",
+        "moduleName": "MoEngageMessaging"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MoEngagePushStateSpecification",
+        "printedName": "MoEngagePushStateSpecification",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "default",
+            "printedName": "default",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MoEngagePushStateSpecification",
+                "printedName": "MoEngageMessaging.MoEngagePushStateSpecification",
+                "usr": "s:17MoEngageMessaging0aB22PushStateSpecificationV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17MoEngageMessaging0aB22PushStateSpecificationV7defaultACvpZ",
+            "mangledName": "$s17MoEngageMessaging0aB22PushStateSpecificationV7defaultACvpZ",
+            "moduleName": "MoEngageMessaging",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MoEngagePushStateSpecification",
+                    "printedName": "MoEngageMessaging.MoEngagePushStateSpecification",
+                    "usr": "s:17MoEngageMessaging0aB22PushStateSpecificationV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17MoEngageMessaging0aB22PushStateSpecificationV7defaultACvgZ",
+                "mangledName": "$s17MoEngageMessaging0aB22PushStateSpecificationV7defaultACvgZ",
+                "moduleName": "MoEngageMessaging",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "inboxExtensionData",
+            "printedName": "inboxExtensionData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MoEngageDefaultValueStorage",
+                "printedName": "MoEngageCore.MoEngageDefaultValueStorage<MoEngageCore.MoEngageAggregatedStorage<MoEngageMessaging.MoEngagePushExtensionData?>, MoEngageMessaging.MoEngagePushExtensionData>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MoEngageAggregatedStorage",
+                    "printedName": "MoEngageCore.MoEngageAggregatedStorage<MoEngageMessaging.MoEngagePushExtensionData?>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "MoEngageMessaging.MoEngagePushExtensionData?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "MoEngagePushExtensionData",
+                            "printedName": "MoEngageMessaging.MoEngagePushExtensionData",
+                            "usr": "s:17MoEngageMessaging0aB17PushExtensionDataV"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "usr": "s:12MoEngageCore0aB17AggregatedStorageV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MoEngagePushExtensionData",
+                    "printedName": "MoEngageMessaging.MoEngagePushExtensionData",
+                    "usr": "s:17MoEngageMessaging0aB17PushExtensionDataV"
+                  }
+                ],
+                "usr": "s:12MoEngageCore0aB19DefaultValueStorageV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17MoEngageMessaging0aB22PushStateSpecificationV18inboxExtensionData0aB4Core0aB19DefaultValueStorageVyAE0ab10AggregatedM0VyAA0abdhI0VSgGAKGvp",
+            "mangledName": "$s17MoEngageMessaging0aB22PushStateSpecificationV18inboxExtensionData0aB4Core0aB19DefaultValueStorageVyAE0ab10AggregatedM0VyAA0abdhI0VSgGAKGvp",
+            "moduleName": "MoEngageMessaging",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MoEngageDefaultValueStorage",
+                    "printedName": "MoEngageCore.MoEngageDefaultValueStorage<MoEngageCore.MoEngageAggregatedStorage<MoEngageMessaging.MoEngagePushExtensionData?>, MoEngageMessaging.MoEngagePushExtensionData>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MoEngageAggregatedStorage",
+                        "printedName": "MoEngageCore.MoEngageAggregatedStorage<MoEngageMessaging.MoEngagePushExtensionData?>",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "MoEngageMessaging.MoEngagePushExtensionData?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "MoEngagePushExtensionData",
+                                "printedName": "MoEngageMessaging.MoEngagePushExtensionData",
+                                "usr": "s:17MoEngageMessaging0aB17PushExtensionDataV"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ],
+                        "usr": "s:12MoEngageCore0aB17AggregatedStorageV"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MoEngagePushExtensionData",
+                        "printedName": "MoEngageMessaging.MoEngagePushExtensionData",
+                        "usr": "s:17MoEngageMessaging0aB17PushExtensionDataV"
+                      }
+                    ],
+                    "usr": "s:12MoEngageCore0aB19DefaultValueStorageV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17MoEngageMessaging0aB22PushStateSpecificationV18inboxExtensionData0aB4Core0aB19DefaultValueStorageVyAE0ab10AggregatedM0VyAA0abdhI0VSgGAKGvg",
+                "mangledName": "$s17MoEngageMessaging0aB22PushStateSpecificationV18inboxExtensionData0aB4Core0aB19DefaultValueStorageVyAE0ab10AggregatedM0VyAA0abdhI0VSgGAKGvg",
+                "moduleName": "MoEngageMessaging",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MoEngageDefaultValueStorage",
+                    "printedName": "MoEngageCore.MoEngageDefaultValueStorage<MoEngageCore.MoEngageAggregatedStorage<MoEngageMessaging.MoEngagePushExtensionData?>, MoEngageMessaging.MoEngagePushExtensionData>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MoEngageAggregatedStorage",
+                        "printedName": "MoEngageCore.MoEngageAggregatedStorage<MoEngageMessaging.MoEngagePushExtensionData?>",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "MoEngageMessaging.MoEngagePushExtensionData?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "MoEngagePushExtensionData",
+                                "printedName": "MoEngageMessaging.MoEngagePushExtensionData",
+                                "usr": "s:17MoEngageMessaging0aB17PushExtensionDataV"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ],
+                        "usr": "s:12MoEngageCore0aB17AggregatedStorageV"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MoEngagePushExtensionData",
+                        "printedName": "MoEngageMessaging.MoEngagePushExtensionData",
+                        "usr": "s:17MoEngageMessaging0aB17PushExtensionDataV"
+                      }
+                    ],
+                    "usr": "s:12MoEngageCore0aB19DefaultValueStorageV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17MoEngageMessaging0aB22PushStateSpecificationV18inboxExtensionData0aB4Core0aB19DefaultValueStorageVyAE0ab10AggregatedM0VyAA0abdhI0VSgGAKGvs",
+                "mangledName": "$s17MoEngageMessaging0aB22PushStateSpecificationV18inboxExtensionData0aB4Core0aB19DefaultValueStorageVyAE0ab10AggregatedM0VyAA0abdhI0VSgGAKGvs",
+                "moduleName": "MoEngageMessaging",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17MoEngageMessaging0aB22PushStateSpecificationV18inboxExtensionData0aB4Core0aB19DefaultValueStorageVyAE0ab10AggregatedM0VyAA0abdhI0VSgGAKGvM",
+                "mangledName": "$s17MoEngageMessaging0aB22PushStateSpecificationV18inboxExtensionData0aB4Core0aB19DefaultValueStorageVyAE0ab10AggregatedM0VyAA0abdhI0VSgGAKGvM",
+                "moduleName": "MoEngageMessaging",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:17MoEngageMessaging0aB22PushStateSpecificationV",
+        "mangledName": "$s17MoEngageMessaging0aB22PushStateSpecificationV",
+        "moduleName": "MoEngageMessaging",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
         ]
       },
       {
@@ -8112,6 +10801,13 @@
         "kind": "Import",
         "name": "MoEngageCore",
         "printedName": "MoEngageCore",
+        "declKind": "Import",
+        "moduleName": "MoEngageMessaging"
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageCampaignsCore",
+        "printedName": "MoEngageCampaignsCore",
         "declKind": "Import",
         "moduleName": "MoEngageMessaging"
       },
@@ -8376,6 +11072,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -8616,6 +11326,116 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "accessibilityData",
+            "printedName": "accessibilityData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "MoEngageCampaignsCore.MoEngageAccessibilityData?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MoEngageAccessibilityData",
+                    "printedName": "MoEngageCampaignsCore.MoEngageAccessibilityData",
+                    "usr": "c:@M@MoEngageCampaignsCore@objc(cs)MoEngageAccessibilityData"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17MoEngageMessaging0aB10PushWidgetC17accessibilityData0aB13CampaignsCore0ab13AccessibilityG0CSgvp",
+            "mangledName": "$s17MoEngageMessaging0aB10PushWidgetC17accessibilityData0aB13CampaignsCore0ab13AccessibilityG0CSgvp",
+            "moduleName": "MoEngageMessaging",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "MoEngageCampaignsCore.MoEngageAccessibilityData?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MoEngageAccessibilityData",
+                        "printedName": "MoEngageCampaignsCore.MoEngageAccessibilityData",
+                        "usr": "c:@M@MoEngageCampaignsCore@objc(cs)MoEngageAccessibilityData"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17MoEngageMessaging0aB10PushWidgetC17accessibilityData0aB13CampaignsCore0ab13AccessibilityG0CSgvg",
+                "mangledName": "$s17MoEngageMessaging0aB10PushWidgetC17accessibilityData0aB13CampaignsCore0ab13AccessibilityG0CSgvg",
+                "moduleName": "MoEngageMessaging",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "MoEngageCampaignsCore.MoEngageAccessibilityData?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MoEngageAccessibilityData",
+                        "printedName": "MoEngageCampaignsCore.MoEngageAccessibilityData",
+                        "usr": "c:@M@MoEngageCampaignsCore@objc(cs)MoEngageAccessibilityData"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17MoEngageMessaging0aB10PushWidgetC17accessibilityData0aB13CampaignsCore0ab13AccessibilityG0CSgvs",
+                "mangledName": "$s17MoEngageMessaging0aB10PushWidgetC17accessibilityData0aB13CampaignsCore0ab13AccessibilityG0CSgvs",
+                "moduleName": "MoEngageMessaging",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17MoEngageMessaging0aB10PushWidgetC17accessibilityData0aB13CampaignsCore0ab13AccessibilityG0CSgvM",
+                "mangledName": "$s17MoEngageMessaging0aB10PushWidgetC17accessibilityData0aB13CampaignsCore0ab13AccessibilityG0CSgvM",
+                "moduleName": "MoEngageMessaging",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(_:)",
@@ -8664,6 +11484,22 @@
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
         ]
       },
       {
@@ -9618,6 +12454,22 @@
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
         ]
       },
       {
@@ -9648,20 +12500,6 @@
         "kind": "Import",
         "name": "MoEngageCore",
         "printedName": "MoEngageCore",
-        "declKind": "Import",
-        "moduleName": "MoEngageMessaging"
-      },
-      {
-        "kind": "Import",
-        "name": "MoEngageAnalytics",
-        "printedName": "MoEngageAnalytics",
-        "declKind": "Import",
-        "moduleName": "MoEngageMessaging"
-      },
-      {
-        "kind": "Import",
-        "name": "MoEngageObjCUtils",
-        "printedName": "MoEngageObjCUtils",
         "declKind": "Import",
         "moduleName": "MoEngageMessaging"
       },
@@ -9723,6 +12561,29 @@
                 "accessorKind": "get"
               }
             ]
+          },
+          {
+            "kind": "Function",
+            "name": "navigateToPushSettings",
+            "printedName": "navigateToPushSettings()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@MoEngageMessaging@objc(cs)MoEngageSDKMessaging(im)navigateToPushSettings",
+            "mangledName": "$s17MoEngageMessaging0aB12SDKMessagingC22navigateToPushSettingsyyF",
+            "moduleName": "MoEngageMessaging",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "Available",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -9741,6 +12602,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -9797,506 +12672,702 @@
   },
   "ConstValues": [
     {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingCommonHandler.swift",
+      "kind": "BooleanLiteral",
+      "offset": 426,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "IntegerLiteral",
+      "offset": 292,
+      "length": 2,
+      "value": "24"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "IntegerLiteral",
+      "offset": 297,
+      "length": 2,
+      "value": "60"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "IntegerLiteral",
+      "offset": 302,
+      "length": 2,
+      "value": "60"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "IntegerLiteral",
+      "offset": 364,
+      "length": 2,
+      "value": "24"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "IntegerLiteral",
+      "offset": 369,
+      "length": 2,
+      "value": "60"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "IntegerLiteral",
+      "offset": 374,
+      "length": 2,
+      "value": "60"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "IntegerLiteral",
+      "offset": 421,
+      "length": 1,
+      "value": "1"
+    },
+    {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 319,
+      "offset": 506,
       "length": 25,
       "value": "\"tracked_push_preference\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 391,
+      "offset": 585,
       "length": 29,
       "value": "\"categories_sent_app_version\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 500,
-      "length": 17,
-      "value": "\"PUSH_PREFERENCE\""
+      "offset": 668,
+      "length": 25,
+      "value": "\"notification_categories\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 617,
+      "offset": 789,
       "length": 32,
       "value": "\"NOTIFICATION_DISMISSED_IOS_MOE\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 707,
+      "offset": 879,
       "length": 24,
       "value": "\"MOE_NOTIFICATION_SHOWN\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 789,
+      "offset": 961,
       "length": 29,
       "value": "\"DT_CAMPAIGN_SCHEDULE_FAILED\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 876,
+      "offset": 1048,
       "length": 23,
       "value": "\"DT_CAMPAIGN_SCHEDULED\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 957,
+      "offset": 1129,
       "length": 26,
       "value": "\"NOTIFICATION_OFFLINE_MOE\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 1070,
-      "length": 24,
-      "value": "\"push_preference_status\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 1137,
+      "offset": 1264,
       "length": 24,
       "value": "\"apns_action_identifier\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 1204,
+      "offset": 1350,
       "length": 15,
       "value": "\"template_name\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 1330,
+      "offset": 1427,
+      "length": 8,
+      "value": "\"source\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1497,
+      "length": 6,
+      "value": "\"flow\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1565,
+      "length": 13,
+      "value": "\"action_type\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1640,
+      "length": 15,
+      "value": "\"request_count\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1717,
+      "length": 12,
+      "value": "\"os_version\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1791,
+      "length": 18,
+      "value": "\"push_opt_in_mode\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1871,
+      "length": 11,
+      "value": "\"group_key\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1944,
+      "length": 14,
+      "value": "\"collapse_key\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2036,
+      "length": 12,
+      "value": "\"authorized\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2082,
+      "length": 13,
+      "value": "\"provisional\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2202,
       "length": 22,
       "value": "\"MOE_DISMISS_CATEGORY\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 1391,
+      "offset": 2263,
       "length": 19,
       "value": "\"MOE_PUSH_TEMPLATE\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 1488,
+      "offset": 2352,
       "length": 20,
       "value": "\"MOE_DISMISS_ACTION\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 1603,
+      "offset": 2466,
       "length": 5,
       "value": "\"aps\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 1646,
+      "offset": 2512,
       "length": 10,
       "value": "\"moengage\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 1694,
+      "offset": 2563,
       "length": 11,
       "value": "\"app_extra\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 1796,
-      "length": 7,
-      "value": "\"alert\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 1853,
-      "length": 7,
-      "value": "\"title\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 1910,
-      "length": 10,
-      "value": "\"subtitle\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 1970,
-      "length": 6,
-      "value": "\"body\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 2026,
-      "length": 7,
-      "value": "\"sound\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 2083,
-      "length": 10,
-      "value": "\"category\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 2195,
-      "length": 12,
-      "value": "\"silentPush\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 2253,
-      "length": 5,
-      "value": "\"cid\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 2304,
-      "length": 8,
-      "value": "\"app_id\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 2358,
-      "length": 8,
-      "value": "\"webUrl\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 2412,
-      "length": 12,
-      "value": "\"couponCode\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 2470,
-      "length": 14,
-      "value": "\"inbox_expiry\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 2530,
-      "length": 11,
-      "value": "\"moe_inapp\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 2587,
-      "length": 15,
-      "value": "\"moe_inapp_cid\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 2648,
-      "length": 12,
-      "value": "\"media-type\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 2709,
-      "length": 18,
-      "value": "\"media-attachment\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 2787,
-      "length": 8,
-      "value": "\"isRead\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 2842,
-      "length": 20,
-      "value": "\"received_epoch_val\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 2909,
-      "length": 19,
-      "value": "\"clicked_epoch_val\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 3034,
-      "length": 14,
-      "value": "\"moe_deeplink\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 3098,
-      "length": 12,
-      "value": "\"screenName\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 3160,
-      "length": 12,
-      "value": "\"screenData\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 3280,
-      "length": 4,
-      "value": "\"id\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 3334,
-      "length": 9,
-      "value": "\"actions\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 3393,
-      "length": 9,
-      "value": "\"widgets\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 3452,
-      "length": 13,
-      "value": "\"displayName\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 3515,
-      "length": 16,
-      "value": "\"defaultActions\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 3581,
-      "length": 6,
-      "value": "\"name\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 3637,
-      "length": 7,
-      "value": "\"value\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 3694,
-      "length": 9,
-      "value": "\"kvPairs\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 3753,
-      "length": 9,
-      "value": "\"content\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 3812,
-      "length": 15,
-      "value": "\"stylizedBasic\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 3877,
-      "length": 15,
-      "value": "\"imageCarousel\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 3942,
+      "offset": 2615,
       "length": 13,
       "value": "\"moeFeatures\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4005,
-      "length": 10,
-      "value": "\"richPush\""
+      "offset": 2669,
+      "length": 14,
+      "value": "\"moe_cid_attr\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4065,
-      "length": 10,
-      "value": "\"navigate\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 4125,
-      "length": 8,
-      "value": "\"coupon\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 4183,
-      "length": 10,
-      "value": "\"expanded\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 4243,
-      "length": 11,
-      "value": "\"autoStart\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 4304,
+      "offset": 2766,
       "length": 7,
-      "value": "\"cards\""
+      "value": "\"alert\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4361,
+      "offset": 2823,
+      "length": 7,
+      "value": "\"title\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2880,
+      "length": 10,
+      "value": "\"subtitle\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2940,
       "length": 6,
-      "value": "\"type\""
+      "value": "\"body\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4417,
-      "length": 7,
-      "value": "\"style\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 4474,
-      "length": 9,
-      "value": "\"bgColor\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 4588,
-      "length": 5,
-      "value": "\"ios\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 4643,
-      "length": 10,
-      "value": "\"category\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 4703,
+      "offset": 2996,
       "length": 7,
       "value": "\"sound\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4813,
+      "offset": 3053,
       "length": 10,
-      "value": "\"deepLink\""
+      "value": "\"category\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4873,
-      "length": 13,
-      "value": "\"richLanding\""
+      "offset": 3113,
+      "length": 11,
+      "value": "\"thread-id\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 4936,
+      "offset": 3218,
+      "length": 12,
+      "value": "\"silentPush\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 3276,
+      "length": 5,
+      "value": "\"cid\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 3327,
+      "length": 8,
+      "value": "\"app_id\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 3381,
+      "length": 8,
+      "value": "\"webUrl\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 3435,
+      "length": 12,
+      "value": "\"couponCode\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 3493,
+      "length": 14,
+      "value": "\"inbox_expiry\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 3553,
+      "length": 11,
+      "value": "\"moe_inapp\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 3610,
+      "length": 15,
+      "value": "\"moe_inapp_cid\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 3671,
+      "length": 12,
+      "value": "\"media-type\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 3732,
+      "length": 18,
+      "value": "\"media-attachment\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 3798,
+      "length": 8,
+      "value": "\"isRead\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 3853,
+      "length": 20,
+      "value": "\"received_epoch_val\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 3920,
+      "length": 19,
+      "value": "\"clicked_epoch_val\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 4037,
+      "length": 14,
+      "value": "\"moe_deeplink\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 4101,
       "length": 12,
       "value": "\"screenName\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5068,
+      "offset": 4163,
+      "length": 12,
+      "value": "\"screenData\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 4275,
+      "length": 4,
+      "value": "\"id\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 4329,
+      "length": 9,
+      "value": "\"actions\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 4388,
+      "length": 9,
+      "value": "\"widgets\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 4447,
+      "length": 13,
+      "value": "\"displayName\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 4510,
+      "length": 16,
+      "value": "\"defaultActions\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 4576,
+      "length": 6,
+      "value": "\"name\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 4632,
+      "length": 7,
+      "value": "\"value\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 4689,
+      "length": 9,
+      "value": "\"kvPairs\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 4748,
+      "length": 9,
+      "value": "\"content\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 4807,
+      "length": 15,
+      "value": "\"stylizedBasic\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 4872,
+      "length": 15,
+      "value": "\"imageCarousel\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 4937,
+      "length": 13,
+      "value": "\"moeFeatures\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 5000,
+      "length": 10,
+      "value": "\"richPush\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 5060,
+      "length": 10,
+      "value": "\"navigate\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 5120,
+      "length": 8,
+      "value": "\"coupon\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 5178,
+      "length": 10,
+      "value": "\"expanded\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 5238,
+      "length": 11,
+      "value": "\"autoStart\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 5299,
+      "length": 7,
+      "value": "\"cards\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 5356,
+      "length": 6,
+      "value": "\"type\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 5412,
+      "length": 7,
+      "value": "\"style\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 5469,
+      "length": 9,
+      "value": "\"bgColor\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 5528,
+      "length": 5,
+      "value": "\"nId\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 5636,
+      "length": 5,
+      "value": "\"iat\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 5679,
+      "length": 5,
+      "value": "\"iah\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 5795,
+      "length": 17,
+      "value": "\"sent_epoch_time\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 5909,
+      "length": 5,
+      "value": "\"ios\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 5964,
+      "length": 10,
+      "value": "\"category\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 6024,
+      "length": 7,
+      "value": "\"sound\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 6127,
+      "length": 10,
+      "value": "\"deepLink\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 6187,
+      "length": 13,
+      "value": "\"richLanding\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 6250,
+      "length": 12,
+      "value": "\"screenName\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 6363,
       "length": 7,
       "value": "\"image\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5125,
+      "offset": 6420,
       "length": 6,
       "value": "\"text\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5181,
+      "offset": 6476,
       "length": 8,
       "value": "\"button\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5287,
+      "offset": 6578,
       "length": 53,
       "value": "\"MoEngageInbox.MoEngageInboxNotificationStateHandler\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5379,
+      "offset": 7164,
+      "length": 6,
+      "value": "\"self\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 7258,
+      "length": 17,
+      "value": "\"two step opt-in\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 7458,
+      "length": 15,
+      "value": "\"opt_in_pop_up\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 7568,
+      "length": 23,
+      "value": "\"settings_notification\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 7626,
       "length": 28,
       "value": "\"MESSAGING_\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingConstants.swift",
       "kind": "StringLiteral",
-      "offset": 5406,
+      "offset": 7653,
       "length": 1,
       "value": "\"\""
     },
@@ -10305,12 +13376,19 @@
       "kind": "StringLiteral",
       "offset": 155,
       "length": 8,
-      "value": "\"4.17.5\""
+      "value": "\"5.01.2\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingCoordinator.swift",
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/MoEngageMessagingControllerProvider.swift",
+      "kind": "StringLiteral",
+      "offset": 438,
+      "length": 42,
+      "value": "\"com.moengage.messagingControllerProvider\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/Internal\/MoEngageMessagingPermissionHandler.swift",
       "kind": "BooleanLiteral",
-      "offset": 390,
+      "offset": 1108,
       "length": 5,
       "value": "false"
     },
@@ -10371,25 +13449,25 @@
       "value": "60"
     },
     {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/Internal\/MoEngagePushFileStorage.swift",
-      "kind": "StringLiteral",
-      "offset": 267,
-      "length": 6,
-      "value": "\"Push\""
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/Model\/MoEngagePushExtensionData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 356,
+      "length": 1,
+      "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/Internal\/MoEngagePushFileStorage.swift",
-      "kind": "StringLiteral",
-      "offset": 308,
-      "length": 25,
-      "value": "\"MoEngagePushImpressions\""
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/Model\/MoEngagePushExtensionData.swift",
+      "kind": "Array",
+      "offset": 477,
+      "length": 5,
+      "value": "[[]]"
     },
     {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/Internal\/MoEngagePushFileStorage.swift",
-      "kind": "StringLiteral",
-      "offset": 360,
-      "length": 18,
-      "value": "\"MoEngagePushCore\""
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/Model\/MoEngagePushImpressionStatsData.swift",
+      "kind": "Array",
+      "offset": 490,
+      "length": 2,
+      "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/Model\/MoEngagePushRichExpandedMode.swift",
@@ -10397,6 +13475,69 @@
       "offset": 477,
       "length": 5,
       "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/Internal\/MoEngagePushStateSpecification.swift",
+      "kind": "StringLiteral",
+      "offset": 309,
+      "length": 23,
+      "value": "\"Push\/MoEngagePushCore\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/Internal\/MoEngagePushStateSpecification.swift",
+      "kind": "StringLiteral",
+      "offset": 373,
+      "length": 30,
+      "value": "\"Push\/MoEngagePushImpressions\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/Internal\/MoEngagePushStateSpecification.swift",
+      "kind": "StringLiteral",
+      "offset": 456,
+      "length": 32,
+      "value": "\"Push\/MoEngagePushNotifications\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/Internal\/MoEngagePushStateSpecification.swift",
+      "kind": "BooleanLiteral",
+      "offset": 713,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/Internal\/MoEngagePushStateSpecification.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1842,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/Internal\/MoEngagePushStateSpecification.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2325,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/Internal\/MoEngagePushStateSpecification.swift",
+      "kind": "Array",
+      "offset": 2665,
+      "length": 5,
+      "value": "[[]]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/Internal\/MoEngagePushStateSpecification.swift",
+      "kind": "Array",
+      "offset": 2796,
+      "length": 5,
+      "value": "[[]]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageMessaging\/Internal\/MoEngagePushStateSpecification.swift",
+      "kind": "StringLiteral",
+      "offset": 2926,
+      "length": 25,
+      "value": "\"notification_categories\""
     }
   ]
 }

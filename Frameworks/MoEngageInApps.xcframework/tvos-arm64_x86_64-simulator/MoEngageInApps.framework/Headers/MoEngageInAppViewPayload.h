@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MoEngageInAppConstants.h"
 #import "MoEngageInAppCampaignMeta.h"
+@import MoEngageCampaignsCore;
 
 @class MoEngageInAppContainer;
 @class MoEngageInAppResolution;

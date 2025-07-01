@@ -19,16 +19,20 @@
 #import <MoEngageSDK/MoEngageSDK-framework-iOS-umbrella.h>
 #elif TARGET_OS_TV && __has_include(<MoEngageSDK/MoEngageSDK-framework-tvOS-umbrella.h>)
 #import <MoEngageSDK/MoEngageSDK-framework-tvOS-umbrella.h>
-#elif TARGET_OS_IOS && __has_include(<MoEngageSDK/MoEngageSDK-library-iOS-umbrella>)
-#import <MoEngageSDK/MoEngageSDK-library-iOS-umbrella>
-#elif TARGET_OS_TV && __has_include(<MoEngageSDK/MoEngageSDK-framework-tvOS-umbrella.h>)
+#elif TARGET_OS_IOS && __has_include(<MoEngageSDK/MoEngageSDK-library-iOS-umbrella.h>)
+#import <MoEngageSDK/MoEngageSDK-library-iOS-umbrella.h>
+#elif TARGET_OS_TV && __has_include(<MoEngageSDK/MoEngageSDK-library-tvOS-umbrella.h>)
 #import <MoEngageSDK/MoEngageSDK-library-tvOS-umbrella.h>
+#elif TARGET_OS_IOS && __has_include(<MoEngageSDK/MoEngageSDK-iOS-umbrella.h>)
+#import <MoEngageSDK/MoEngageSDK-iOS-umbrella.h>
+#elif TARGET_OS_TV && __has_include(<MoEngageSDK/MoEngageSDK-tvOS-umbrella.h>)
+#import <MoEngageSDK/MoEngageSDK-tvOS-umbrella.h>
+#elif __has_include(<MoEngageSDK/MoEngageSDK-framework-umbrella.h>)
+#import <MoEngageSDK/MoEngageSDK-framework-umbrella.h>
+#elif __has_include(<MoEngageSDK/MoEngageSDK-library-umbrella.h>)
+#import <MoEngageSDK/MoEngageSDK-library-umbrella.h>
 #else
 #error Umbrella header not found use "@import" to import module
-#endif
-
-#if __has_include(<MoEngageAnalytics/MoEngageAnalytics-Swift.h>)
-#import <MoEngageAnalytics/MoEngageAnalytics-Swift.h>
 #endif
 
 #if __has_include(<MoEngageMessaging/MoEngageMessaging-Swift.h>)

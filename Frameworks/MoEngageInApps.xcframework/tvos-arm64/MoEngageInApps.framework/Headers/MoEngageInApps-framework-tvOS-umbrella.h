@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "MoEngageInAppActionHandler.h"
 #import "MoEngageInAppActionType.h"
 #import "MoEngageInAppAssetsManager.h"
 #import "MoEngageInAppCampaignMeta.h"
@@ -35,6 +36,7 @@
 #import "MoEngageInAppWidgetAction.h"
 #import "MoEngageInAppWidgetStyle.h"
 #import "MoEngageModelObject.h"
+#import "MoEngageStarRatingView.h"
 
 FOUNDATION_EXPORT double MoEngageInAppsVersionNumber;
 FOUNDATION_EXPORT const unsigned char MoEngageInAppsVersionString[];

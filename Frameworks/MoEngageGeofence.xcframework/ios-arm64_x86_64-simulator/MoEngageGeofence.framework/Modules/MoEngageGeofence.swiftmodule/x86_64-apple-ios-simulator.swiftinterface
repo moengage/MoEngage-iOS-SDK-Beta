@@ -1,9 +1,9 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
-// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name MoEngageGeofence
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name MoEngageGeofence
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import CoreLocation
 import Foundation
-import MoEngageAnalytics
 import MoEngageCore
 @_exported import MoEngageGeofence
 import Swift
@@ -15,11 +15,13 @@ import _SwiftConcurrencyShims
   @objc func geofenceEnterTriggered(withLocationManager locationManager: CoreLocation.CLLocationManager?, andRegion region: CoreLocation.CLRegion?, forAccountMeta accountMeta: MoEngageCore.MoEngageAccountMeta)
   @objc func geofenceExitTriggered(withLocationManager locationManager: CoreLocation.CLLocationManager?, andRegion region: CoreLocation.CLRegion?, forAccountMeta accountMeta: MoEngageCore.MoEngageAccountMeta)
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class MoEngageGeofenceDelegateHandler : MoEngageCore.MoEngageGeofenceHandler {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class MoEngageGeofenceDelegateHandler : MoEngageCore.MoEngageGeofenceHandler {
+  @objc override public func getInfo(sdkInstance: MoEngageCore.MoEngageSDKInstance) -> MoEngageCore.MoEngageModuleInfo?
   override public func initializeGeofence(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   override public func moengageSDKStateUpdated(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   override public func onDataTrackingDisabled(_ sdkInstance: MoEngageCore.MoEngageSDKInstance)
   override public func migrateEnvironment(forSDK sdkInstance: MoEngageCore.MoEngageSDKInstance)
+  override public func deinitialize(sdkInstance: MoEngageCore.MoEngageSDKInstance)
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MoEngageSDKGeofence : ObjectiveC.NSObject {

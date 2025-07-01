@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "MoEngageInAppWidgetStyle.h"
 
+@import MoEngageCampaignsCore;
+
 @class MoEngageInAppWidget;
 
 typedef enum MoEngageInAppAxisType: NSUInteger{

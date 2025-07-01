@@ -12,7 +12,7 @@
 
 @class MoEngageInAppContainer;
 
-typedef enum{
+typedef NS_ENUM(NSUInteger, MoEngageWidgetActionType) {
     MOE_WIDGET_ACTION_DISMISS,
     MOE_WIDGET_ACTION_TRACK_DATA,
     MOE_WIDGET_ACTION_NAVIGATE,
@@ -28,7 +28,7 @@ typedef enum{
     MOE_WIDGET_ACTION_RATING_CHANGE,
     MOE_WIDGET_ACTION_SET_TEXT,
     MOE_WIDGET_ACTION_UNKNOWN
-} MoEngageWidgetActionType;
+};
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -106,6 +106,6 @@ NS_ASSUME_NONNULL_BEGIN
 +(id _Nullable)validObjectForKeyPath:(id _Nullable)keyPath  dict:(NSDictionary*_Nullable)dict;
 +(BOOL)getBooleanForKey:(NSString *_Nullable)key  dict:(NSDictionary*_Nullable)dict;
 +(NSMutableDictionary*_Nullable)validDictionaryFromKey:(NSString *_Nullable)key  dict:(NSDictionary*_Nullable)dict;
-
++(NSArray*)separateStringIntoArray:(NSArray*)contextsArray;
 @end
 NS_ASSUME_NONNULL_END

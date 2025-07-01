@@ -17,14 +17,14 @@
 -(void)getSelfHandledInAppListForInstanceID:(NSString* _Nullable)instanceID withCompletionBlock:(void(^_Nullable)(NSArray* _Nullable selfHandledInAppList))completionBlock;
 -(void)getInAppStateListForInstanceID:(NSString* _Nullable)instanceID withCompletionBlock:(void(^_Nullable)(NSArray* _Nullable inAppStateList))completionBlock;
 -(void)getInAppStateForCID:(NSString* _Nullable)cid forInstanceID:(NSString* _Nullable)instanceID withCompletionBlock:(void(^_Nullable)(NSDictionary* _Nullable inAppState))completionBlock;
-
+-(void)getSessionTriggerInAppsListForInstanceID:(NSString*)instanceID withCompletionBlock:(void (^ _Nullable)(NSArray * _Nullable))completionBlock;
 NS_ASSUME_NONNULL_BEGIN
 +(instancetype)sharedInstance;
 -(void)previewGeneralInAppForCID:(NSString*)cid forInstanceID:(NSString* _Nullable)instanceID;
 #if !TARGET_OS_TV
 -(void)previewEmbeddedInAppForCID:(NSString*)cid forInstanceID:(NSString* _Nullable)instanceID;
 #endif
-
+-(void)previewSessionTriggerInAppForCID:(NSString*)cid forInstanceID:(NSString*)instanceID;
 -(void)previewSelfHandledInAppForCID:(NSString*)cid forInstanceID:(NSString* _Nullable)instanceID;
 -(void)previewTriggerInAppForCID:(NSString*)cid forInstanceID:(NSString* _Nullable)instanceID;
 

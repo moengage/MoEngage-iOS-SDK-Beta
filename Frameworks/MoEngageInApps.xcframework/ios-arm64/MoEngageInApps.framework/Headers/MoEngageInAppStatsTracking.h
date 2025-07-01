@@ -48,7 +48,9 @@ typedef enum MoEngageInAppStatType: NSUInteger{
     STAT_EVLULATION_PATH_TIME_EXPIRY,
     STAT_EVLULATION_USER_NOT_ON_APP,
     STAT_IMPRESSION_NUDGE_SCREEN_MAX_SHOW_LIMIT,
-    STAT_IMPRESSION_NUDGE_POSITION_UNAVAILABLE
+    STAT_IMPRESSION_NUDGE_POSITION_UNAVAILABLE,
+    STAT_IMPRESSION_SESSION_UNCHANGED,
+    STAT_IMPRESSION_SESSION_CHANGE_IN_BACKGROUND
 }MoEngageInAppStatType;
 
 /*
@@ -57,7 +59,7 @@ typedef enum MoEngageInAppStatType: NSUInteger{
 @interface MoEngageInAppStatInstance : NSObject <NSCoding>
 
 @property(assign, nonatomic) MoEngageInAppStatType  stat_type;
-@property(strong, nonatomic) NSArray        *timestamp_array;
+@property(strong, nonatomic) NSArray<NSString *>     *timestamp_array;
 
 - (instancetype)initWithStatType:(MoEngageInAppStatType)statType;
 -(void)appendOccurenceTimestamp;
@@ -71,7 +73,7 @@ typedef enum MoEngageInAppStatType: NSUInteger{
 @interface MoEngageInAppCampaignStat : NSObject <NSCoding>
 
 @property(strong, nonatomic) NSString   *formatted_campaign_id;
-@property(strong, nonatomic) NSArray    *campaign_stat_array;
+@property(strong, nonatomic) NSArray<MoEngageInAppStatInstance *>    *campaign_stat_array;
 
 - (instancetype)initWithFormattedCampaignID:(NSString*)campaignID;
 -(void)trackStat:(MoEngageInAppStatType)statType;
@@ -84,7 +86,7 @@ typedef enum MoEngageInAppStatType: NSUInteger{
  */
 @interface MoEngageInAppBatchData : NSObject <NSCoding>
 @property(strong, nonatomic) NSString   *batch_id;
-@property(strong, nonatomic) NSArray    *batch_stat_array;
+@property(strong, nonatomic) NSArray<MoEngageInAppCampaignStat *>   *batch_stat_array;
 
 -(void)trackStat:(MoEngageInAppStatType)statType forFormattedCampaignID:(NSString*)fcid;
 -(NSMutableDictionary*)getBatchPayload;
@@ -95,7 +97,7 @@ typedef enum MoEngageInAppStatType: NSUInteger{
  MoEngageInAppStatData
  */
 @interface MoEngageInAppStatData : NSObject <NSCoding>
-@property(strong, nonatomic) NSArray  *batches_array;
+@property(strong, nonatomic) NSArray<MoEngageInAppBatchData *>  *batches_array;
 -(MoEngageInAppBatchData*)initiateCurrentBatch;
 @end
 

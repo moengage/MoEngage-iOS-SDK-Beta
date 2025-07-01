@@ -13,6 +13,10 @@
 #import "MoEngageInAppDelegate.h"
 #import "MoEngageCore.h"
 #import "MoEngageExceptionUtils.h"
+#import "MoEngageAppDelegateProxy.h"
+#import "MoEngageAppDelegateSwizzler.h"
+#import "MoEngageMutableDictionary.h"
+#import "MoEngageProxyUtils.h"
 
 FOUNDATION_EXPORT double MoEngageCoreVersionNumber;
 FOUNDATION_EXPORT const unsigned char MoEngageCoreVersionString[];

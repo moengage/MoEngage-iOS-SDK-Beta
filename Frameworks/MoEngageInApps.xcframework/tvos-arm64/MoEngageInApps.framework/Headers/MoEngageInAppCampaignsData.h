@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "MoEngageInAppCampaignMeta.h"
+#import "MoEngageInAppState.h"
 
 @interface MoEngageInAppCampaignsData : NSObject<NSCoding>
-@property NSArray   *generalInApps;
-@property NSArray   *triggerInApps;
-@property NSArray   *embeddedInApps;
-@property NSArray   *selfHandledInApps;
+@property NSArray<MoEngageInAppCampaignMeta *>   *generalInApps;
+@property NSArray<MoEngageInAppCampaignMeta *>   *triggerInApps;
+@property NSArray<MoEngageInAppCampaignMeta *>   *embeddedInApps;
+@property NSArray<MoEngageInAppCampaignMeta *>   *selfHandledInApps;
+@property NSArray<MoEngageInAppCampaignMeta *>   *sessionTriggeredCampaigns;
 
-@property NSArray   *inAppStateData;
+@property NSArray<MoEngageInAppState *>   *inAppStateData;
 @property NSNumber  *globalDelay;
 @property NSNumber  *syncDelay;
 @property NSDate    *inAppLastUpdatedTime;

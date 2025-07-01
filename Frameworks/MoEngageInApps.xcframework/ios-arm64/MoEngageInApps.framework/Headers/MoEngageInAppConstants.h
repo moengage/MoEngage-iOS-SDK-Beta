@@ -67,6 +67,7 @@ extern NSString* const MO_INAPP_META_KEY_INSTANCE_ID;
 extern NSString* const MO_INAPP_META_KEY_CID;
 extern NSString* const MO_INAPP_META_KEY_C_NAME;
 extern NSString* const MO_INAPP_META_KEY_C_TYPE;
+extern NSString* const MO_INAPP_META_KEY_C_S_TYPE;
 extern NSString* const MO_INAPP_META_KEY_TEMPLATE_TYPE;
 extern NSString* const MO_INAPP_META_KEY_SDK_CMP_TYPE;
 extern NSString* const MO_INAPP_META_KEY_INAPP_TYPE;
@@ -311,11 +312,13 @@ extern NSString* const MO_INAPP_ACTION_TYPE_DISMISS;
 extern NSString* const MO_INAPP_ACTION_TYPE_TRACK_DATA;
 extern NSString* const MO_INAPP_ACTION_TYPE_NAVIGATE;
 extern NSString* const MO_INAPP_ACTION_TYPE_NAVIGATE_SETTINGS;
+extern NSString* const MO_INAPP_ACTION_TYPE_NAVIGATE_SETTINGS_NOTIFICATIONS;
 extern NSString* const MO_INAPP_ACTION_TYPE_SHARE;
 extern NSString* const MO_INAPP_ACTION_TYPE_COPY_TEXT;
 extern NSString* const MO_INAPP_ACTION_TYPE_CALL;
 extern NSString* const MO_INAPP_ACTION_TYPE_SMS;
 extern NSString* const MO_INAPP_ACTION_TYPE_NOTIFICATION_ACTION;
+extern NSString* const MO_INAPP_ACTION_TYPE_REQUEST_NOTIFICATION_PERMISSION;
 extern NSString* const MO_INAPP_ACTION_TYPE_CONDITIONAL_ACTION;
 extern NSString* const MO_INAPP_ACTION_TYPE_USER_INPUT_ACTION;
 extern NSString* const MO_INAPP_ACTION_TYPE_CUSTOM_ACTION;
@@ -337,6 +340,20 @@ extern NSString* const MO_INAPP_ACTION_USER_INPUT_RATING;
 extern NSString* const MO_INAPP_ACTION_USER_INPUT_CUSTOM_RATING;
 extern NSString* const MO_INAPP_STYLE_RATING_KEY_NUM_OF_RATINGS;
 extern NSString* const MO_INAPP_STYLE_RATING_KEY_RATING_TYPE;
+
+//ACCESSIBILITY KEYS
+extern NSString* const MO_INAPP_WIDGET_KEY_ACCESSIBILITY;
+extern NSString* const MO_INAPP_ACCESSIBILITY_KEY_LABEL;
+extern NSString* const MO_INAPP_ACCESSIBILITY_KEY_HINT;
+extern NSString* const MO_INAPP_ACCESSIBILITY_KEY_DEFAULT;
+
+// Video KEYS
+extern NSString* const MO_INAPP_VIDEO_KEY_MINIMIZE;
+extern NSString* const MO_INAPP_VIDEO_KEY_MAXIMIZE;
+extern NSString* const MO_INAPP_VIDEO_KEY_PLAY;
+extern NSString* const MO_INAPP_VIDEO_KEY_PAUSE;
+extern NSString* const MO_INAPP_VIDEO_KEY_MUTE;
+extern NSString* const MO_INAPP_VIDEO_KEY_UNMUTE;
 
 #pragma -mark Misc
 extern NSString* const IN_APP_V2_LAST_SHOWN_INAPP;
@@ -362,3 +379,11 @@ extern NSString* const kMODateFormatISO8601MilliSec;
 extern NSString* const appVersion;
 extern NSString* const sdkVersion;
 extern NSString* const eventAttributes;
+
+// InApp sync request body keys
+extern NSString* const MO_INAPP_META_QUERY_PUSH_OPT_IN_STATUS;
+
+// Unique ID key
+extern NSString* const uid;
+
+extern NSString* const MO_INAPP_META_DISPLAY_RULES_KEY_SCREEN_IN_OLD_VERSION;

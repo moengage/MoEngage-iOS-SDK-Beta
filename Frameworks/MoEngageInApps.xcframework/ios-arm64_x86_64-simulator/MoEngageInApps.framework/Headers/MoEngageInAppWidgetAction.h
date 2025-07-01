@@ -7,34 +7,33 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MoEngageInAppConstants.h"
-#import "MoEngageInAppUtils.h"
 
+typedef NS_ENUM(NSUInteger, MoEngageWidgetActionType);
 
-typedef enum{
+typedef NS_ENUM(NSUInteger,MoEngageUserAttributeType) {
     MOE_GENERAL,
     MOE_TIMESTAMP,
     MOE_LOCATION
-} MoEngageUserAttributeType;
+};
 
-typedef enum{
+typedef NS_ENUM(NSUInteger,MoEngageTrackActionType){
     MOE_TRACK_ACTION_EVENT,
     MOE_TRACK_ACTION_USER_ATTRIBUTE,
     MOE_TRACK_ACTION_UNKNOWN
-} MoEngageTrackActionType;
+};
 
-typedef enum{
+typedef NS_ENUM(NSUInteger,MoEngageNavActionType){
     MOE_NAV_ACTION_RICH_LANDING,
     MOE_NAV_ACTION_DEEP_LINKING,
     MOE_NAV_ACTION_SCREEN,
     MOE_NAV_ACTION_EXTERNAL_BROWSER
-} MoEngageNavActionType;
+};
 
-typedef enum{
+typedef NS_ENUM(NSUInteger,MoEngageUserInputActionType){
     MOE_USER_INPUT_ACTION_RATING,
     MOE_USER_INPUT_ACTION_CUSTOM_RATING,
     MOE_USER_INPUT_ACTION_UNKNOWN
-} MoEngageUserInputActionType;
+};
 
 
 @interface MoEngageInAppWidgetAction : NSObject

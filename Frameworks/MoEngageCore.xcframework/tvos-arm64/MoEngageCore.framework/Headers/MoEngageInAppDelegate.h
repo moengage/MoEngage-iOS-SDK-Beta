@@ -33,5 +33,29 @@
 /// Handle callback for environment change.
 /// - Parameter sdkInstance: The instance to migrate.
 -(void)migrateEnvironmentForSDK:(MoEngageSDKInstance*)sdkInstance;
+/// Handle callback for SDK deinitialization.
+/// - Parameter sdkInstance: The instance to deinitialize.
+-(void)deinitialize:(MoEngageSDKInstance*)sdkInstance;
+
+/// Identities updated callback.
+///
+/// - Parameters:
+///   - old: The identities before update.
+///   - new: The identities after update.
+///   - sdkInstance: The instance to update for.
+-(void)identitiesUpdatedFrom:(NSDictionary<NSString*, NSString*>*)old to:(NSDictionary<NSString*, NSString*>*)new sdkInstance:(MoEngageSDKInstance*)sdkInstance;
+
+/// Unique updated callback.
+///
+/// - Parameters:
+///   - previousId: The uniqueId before update.
+///   - newId: The uniqueId after update.
+///   - sdkInstance: The instance to update for.
+- (void)userUniqueIdUpdatedForSDKInstance:(MoEngageSDKInstance *)sdkInstance fromPreviousId:(nullable NSString *)previousId toNewId:(NSString *)newId;
+
+/// Callback on new session created
+/// - Parameter sdkInstance: The instance  for which new session createds
+-(void)userSessionCreated:(MoEngageSDKInstance*)sdkInstance;
+
 @end
 

@@ -11,8 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MoEngageInAppDisplayRules : MoEngageModelObject <NSCoding>
-@property(nonatomic, strong) NSString* showInScreen;
-@property(nonatomic, strong) NSArray* contexts;
+@property(nonatomic, strong) NSArray<NSString *>* contexts;
+@property(nonatomic, strong) NSArray<NSString *>* showInScreens;
 @end
 
 @interface MoEngageInAppDisplay : MoEngageModelObject <NSCoding>

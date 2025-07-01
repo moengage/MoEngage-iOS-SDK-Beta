@@ -25,7 +25,7 @@
 @class MoEngageInAppPrimaryContainerView;
 @class MoEngageInAppActionHandler;
 @class MoEngageInAppConfigurationHandler;
-
+@class MoEngageInAppSelfHandledData;
 
 @protocol MoEngageInAppNativeDelegate;
 @class MoEngageInAppSelfHandledCampaign;
@@ -47,6 +47,11 @@ typedef void(^MOInAppViewCompletionBlock)(MoEngageInAppPrimaryContainerView* _Nu
 
 typedef MoEngageNudgePosition(^nonIntrusiveInAppCompletion)(void);
 
+typedef enum {
+  MoEngageInAppSyncTypeAppOpen,
+  MoEngageInAppSyncTypeImmediateSync,
+} MoEngageInAppSyncType;
+
 @interface MoEngageInAppController : NSObject
 
 @property(nonatomic, strong) MoEngageAccountMeta* accountMeta;
@@ -61,21 +66,28 @@ typedef MoEngageNudgePosition(^nonIntrusiveInAppCompletion)(void);
 @property(nonatomic, assign) BOOL inAppFetchedSuccessfully;
 @property(nonatomic, strong, nullable) NSDate* inAppSyncTimeInSession;
 @property(nonatomic, strong) MoEngageTriggerEvaluatorManager* triggerEvaluator;
-
-
+@property(nonatomic, strong) void(^_Nullable multipleSelfHandledInAppCompletion)(MoEngageInAppSelfHandledData* _Nullable campaignData);
+@property(nonatomic, copy) void(^_Nullable selfHandledInAppCompletion)(MoEngageInAppSelfHandledCampaign* _Nullable inAppData,  MoEngageAccountMeta* _Nullable accountMeta);
+@property(nonatomic, assign) BOOL hasSessionChanged;
 #if !TARGET_OS_TV
 @property(nonatomic, strong) NSMutableArray<nonIntrusiveInAppCompletion>* cachedNudgePosition;
 @property(nonatomic, strong) NSHashTable<MoEngageInAppPrimaryContainerView*>* nudgeViewsArray;
 #endif
 
--(instancetype)initWithSDKConfig:(MoEngageSDKConfig*)sdkConfig withSDKInstance:(nonnull MoEngageSDKInstance *)sdkInstance;
+@property (nullable, nonatomic, copy) NSString *lastSyncedUid;
+@property (nonatomic, strong) NSDictionary<NSString *, NSString *> *lastSyncedIdentities;
+@property (nonatomic, strong) NSOperationQueue *fetchQueue;
+
+-(instancetype)initWithSDKInstance:(nonnull MoEngageSDKInstance *)sdkInstance;
 -(instancetype _Nonnull)init NS_UNAVAILABLE;
 -(void)initializeInAppController;
 
 -(void)applicationEnteredForeground;
 -(void)applicationInActive;
 -(void)updateModule;
+- (void)updateModuleWithSyncType:(MoEngageInAppSyncType)syncType previousIdentities:(NSDictionary<NSString *, NSString *> *)previousIdentities;
 -(void)userReset:(void (^)(void))completionHandler;
+-(void)resetLastSyncedUidAndIdentities;
 #if !TARGET_OS_TV
 -(void)showInAppViaPushWithInfo:(NSDictionary*)pushInfo;
 -(void)orientationChanged;
@@ -84,14 +96,15 @@ typedef MoEngageNudgePosition(^nonIntrusiveInAppCompletion)(void);
 -(void)keyboardHidden;
 -(void)syncInAppStatsData:(void (^)(void))completionHandler;
 -(void)removeInAppStorageData:(void (^)(void))completionHandler;
+- (void)sessionChanged;
 -(void)inAppSyncCompleted;
-
--(BOOL)shouldSyncInApps;
--(void)inAppSyncCompleted;
+-(BOOL)isInAppEnabled;
+-(BOOL)shouldSyncInAppFetchType:(MoEngageInAppSyncType)syncType;;
 -(void)clearExpiredInAppImages;
 -(NSDictionary*)getCurrentScreenAndContextInfoDict;
 - (NSArray<NSDictionary<NSString *, id> *> *)convertCampaignsToDictionaries:(NSArray<MoEngageInAppCampaignMeta *> *)campaigns;
-
+-(NSMutableArray<MoEngageInAppCampaignMeta *>*)getEligibleCampaignForMultipleContext:(NSArray*)campaignsArray forSDKCampaignType:(MoEngageInAppSDKCampaignType)sdkCmpType inPrioratizingStage:(BOOL)inPrioratizing;
+-(void)updateInAppStatusForControlGroupFailureWithCampaignMeta:(MoEngageInAppCampaignMeta*)campaignMeta;
 
 #pragma mark- InApp Delegate Handling
 
@@ -108,6 +121,7 @@ typedef MoEngageNudgePosition(^nonIntrusiveInAppCompletion)(void);
 
 -(void)showInApp;
 -(void)blockInAppInViewController:(UIViewController* _Nonnull)viewcontroller;
+-(void)fetchInAppWithCampaignID:(NSString*)campaignID;
 
 #pragma mark- Nudge Campaign
 #if !TARGET_OS_TV

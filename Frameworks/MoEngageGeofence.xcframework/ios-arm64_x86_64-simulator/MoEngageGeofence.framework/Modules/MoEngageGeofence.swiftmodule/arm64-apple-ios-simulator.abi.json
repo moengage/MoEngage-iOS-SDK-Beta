@@ -1,8 +1,8 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "TopLevel",
-    "printedName": "TopLevel",
+    "name": "MoEngageGeofence",
+    "printedName": "MoEngageGeofence",
     "children": [
       {
         "kind": "Import",
@@ -57,8 +57,18 @@
       },
       {
         "kind": "Import",
-        "name": "MoEngageAnalytics",
-        "printedName": "MoEngageAnalytics",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MoEngageGeofence",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageCore",
+        "printedName": "MoEngageCore",
         "declKind": "Import",
         "moduleName": "MoEngageGeofence"
       },
@@ -220,6 +230,22 @@
           "AccessControl",
           "ObjC",
           "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
         ]
       },
       {
@@ -244,6 +270,45 @@
         "name": "MoEngageGeofenceDelegateHandler",
         "printedName": "MoEngageGeofenceDelegateHandler",
         "children": [
+          {
+            "kind": "Function",
+            "name": "getInfo",
+            "printedName": "getInfo(sdkInstance:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "MoEngageCore.MoEngageModuleInfo?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MoEngageModuleInfo",
+                    "printedName": "MoEngageCore.MoEngageModuleInfo",
+                    "usr": "c:@M@MoEngageCore@objc(cs)MoEngageModuleInfo"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MoEngageSDKInstance",
+                "printedName": "MoEngageCore.MoEngageSDKInstance",
+                "usr": "c:@M@MoEngageCore@objc(cs)MoEngageSDKInstance"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@MoEngageGeofence@objc(cs)MoEngageGeofenceDelegateHandler(im)getInfoWithSdkInstance:",
+            "mangledName": "$s16MoEngageGeofence0abC15DelegateHandlerC7getInfo11sdkInstance0aB4Core0ab6ModuleG0CSgAF0aB11SDKInstanceC_tF",
+            "moduleName": "MoEngageGeofence",
+            "overriding": true,
+            "objc_name": "getInfoWithSdkInstance:",
+            "declAttributes": [
+              "ObjC",
+              "Override",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
           {
             "kind": "Function",
             "name": "initializeGeofence",
@@ -356,15 +421,45 @@
               "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "deinitialize",
+            "printedName": "deinitialize(sdkInstance:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MoEngageSDKInstance",
+                "printedName": "MoEngageCore.MoEngageSDKInstance",
+                "usr": "c:@M@MoEngageCore@objc(cs)MoEngageSDKInstance"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16MoEngageGeofence0abC15DelegateHandlerC12deinitialize11sdkInstancey0aB4Core0aB11SDKInstanceC_tF",
+            "mangledName": "$s16MoEngageGeofence0abC15DelegateHandlerC12deinitialize11sdkInstancey0aB4Core0aB11SDKInstanceC_tF",
+            "moduleName": "MoEngageGeofence",
+            "overriding": true,
+            "declAttributes": [
+              "Override",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
-        "usr": "s:16MoEngageGeofence0abC15DelegateHandlerC",
+        "usr": "c:@M@MoEngageGeofence@objc(cs)MoEngageGeofenceDelegateHandler",
         "mangledName": "$s16MoEngageGeofence0abC15DelegateHandlerC",
         "moduleName": "MoEngageGeofence",
         "declAttributes": [
           "AccessControl",
-          "RawDocComment"
+          "RawDocComment",
+          "ObjC"
         ],
         "superclassUsr": "c:@M@MoEngageCore@objc(cs)MoEngageGeofenceHandler",
         "hasMissingDesignatedInitializers": true,
@@ -374,6 +469,27 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "MoEngageModule",
+            "printedName": "MoEngageModule",
+            "usr": "c:@M@MoEngageCore@objc(pl)MoEngageModule",
+            "mangledName": "$s12MoEngageCore0aB6ModuleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -461,6 +577,13 @@
       },
       {
         "kind": "Import",
+        "name": "CoreLocation",
+        "printedName": "CoreLocation",
+        "declKind": "Import",
+        "moduleName": "MoEngageGeofence"
+      },
+      {
+        "kind": "Import",
         "name": "MoEngageCore",
         "printedName": "MoEngageCore",
         "declKind": "Import",
@@ -475,13 +598,6 @@
         "declAttributes": [
           "RawDocComment"
         ]
-      },
-      {
-        "kind": "Import",
-        "name": "CoreLocation",
-        "printedName": "CoreLocation",
-        "declKind": "Import",
-        "moduleName": "MoEngageGeofence"
       },
       {
         "kind": "Import",
@@ -927,6 +1043,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -1100,32 +1230,46 @@
       "value": "\"MoEGeofenceBGTask\""
     },
     {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageGeofence\/Internal\/MoEngageGeofenceConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1294,
+      "length": 20,
+      "value": "\"geofenceInstanceID\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageGeofence\/Internal\/MoEngageGeofenceConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1366,
+      "length": 22,
+      "value": "\"MOE_GEOFENCE_ENABLED\""
+    },
+    {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageGeofence\/MoEngageGeofenceConstants+Version.swift",
       "kind": "StringLiteral",
       "offset": 154,
       "length": 8,
-      "value": "\"5.16.2\""
+      "value": "\"6.00.1\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageGeofence\/Internal\/MoEngageGeofenceController.swift",
       "kind": "IntegerLiteral",
-      "offset": 340,
+      "offset": 321,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageGeofence\/Internal\/MoEngageGeofenceController.swift",
       "kind": "BooleanLiteral",
-      "offset": 368,
+      "offset": 349,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageGeofence\/Internal\/MoEngageGeofenceController.swift",
+      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageGeofence\/Internal\/MoEngageGeofenceControllerProvider.swift",
       "kind": "StringLiteral",
-      "offset": 262,
-      "length": 26,
-      "value": "\"MoEngageGeofence.MoEngageGeofenceController\""
+      "offset": 424,
+      "length": 41,
+      "value": "\"com.moengage.geofenceControllerProvider\""
     },
     {
       "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageGeofence\/Internal\/MoEngageGeofenceModel.swift",
@@ -1140,27 +1284,6 @@
       "offset": 300,
       "length": 6,
       "value": "\"exit\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageGeofence\/Internal\/MoEngageGeofenceModel.swift",
-      "kind": "StringLiteral",
-      "offset": 262,
-      "length": 7,
-      "value": "\"enter\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageGeofence\/Internal\/MoEngageGeofenceModel.swift",
-      "kind": "StringLiteral",
-      "offset": 300,
-      "length": 6,
-      "value": "\"exit\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/MoEngage-iPhone-SDK\/MoEngage-iPhone-SDK\/source\/Sources\/MoEngageGeofence\/Internal\/MoEngageGeofenceModel.swift",
-      "kind": "StringLiteral",
-      "offset": 316,
-      "length": 21,
-      "value": "\"MoEngageGeofence.MoEngageGeofenceModel\""
     }
   ]
 }
